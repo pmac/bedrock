@@ -6,6 +6,9 @@ if [ ! -e ./manage.py ]; then
     cd $script_parent_dir
 fi
 
+echo ENVIRONMENT_VARIABLES
+env
+
 # for heroku demos
 if [[ ! -d ./vendor-local/src/legal-docs/.git ]]; then
     rm -rf ./vendor-local/src/legal-docs
