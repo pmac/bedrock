@@ -6,6 +6,12 @@ if [ ! -e ./manage.py ]; then
     cd $script_parent_dir
 fi
 
+# for heroku demos
+if [[ ! -d ./vendor-local/src/legal-docs/.git ]]; then
+    rm -rf ./vendor-local/src/legal-docs
+    git clone --depth 1 https://github.com/mozilla/legal-docs.git vendor-local/src/legal-docs
+fi
+
 ./bin/run-db-download.py --force
 ./manage.py migrate --noinput
 ./bin/run-db-update.sh --all || true
