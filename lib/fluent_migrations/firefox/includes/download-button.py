@@ -52,11 +52,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     download_button,
                     'Please follow <a href="%(url)s">these instructions</a> to install Firefox.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -64,11 +60,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     download_button,
                     'Your system doesn\'t meet the <a href="%(url)s">requirements</a> to run Firefox.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],
@@ -80,33 +72,18 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
         [
             FTL.Message(
                 id=FTL.Identifier("download-button-firefox-other-platforms"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Firefox for Other Platforms & Languages",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Firefox for Other Platforms & Languages", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-update-your-firefox"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Update your Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Update your Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-get-firefox-android"),
                 value=REPLACE(
                     "download_button.lang",
                     "Get Firefox for Android",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -114,70 +91,35 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "Get Firefox for iOS",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-google-play"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Get it on Google Play",
-                    {
-                        "Google Play": TERM_REFERENCE("brand-name-google-play"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Get it on Google Play", {"Google Play": TERM_REFERENCE("brand-name-google-play"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-free-google-play"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Get it free on Google Play",
-                    {
-                        "Google Play": TERM_REFERENCE("brand-name-google-play"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Get it free on Google Play", {"Google Play": TERM_REFERENCE("brand-name-google-play"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-app-store"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Get it free from the App Store",
-                    {
-                        "App Store": TERM_REFERENCE("brand-name-app-store"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Get it free from the App Store", {"App Store": TERM_REFERENCE("brand-name-app-store"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-download-app-store"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Download on the App Store",
-                    {
-                        "App Store": TERM_REFERENCE("brand-name-app-store"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Download on the App Store", {"App Store": TERM_REFERENCE("brand-name-app-store"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-download-firefox"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Download Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Download Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-your-system-may"),
                 value=REPLACE(
                     "download_button.lang",
                     "Your system may not meet the requirements for Firefox, but you can try one of these versions:",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -185,10 +127,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "<span>Firefox Beta</span> for Android",
-                    {
-                        "Firefox Beta": TERM_REFERENCE("brand-name-firefox-beta"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox Beta": TERM_REFERENCE("brand-name-firefox-beta"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -196,10 +135,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "<span>Firefox Aurora</span> for Android",
-                    {
-                        "Firefox Aurora": TERM_REFERENCE("brand-name-firefox-aurora"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox Aurora": TERM_REFERENCE("brand-name-firefox-aurora"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -207,10 +143,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "<span>Firefox Nightly</span> for Android",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -218,10 +151,7 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "<span>Firefox</span> for Android",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -229,21 +159,12 @@ download-button-recommended = {COPY(download_button, "Recommended",)}
                 value=REPLACE(
                     "download_button.lang",
                     "<span>Firefox</span> for iOS",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("download-button-firefox-privacy"),
-                value=REPLACE(
-                    "download_button.lang",
-                    "Firefox Privacy",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("download_button.lang", "Firefox Privacy", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ],
     )

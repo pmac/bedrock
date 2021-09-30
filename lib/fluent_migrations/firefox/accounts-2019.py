@@ -17,11 +17,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("firefox-accounts-there-is-a-way-to"),
                 value=REPLACE(
-                    accounts_2019,
-                    "There is a way to protect your privacy. Join Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    accounts_2019, "There is a way to protect your privacy. Join Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -29,9 +25,7 @@ def migrate(ctx):
                 value=REPLACE(
                     accounts_2019,
                     "Get a Firefox Account – Keep your data private, safe and synced",
-                    {
-                        "Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),
-                    },
+                    {"Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),},
                 ),
             ),
         ]
@@ -47,9 +41,7 @@ firefox-accounts-take-your-stand-stay-smart = {COPY(accounts_2019, "Take your st
                 value=REPLACE(
                     accounts_2019,
                     "Securely sync your passwords, bookmarks and tabs across all your devices. Get a Firefox Account now – One login – Power and privacy everywhere.",
-                    {
-                        "Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),
-                    },
+                    {"Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),},
                 ),
             ),
             FTL.Message(
@@ -57,9 +49,7 @@ firefox-accounts-take-your-stand-stay-smart = {COPY(accounts_2019, "Take your st
                 value=REPLACE(
                     accounts_2019,
                     "There is a way to protect your privacy. <span>Join Firefox.</span>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -75,10 +65,7 @@ firefox-accounts-take-your-stand-against = {COPY(accounts_2019, "Take your stand
                 value=REPLACE(
                     accounts_2019,
                     "You’re signed <br>in to Firefox. <br><span>Now try Firefox Monitor.</span>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
         ]
@@ -91,23 +78,11 @@ firefox-accounts-see-if-youve-been = {COPY(accounts_2019, "See if you’ve been 
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-accounts-sign-in-to-monitor"),
-                value=REPLACE(
-                    accounts_2019,
-                    "Sign In to Monitor",
-                    {
-                        "Monitor": TERM_REFERENCE("brand-name-monitor"),
-                    },
-                ),
+                value=REPLACE(accounts_2019, "Sign In to Monitor", {"Monitor": TERM_REFERENCE("brand-name-monitor"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-accounts-join-firefox"),
-                value=REPLACE(
-                    accounts_2019,
-                    "Join Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(accounts_2019, "Join Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -122,13 +97,7 @@ firefox-accounts-meet-our-family-of = {COPY(accounts_2019, "Meet our family of p
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-accounts-firefox-is-technology"),
-                value=REPLACE(
-                    accounts_2019,
-                    "Firefox is technology that fights for you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(accounts_2019, "Firefox is technology that fights for you.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -150,10 +119,7 @@ firefox-accounts-get-the-respect-you = {COPY(accounts_2019, "Get the respect you
                 value=REPLACE(
                     accounts_2019,
                     'You’ll always get the truth from us. Everything we make and do honors our <a href="%(promise)s">Personal Data Promise</a>:',
-                    {
-                        "%%": "%",
-                        "%(promise)s": VARIABLE_REFERENCE("promise"),
-                    },
+                    {"%%": "%", "%(promise)s": VARIABLE_REFERENCE("promise"),},
                 ),
             ),
         ]
@@ -169,13 +135,7 @@ firefox-accounts-and-be-part-of-protecting = {COPY(accounts_2019, "And be part o
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-accounts-help-us-build-a-better"),
-                value=REPLACE(
-                    accounts_2019,
-                    "Help us build a better Firefox for all.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(accounts_2019, "Help us build a better Firefox for all.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(

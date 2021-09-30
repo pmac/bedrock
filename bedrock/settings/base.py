@@ -40,10 +40,7 @@ DEV = config("DEV", parser=bool, default="false")
 PROD = config("PROD", parser=bool, default="false")
 DEBUG = config("DEBUG", parser=bool, default="false")
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": data_path("bedrock.db"),
-    },
+    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": data_path("bedrock.db"),},
 }
 
 CACHES = {
@@ -51,10 +48,7 @@ CACHES = {
         "BACKEND": "bedrock.base.cache.SimpleDictCache",
         "LOCATION": "default",
         "TIMEOUT": 600,
-        "OPTIONS": {
-            "MAX_ENTRIES": 5000,
-            "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-        },
+        "OPTIONS": {"MAX_ENTRIES": 5000, "CULL_FREQUENCY": 4,},  # 1/4 entries deleted if max reached
     }
 }
 
@@ -752,10 +746,7 @@ EXTERNAL_FILES_PATH = config("EXTERNAL_FILES_PATH", default=data_path("community
 EXTERNAL_FILES_BRANCH = config("EXTERNAL_FILES_BRANCH", default="master")
 EXTERNAL_FILES_REPO = config("EXTERNAL_FILES_REPO", default="https://github.com/mozilla/community-data.git")
 EXTERNAL_FILES = {
-    "credits": {
-        "type": "bedrock.mozorg.credits.CreditsFile",
-        "name": "credits/names.csv",
-    },
+    "credits": {"type": "bedrock.mozorg.credits.CreditsFile", "name": "credits/names.csv",},
 }
 
 # Facebook Like button supported locales
@@ -971,55 +962,15 @@ from .appstores import (
 SEND_TO_DEVICE_LOCALES = ["de", "en-GB", "en-US", "es-AR", "es-CL", "es-ES", "es-MX", "fr", "id", "pl", "pt-BR", "ru", "zh-TW"]
 
 SEND_TO_DEVICE_MESSAGE_SETS = {
-    "default": {
-        "email": {
-            "android": "download-firefox-android",
-            "ios": "download-firefox-ios",
-            "all": "download-firefox-mobile",
-        }
-    },
-    "fx-android": {
-        "email": {
-            "android": "get-android-embed",
-            "ios": "download-firefox-ios",
-            "all": "download-firefox-mobile",
-        }
-    },
-    "fx-mobile-download-desktop": {
-        "email": {
-            "all": "download-firefox-mobile-reco",
-        }
-    },
-    "fx-whatsnew": {
-        "email": {
-            "all": "download-firefox-mobile-whatsnew",
-        }
-    },
-    "fx-focus": {
-        "email": {
-            "all": "download-focus-mobile-whatsnew",
-        }
-    },
-    "fx-klar": {
-        "email": {
-            "all": "download-klar-mobile-whatsnew",
-        }
-    },
-    "download-firefox-rocket": {
-        "email": {
-            "all": "download-firefox-rocket",
-        }
-    },
-    "firefox-mobile-welcome": {
-        "email": {
-            "all": "firefox-mobile-welcome",
-        }
-    },
-    "lockwise-welcome-download": {
-        "email": {
-            "all": "lockwise-welcome-download",
-        }
-    },
+    "default": {"email": {"android": "download-firefox-android", "ios": "download-firefox-ios", "all": "download-firefox-mobile",}},
+    "fx-android": {"email": {"android": "get-android-embed", "ios": "download-firefox-ios", "all": "download-firefox-mobile",}},
+    "fx-mobile-download-desktop": {"email": {"all": "download-firefox-mobile-reco",}},
+    "fx-whatsnew": {"email": {"all": "download-firefox-mobile-whatsnew",}},
+    "fx-focus": {"email": {"all": "download-focus-mobile-whatsnew",}},
+    "fx-klar": {"email": {"all": "download-klar-mobile-whatsnew",}},
+    "download-firefox-rocket": {"email": {"all": "download-firefox-rocket",}},
+    "firefox-mobile-welcome": {"email": {"all": "firefox-mobile-welcome",}},
+    "lockwise-welcome-download": {"email": {"all": "lockwise-welcome-download",}},
 }
 
 if DEV:
@@ -1061,21 +1012,10 @@ CORS_URLS_REGEX = r"^/([a-zA-Z-]+/)?(newsletter)/"
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "root": {
-        "level": LOG_LEVEL,
-        "handlers": ["console"],
-    },
-    "formatters": {
-        "verbose": {"format": "%(levelname)s %(asctime)s %(module)s %(message)s"},
-    },
+    "root": {"level": LOG_LEVEL, "handlers": ["console"],},
+    "formatters": {"verbose": {"format": "%(levelname)s %(asctime)s %(module)s %(message)s"},},
     "handlers": {"console": {"class": "logging.StreamHandler", "stream": sys.stdout, "formatter": "verbose"}},
-    "loggers": {
-        "django.db.backends": {
-            "level": "ERROR",
-            "handlers": ["console"],
-            "propagate": False,
-        },
-    },
+    "loggers": {"django.db.backends": {"level": "ERROR", "handlers": ["console"], "propagate": False,},},
 }
 
 PASSWORD_HASHERS = ["django.contrib.auth.hashers.PBKDF2PasswordHasher"]
@@ -1442,44 +1382,16 @@ VPN_PLAN_ID_MATRIX = {
 # Each country can support both a default language and (optionally)
 # a set of one or more alternative languages.
 VPN_VARIABLE_PRICING = {
-    "at": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["de"],
-    },
-    "be": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["nl"],
-        "alt": {
-            "de": VPN_PLAN_ID_MATRIX["euro"]["de"],
-            "fr": VPN_PLAN_ID_MATRIX["euro"]["fr"],
-        },
-    },
-    "ch": {
-        "default": VPN_PLAN_ID_MATRIX["chf"]["de"],
-        "alt": {
-            "fr": VPN_PLAN_ID_MATRIX["chf"]["fr"],
-            "it": VPN_PLAN_ID_MATRIX["chf"]["it"],
-        },
-    },
-    "de": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["de"],
-    },
-    "es": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["es"],
-    },
-    "fr": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["fr"],
-    },
-    "ie": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["en"],
-    },
-    "it": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["it"],
-    },
-    "nl": {
-        "default": VPN_PLAN_ID_MATRIX["euro"]["nl"],
-    },
-    "us": {
-        "default": VPN_PLAN_ID_MATRIX["usd"]["en"],
-    },
+    "at": {"default": VPN_PLAN_ID_MATRIX["euro"]["de"],},
+    "be": {"default": VPN_PLAN_ID_MATRIX["euro"]["nl"], "alt": {"de": VPN_PLAN_ID_MATRIX["euro"]["de"], "fr": VPN_PLAN_ID_MATRIX["euro"]["fr"],},},
+    "ch": {"default": VPN_PLAN_ID_MATRIX["chf"]["de"], "alt": {"fr": VPN_PLAN_ID_MATRIX["chf"]["fr"], "it": VPN_PLAN_ID_MATRIX["chf"]["it"],},},
+    "de": {"default": VPN_PLAN_ID_MATRIX["euro"]["de"],},
+    "es": {"default": VPN_PLAN_ID_MATRIX["euro"]["es"],},
+    "fr": {"default": VPN_PLAN_ID_MATRIX["euro"]["fr"],},
+    "ie": {"default": VPN_PLAN_ID_MATRIX["euro"]["en"],},
+    "it": {"default": VPN_PLAN_ID_MATRIX["euro"]["it"],},
+    "nl": {"default": VPN_PLAN_ID_MATRIX["euro"]["nl"],},
+    "us": {"default": VPN_PLAN_ID_MATRIX["usd"]["en"],},
 }
 
 # Mozilla VPN Geo restrictions

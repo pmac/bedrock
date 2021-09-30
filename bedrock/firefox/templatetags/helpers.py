@@ -214,14 +214,7 @@ def download_firefox_thanks(ctx, dom_id=None, locale=None, alt_copy=None, button
         transition_url = "/%s%s" % (locale, transition_url)
 
     download_link_direct = firefox_desktop.get_download_url(
-        channel,
-        version,
-        "win",
-        locale,
-        force_direct=True,
-        force_full_installer=False,
-        force_funnelcake=False,
-        funnelcake_id=funnelcake_id,
+        channel, version, "win", locale, force_direct=True, force_full_installer=False, force_funnelcake=False, funnelcake_id=funnelcake_id,
     )
 
     data = {
@@ -276,10 +269,7 @@ def download_firefox_desktop_list(ctx, channel="release", dom_id=None, locale=No
 
     data = {
         "id": dom_id,
-        "builds": {
-            "recommended": recommended_builds,
-            "traditional": traditional_builds,
-        },
+        "builds": {"recommended": recommended_builds, "traditional": traditional_builds,},
     }
 
     html = render_to_string("firefox/includes/download-list.html", data, request=ctx["request"])

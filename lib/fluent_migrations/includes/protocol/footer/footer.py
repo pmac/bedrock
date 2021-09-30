@@ -53,21 +53,13 @@ footer-nightly = { -brand-name-nightly }
                 value=REPLACE(
                     "footer.lang",
                     "Nightly for Android",
-                    {
-                        "Nightly": TERM_REFERENCE("brand-name-nightly"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Nightly": TERM_REFERENCE("brand-name-nightly"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("footer-beta-for-android"),
                 value=REPLACE(
-                    "footer.lang",
-                    "Beta for Android",
-                    {
-                        "Beta": TERM_REFERENCE("brand-name-beta"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    "footer.lang", "Beta for Android", {"Beta": TERM_REFERENCE("brand-name-beta"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(

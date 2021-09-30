@@ -83,11 +83,7 @@ NAMESPACES = {
         "standard": "Software Update Service",
         "docs": "https://wiki.mozilla.org/Software_Update:Testing",
     },
-    "xbl": {
-        "namespace": "http://www.mozilla.org/xbl",
-        "standard": "XML Binding Language (XBL)",
-        "docs": "https://developer.mozilla.org/en/XBL",
-    },
+    "xbl": {"namespace": "http://www.mozilla.org/xbl", "standard": "XML Binding Language (XBL)", "docs": "https://developer.mozilla.org/en/XBL",},
     "xforms-type": {
         "namespace": "http://www.mozilla.org/projects/xforms/2005/type",
         "standard": "XForms mozType extension",

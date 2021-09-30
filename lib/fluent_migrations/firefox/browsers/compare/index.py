@@ -39,9 +39,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Using a browser that blocks third-party trackers isn’t just important for privacy — it usually means it runs much faster, too. Most trackers are just scripts that run in the background on a number of websites. You can’t see them, but you can feel them slowing down your browser. As of version 67 of Firefox, fingerprinting and cryptominers are also blocked. If you’re not familiar with cryptominers, here’s an example of how they can affect you: maybe you’ve experienced your computer suddenly running hotter or the battery depleting faster than normal. That’s often the byproduct of cryptominers creeping around on your device.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -49,10 +47,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Another browser feature that should be a given is the ability to prevent websites and companies from tracking your browsing and shopping data — even in normal browsing mode. But that’s actually not the case: in fact, the only browsers that block third party tracking cookies by default are Firefox and Safari.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Safari": TERM_REFERENCE("brand-name-safari"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Safari": TERM_REFERENCE("brand-name-safari"),},
                 ),
             ),
             FTL.Message(
@@ -119,10 +114,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Since your browser is your gateway to the internet, speed, security, privacy and utility are paramount. In recent years, Google Chrome has been the browser of choice for many. But at a time when online ads seem to follow us everywhere and data breaches are a fixture of news headlines, a lot of people are starting to demand more privacy and respect from their browser.",
-                    {
-                        "Google": TERM_REFERENCE("brand-name-google"),
-                        "Chrome": TERM_REFERENCE("brand-name-chrome"),
-                    },
+                    {"Google": TERM_REFERENCE("brand-name-google"), "Chrome": TERM_REFERENCE("brand-name-chrome"),},
                 ),
             ),
             FTL.Message(
@@ -147,10 +139,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Browsers have come a long way since Chrome was introduced and took over the market share. Most of the modern browsers have closed the gap on portability and functionality, and in some areas, like speed and privacy, have actually surpassed Chrome. Still, determining which browser is right for you will always depend on your individual needs and what you value most as you navigate online.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Chrome": TERM_REFERENCE("brand-name-chrome"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Chrome": TERM_REFERENCE("brand-name-chrome"),},
                 ),
             ),
             FTL.Message(
@@ -158,10 +147,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Firefox is backed by the not-for-profit Mozilla.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -169,9 +155,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Firefox puts your privacy first — in everything we make and do. We believe you have the right to decide how and with whom you share your personal information. Firefox collects as little data as possible and never sells it. The little data we do collect is only used to make products and features better. No secrets. But a lot of transparency and real privacy.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -179,9 +163,7 @@ compare-index-and-the-winner-is = {COPY(compare, "And the winner is…",)}
                 value=REPLACE(
                     "firefox/compare.lang",
                     "Based on the criteria we outlined — privacy, utility, and portability — there’s really only one browser that meets the mark, and that’s Firefox. The real area of difference isn’t in functionality, it’s privacy. Firefox is the most private browser that doesn’t lock you into an ecosystem. Use it on any operating system, on all your devices, and feel secure when you do.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

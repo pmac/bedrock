@@ -9,16 +9,10 @@ class TestSitemapView(TestCase):
         data = [
             {"path": "/firefox/all/", "locale": "de", "lastmod": "2020-07-01T21:07:08.730133+00:00"},
             {"path": "/firefox/", "locale": "de", "lastmod": "2020-07-01T21:07:08.730133+00:00"},
-            {
-                "path": "/privacy/",
-                "locale": "fr",
-            },
+            {"path": "/privacy/", "locale": "fr",},
             {"path": "/firefox/", "locale": "fr", "lastmod": "2020-07-01T21:07:08.730133+00:00"},
             {"path": "/keymaster/gatekeeper/there.is.only.xul", "locale": NO_LOCALE, "lastmod": "2020-07-01T21:07:08.730133+00:00"},
-            {
-                "path": "/locales/",
-                "locale": NO_LOCALE,
-            },
+            {"path": "/locales/", "locale": NO_LOCALE,},
         ]
         SitemapURL.objects.bulk_create(SitemapURL(**kw) for kw in data)
 

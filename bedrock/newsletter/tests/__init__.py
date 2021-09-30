@@ -28,20 +28,6 @@ newsletters = {
         "description": "Firefox tips",
         "order": 2,
     },
-    "beta": {
-        "active": False,
-        "show": False,
-        "title": "Beta News",
-        "languages": ["en"],
-        "description": "Beta News",
-        "order": 3,
-    },
-    "join-mozilla": {
-        "active": True,
-        "show": False,
-        "title": "Join Mozilla",
-        "languages": ["en", "es"],
-        "description": "Join Mozilla",
-        "order": 1,
-    },
+    "beta": {"active": False, "show": False, "title": "Beta News", "languages": ["en"], "description": "Beta News", "order": 3,},
+    "join-mozilla": {"active": True, "show": False, "title": "Join Mozilla", "languages": ["en", "es"], "description": "Join Mozilla", "order": 1,},
 }

@@ -16,22 +16,12 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-mozillas-data-privacy-faq"),
-                value=REPLACE(
-                    faq,
-                    "Mozilla’s Data Privacy FAQ",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(faq, "Mozilla’s Data Privacy FAQ", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-at-mozilla-we-respect-and-protect-desc"),
                 value=REPLACE(
-                    faq,
-                    "At Mozilla we respect and protect your personal information.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    faq, "At Mozilla we respect and protect your personal information.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -47,19 +37,13 @@ privacy-faq-we-stand-for-people-over-profit = {COPY(faq, "We Stand for People Ov
                 value=REPLACE(
                     faq,
                     "It can be tricky for people to know what to expect of any software or services they use today. The technology that powers our lives is complex and people don’t have the time to dig into the details. That is still true for Firefox, where we find that people have many different ideas of what is happening under the hood in their browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-at-mozilla-we-respect-and-protect"),
                 value=REPLACE(
-                    faq,
-                    "At Mozilla, we respect and protect your personal information:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    faq, "At Mozilla, we respect and protect your personal information:", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -67,11 +51,7 @@ privacy-faq-we-stand-for-people-over-profit = {COPY(faq, "We Stand for People Ov
                 value=REPLACE(
                     faq,
                     'We follow a set of <a href="%(link)s">Data Privacy Principles</a> that shape our approach to privacy in the Firefox desktop and mobile browsers.',
-                    {
-                        "%%": "%",
-                        "%(link)s": VARIABLE_REFERENCE("link"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(link)s": VARIABLE_REFERENCE("link"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -88,9 +68,7 @@ privacy-faq-we-put-people-in-control-of = {COPY(faq, "We put people in control o
                 value=REPLACE(
                     faq,
                     "We adhere to “no surprises” principle, meaning we work hard to ensure people’s understanding of Firefox matches reality.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -98,10 +76,7 @@ privacy-faq-we-put-people-in-control-of = {COPY(faq, "We put people in control o
                 value=REPLACE(
                     faq,
                     "The following questions and answers should help you understand what to expect from Mozilla and Firefox:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -109,10 +84,7 @@ privacy-faq-we-put-people-in-control-of = {COPY(faq, "We put people in control o
                 value=REPLACE(
                     faq,
                     "I use Firefox for almost everything on the Web. You folks at Mozilla must know a ton of stuff about me, right?",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -120,10 +92,7 @@ privacy-faq-we-put-people-in-control-of = {COPY(faq, "We put people in control o
                 value=REPLACE(
                     faq,
                     "Firefox, the web browser that runs on your device or computer, is your gateway to the internet. Your browser will manage a lot of information about the websites you visit, but that information stays on your device. Mozilla, the company that makes Firefox, doesn’t collect it (unless you ask us to).",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -158,11 +127,7 @@ privacy-faq-it-seems-like-every-company = {COPY(faq, "It seems like every compan
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-mozilla-doesnt-sell-data-about"),
                 value=REPLACE(
-                    faq,
-                    "Mozilla doesn’t sell data about you, and we don’t buy data about you.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    faq, "Mozilla doesn’t sell data about you, and we don’t buy data about you.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -223,9 +188,7 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     "There are two categories of data that we collect by default in our release version of Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -233,9 +196,7 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     'The first is what we call "technical data." This is data about the browser itself, such as the operating system it is running on and information about errors or crashes.',
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -243,19 +204,13 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     'The second is what we call "interaction data." This is data about an individual\'s engagement with Firefox, such as the number of tabs that were open, the status of user preferences, or number of times certain browser features were used, such as screenshots or containers. For example, we collect this data in terms of the back button, that arrow in the upper left corner of your browser that lets you navigate back to a previous webpage in a way that shows us someone used the back button, but doesn’t tell what specific webpages are accessed.',
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-do-you-collect-more-data-in"),
                 value=REPLACE(
-                    faq,
-                    "Do you collect more data in pre-release versions of Firefox?",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    faq, "Do you collect more data in pre-release versions of Firefox?", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -263,9 +218,7 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     "Sort-of. In addition to the data described above, we receive crash and error reports by default in pre-release version of Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -273,11 +226,7 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     'We may also collect additional data in pre-release for one of our <a href="%(link)s">studies</a>. For example, some studies require what we call “web activity data” data, which may include URLs and other information about certain websites. This helps us answer specific questions to improve Firefox, for example, how to better integrate popular websites in specific locales.',
-                    {
-                        "%%": "%",
-                        "%(link)s": VARIABLE_REFERENCE("link"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(link)s": VARIABLE_REFERENCE("link"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -285,10 +234,7 @@ privacy-faq-that-documentation-is-gobbledygook = {COPY(faq, "That documentation 
                 value=REPLACE(
                     faq,
                     "Mozilla’s pre-release versions of Firefox are development platforms, frequently updated with experimental features. We collect more data in pre-release than what we do after release in order to understand how these experimental features are working. You can opt out of having this data collected in preferences.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -328,11 +274,7 @@ privacy-faq-we-are-big-believers-of-data = {COPY(faq, "We are big believers of d
                 value=REPLACE(
                     faq,
                     "You don't need an account to use Firefox. <a href=\"%(accounts)s\">Accounts</a> are required to sync data across devices, but we only ask you for an email address. We don't want to know things like your name, address, birthday and phone number.",
-                    {
-                        "%%": "%",
-                        "%(accounts)s": VARIABLE_REFERENCE("accounts"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(accounts)s": VARIABLE_REFERENCE("accounts"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -349,13 +291,7 @@ privacy-faq-yes-we-do = {COPY(faq, "Yes, we do.",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("privacy-faq-find-out-more-about-how-mozilla"),
-                value=REPLACE(
-                    faq,
-                    "Find out more about how Mozilla protects the internet.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(faq, "Find out more about how Mozilla protects the internet.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ],
     )

@@ -18,13 +18,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("history-history-of-the-mozilla-project"),
-                value=REPLACE(
-                    history_details,
-                    "History of the Mozilla Project",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(history_details, "History of the Mozilla Project", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-the-mozilla-project-was"),
@@ -53,10 +47,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'Within the <a href="%(firstyear)s">first year</a>, new community members from around the world had already contributed new functionality, enhanced existing features and became engaged in the management and planning of the project itself.',
-                    {
-                        "%%": "%",
-                        "%(firstyear)s": VARIABLE_REFERENCE("firstyear"),
-                    },
+                    {"%%": "%", "%(firstyear)s": VARIABLE_REFERENCE("firstyear"),},
                 ),
             ),
             FTL.Message(
@@ -64,11 +55,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'By creating an open community, the Mozilla project had become <a href="%(stevecase)s">larger than any one company</a>.',
-                    {
-                        "%%": "%",
-                        "%(stevecase)s": VARIABLE_REFERENCE("stevecase"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(stevecase)s": VARIABLE_REFERENCE("stevecase"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -91,9 +78,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     "People contributed to Mozilla in different ways, but everyone was passionate about creating free software that would enable people to have a choice in how they experienced the Internet.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -101,11 +86,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'After several years of development, <a href="%(mozilla1)s">Mozilla 1.0</a>, the first major version, was released in 2002. This version featured many improvements to the browser, email client and other applications included in the suite, but not many people were using it.',
-                    {
-                        "%%": "%",
-                        "%(mozilla1)s": VARIABLE_REFERENCE("mozilla1"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(mozilla1)s": VARIABLE_REFERENCE("mozilla1"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -113,11 +94,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'By 2002, <a href="%(over90)s">well over 90%% of Internet users</a> were browsing with Internet Explorer.',
-                    {
-                        "%%": FTL.TextElement("%"),
-                        "%(over90)s": VARIABLE_REFERENCE("over90"),
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                    },
+                    {"%%": FTL.TextElement("%"), "%(over90)s": VARIABLE_REFERENCE("over90"), "Internet Explorer": TERM_REFERENCE("brand-name-ie"),},
                 ),
             ),
             FTL.Message(
@@ -189,9 +166,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     "New versions of Firefox have come out regularly since then and keep setting new records. The popularity of Firefox has helped bring choice back to users.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -199,10 +174,7 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'The renewed competition has <a href="%(innovation)s">accelerated innovation</a> and improved the Internet for everyone.',
-                    {
-                        "%%": "%",
-                        "%(innovation)s": VARIABLE_REFERENCE("innovation"),
-                    },
+                    {"%%": "%", "%(innovation)s": VARIABLE_REFERENCE("innovation"),},
                 ),
             ),
             FTL.Message(
@@ -210,21 +182,13 @@ history-it-was-intended-to-harness = {COPY(history_details, "It was intended to 
                 value=REPLACE(
                     history_details,
                     'In 2013, we launched <a href="%(firefoxos)s">Firefox OS</a> to unleash the full power of the Web on smartphones and once again offer control and choice to a new generation of people coming online.',
-                    {
-                        "%%": "%",
-                        "%(firefoxos)s": VARIABLE_REFERENCE("firefoxos"),
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
+                    {"%%": "%", "%(firefoxos)s": VARIABLE_REFERENCE("firefoxos"), "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-mozilla-also-celebrated"),
                 value=REPLACE(
-                    history_details,
-                    "Mozilla also celebrated its 15th anniversary in 2013.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    history_details, "Mozilla also celebrated its 15th anniversary in 2013.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -240,10 +204,7 @@ history-the-community-has-shown = {COPY(history_details, "The community has show
                 value=REPLACE(
                     history_details,
                     'More people than ever before are using the Internet and are experiencing it <a href="%(all)s">in their own language</a>.',
-                    {
-                        "%%": "%",
-                        "%(all)s": VARIABLE_REFERENCE("all"),
-                    },
+                    {"%%": "%", "%(all)s": VARIABLE_REFERENCE("all"),},
                 ),
             ),
             FTL.Message(
@@ -251,11 +212,7 @@ history-the-community-has-shown = {COPY(history_details, "The community has show
                 value=REPLACE(
                     history_details,
                     'A sustainable organization has been created that uses market mechanisms to support a public benefit mission and this model has been reused by others to create open, transparent and collaborative organizations in a <a href="%(range)s">broad range</a> <a href="%(areas)s">of areas</a>.',
-                    {
-                        "%%": "%",
-                        "%(range)s": VARIABLE_REFERENCE("range"),
-                        "%(areas)s": VARIABLE_REFERENCE("areas"),
-                    },
+                    {"%%": "%", "%(range)s": VARIABLE_REFERENCE("range"), "%(areas)s": VARIABLE_REFERENCE("areas"),},
                 ),
             ),
         ]
@@ -272,9 +229,7 @@ history-theres-no-guarantee-that = {COPY(history_details, "There’s no guarante
                 value=REPLACE(
                     history_details,
                     "Mozilla will continue to provide an opportunity for people to make their voices heard and to shape their own online lives.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -290,9 +245,7 @@ history-of-course-were-not-alone = {COPY(history_details, "Of course, we’re no
                 value=REPLACE(
                     history_details,
                     "The Mozilla community, together with other open source projects and other public benefit organizations, exists only because of the people who are engaged in making our common goals a reality.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -300,10 +253,7 @@ history-of-course-were-not-alone = {COPY(history_details, "Of course, we’re no
                 value=REPLACE(
                     history_details,
                     'If you want to join us in our mission, please <a href="%(contribute)s">get involved</a>.',
-                    {
-                        "%%": "%",
-                        "%(contribute)s": VARIABLE_REFERENCE("contribute"),
-                    },
+                    {"%%": "%", "%(contribute)s": VARIABLE_REFERENCE("contribute"),},
                 ),
             ),
             FTL.Message(
@@ -311,40 +261,20 @@ history-of-course-were-not-alone = {COPY(history_details, "Of course, we’re no
                 value=REPLACE(
                     history_details,
                     "For more information about Mozilla’s history, see the following:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-mozilla-bookmarks"),
-                value=REPLACE(
-                    history_details,
-                    "Mozilla Bookmarks",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(history_details, "Mozilla Bookmarks", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-timeline-of-mozilla-project"),
-                value=REPLACE(
-                    history_details,
-                    "Timeline of Mozilla Project",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(history_details, "Timeline of Mozilla Project", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-mozilla-digital-memory-bank"),
-                value=REPLACE(
-                    history_details,
-                    "Mozilla Digital Memory Bank",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(history_details, "Mozilla Digital Memory Bank", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("history-the-history-of-firefox-and"),

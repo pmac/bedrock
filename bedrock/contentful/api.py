@@ -92,18 +92,11 @@ def _get_height(width, aspect):
 
 
 def _get_image_url(image, width):
-    return "https:" + image.url(
-        w=width,
-    )
+    return "https:" + image.url(w=width,)
 
 
 def _get_card_image_url(image, width, aspect):
-    return "https:" + image.url(
-        w=width,
-        h=_get_height(width, aspect),
-        fit="fill",
-        f="faces",
-    )
+    return "https:" + image.url(w=width, h=_get_height(width, aspect), fit="fill", f="faces",)
 
 
 def _get_product_class(product):
@@ -327,11 +320,7 @@ class AssetBlockRenderer(BaseBlockRenderer):
     def render(self, node):
         asset_id = node["data"]["target"]["sys"]["id"]
         asset = ContentfulPage.client.asset(asset_id)
-        return self.IMAGE_HTML.format(
-            src=_get_image_url(asset, 688),
-            src_highres=_get_image_url(asset, 1376),
-            alt=asset.title,
-        )
+        return self.IMAGE_HTML.format(src=_get_image_url(asset, 688), src_highres=_get_image_url(asset, 1376), alt=asset.title,)
 
 
 class ContentfulPage:
@@ -382,46 +371,19 @@ class ContentfulPage:
         "Bottom": "mzp-l-split-pop-bottom",
     }
     CONTENT_TYPE_MAP = {
-        "componentHero": {
-            "proc": "get_hero_data",
-            "css": "c-hero",
-        },
-        "componentSectionHeading": {
-            "proc": "get_section_data",
-            "css": "c-section-heading",
-        },
-        "componentSplitBlock": {
-            "proc": "get_split_data",
-            "css": "c-split",
-        },
-        "componentCallout": {
-            "proc": "get_callout_data",
-            "css": "c-call-out",
-        },
+        "componentHero": {"proc": "get_hero_data", "css": "c-hero",},
+        "componentSectionHeading": {"proc": "get_section_data", "css": "c-section-heading",},
+        "componentSplitBlock": {"proc": "get_split_data", "css": "c-split",},
+        "componentCallout": {"proc": "get_callout_data", "css": "c-call-out",},
         "layout2Cards": {"proc": "get_card_layout_data", "css": "t-card-layout", "js": "c-card"},
         "layout3Cards": {"proc": "get_card_layout_data", "css": "t-card-layout", "js": "c-card"},
         "layout4Cards": {"proc": "get_card_layout_data", "css": "t-card-layout", "js": "c-card"},
         "layout5Cards": {"proc": "get_card_layout_data", "css": "t-card-layout", "js": "c-card"},
-        "layoutPictoBlocks": {
-            "proc": "get_picto_layout_data",
-            "css": ("c-picto", "t-multi-column"),
-        },
-        "textOneColumn": {
-            "proc": "get_text_column_data_1",
-            "css": "t-multi-column",
-        },
-        "textTwoColumns": {
-            "proc": "get_text_column_data_2",
-            "css": "t-multi-column",
-        },
-        "textThreeColumns": {
-            "proc": "get_text_column_data_3",
-            "css": "t-multi-column",
-        },
-        "textFourColumns": {
-            "proc": "get_text_column_data_4",
-            "css": "t-multi-column",
-        },
+        "layoutPictoBlocks": {"proc": "get_picto_layout_data", "css": ("c-picto", "t-multi-column"),},
+        "textOneColumn": {"proc": "get_text_column_data_1", "css": "t-multi-column",},
+        "textTwoColumns": {"proc": "get_text_column_data_2", "css": "t-multi-column",},
+        "textThreeColumns": {"proc": "get_text_column_data_3", "css": "t-multi-column",},
+        "textFourColumns": {"proc": "get_text_column_data_4", "css": "t-multi-column",},
     }
 
     def __init__(self, request, page_id):
@@ -432,12 +394,7 @@ class ContentfulPage:
 
     @cached_property
     def page(self):
-        return self.client.entry(
-            self.page_id,
-            {
-                "include": 10,
-            },
-        )
+        return self.client.entry(self.page_id, {"include": 10,},)
 
     def render_rich_text(self, node):
         return self._renderer.render(node) if node else ""

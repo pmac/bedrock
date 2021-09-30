@@ -17,11 +17,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("firefox-home-firefox-protect-your"),
                 value=REPLACE(
-                    home_master,
-                    "Firefox - Protect your life online with privacy-first products",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    home_master, "Firefox - Protect your life online with privacy-first products", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -29,9 +25,7 @@ def migrate(ctx):
                 value=REPLACE(
                     home_master,
                     "Firefox is more than a browser. Learn more about Firefox products that handle your data with respect and are built for privacy anywhere you go online.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -46,11 +40,7 @@ firefox-home-meet-our-family-of = {COPY(home_master, "Meet our family of product
             FTL.Message(
                 id=FTL.Identifier("firefox-home-get-trackers-off"),
                 value=REPLACE(
-                    home_master,
-                    "Get 2,000+ trackers off your trail — including Facebook",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
+                    home_master, "Get 2,000+ trackers off your trail — including Facebook", {"Facebook": TERM_REFERENCE("brand-name-facebook"),},
                 ),
             ),
         ]
@@ -65,13 +55,7 @@ firefox-home-keep-your-passwords = {COPY(home_master, "Keep your passwords safe 
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-home-learn-more-about-lockwise"),
-                value=REPLACE(
-                    home_master,
-                    "Learn more about Lockwise",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
-                ),
+                value=REPLACE(home_master, "Learn more about Lockwise", {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},),
             ),
         ]
         + transforms_from(
@@ -86,9 +70,7 @@ firefox-home-get-the-respect-you = {COPY(home_master, "Get the <strong>respect</
                 value=REPLACE(
                     home_master,
                     "Every single Firefox product honors our Personal Data Promise: <strong>Take less. Keep it safe. No secrets.</strong>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -103,13 +85,7 @@ firefox-home-trade-clickbait-for = {COPY(home_master, "Trade clickbait for quali
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-home-learn-more-about-pocket"),
-                value=REPLACE(
-                    home_master,
-                    "Learn more about Pocket",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(home_master, "Learn more about Pocket", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
         ]
         + transforms_from(
@@ -121,13 +97,7 @@ firefox-home-one-login-all-your = {COPY(home_master, "One login. All your device
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-home-learn-more-about-joining"),
-                value=REPLACE(
-                    home_master,
-                    "Learn more about joining Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(home_master, "Learn more about joining Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -140,11 +110,7 @@ firefox-home-get-the-browser-extension = {COPY(home_master, "Get the browser ext
             FTL.Message(
                 id=FTL.Identifier("firefox-home-get-the-facebook-container"),
                 value=REPLACE(
-                    home_master,
-                    "Get the Facebook Container extension",
-                    {
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                    },
+                    home_master, "Get the Facebook Container extension", {"Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),},
                 ),
             ),
         ]

@@ -19,10 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     windows_64_bit,
                     "Firefox for Windows 64-bit",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -30,10 +27,7 @@ def migrate(ctx):
                 value=REPLACE(
                     windows_64_bit,
                     "Users on 64-bit Windows who download Firefox can get our 64-bit version by default. That means you get a more secure version of Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
         ]
@@ -46,13 +40,7 @@ windows-64-bit-64-bit = {COPY(windows_64_bit, "64-bit",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("windows-64-bit-a-more-secure-firefox"),
-                value=REPLACE(
-                    windows_64_bit,
-                    "A more secure Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(windows_64_bit, "A more secure Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("windows-64-bit-users-on-64-bit-windows-crashes"),
@@ -91,13 +79,7 @@ windows-64-bit-whats-the-difference = {COPY(windows_64_bit, "What’s the differ
             ),
             FTL.Message(
                 id=FTL.Identifier("windows-64-bit-how-do-you-get-64"),
-                value=REPLACE(
-                    windows_64_bit,
-                    "How do you get 64-bit Firefox?",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(windows_64_bit, "How do you get 64-bit Firefox?", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("windows-64-bit-if-youre-running"),
@@ -118,9 +100,7 @@ windows-64-bit-whats-the-difference = {COPY(windows_64_bit, "What’s the differ
                 value=REPLACE(
                     windows_64_bit,
                     "If you see “(32-bit)” and you are running Firefox 56.0 or older, updating to the latest Firefox version should automatically upgrade you to 64-bit.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -128,9 +108,7 @@ windows-64-bit-whats-the-difference = {COPY(windows_64_bit, "What’s the differ
                 value=REPLACE(
                     windows_64_bit,
                     "If you see “(32-bit)” and are running Firefox 56.0.1 or newer, then your computer may not meet the minimum memory requirement for 64-bit (3 GB RAM or more). You can still manually install 64-bit Firefox, if you choose.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(

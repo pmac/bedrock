@@ -25,9 +25,7 @@ firefox-browsers-get-the-browsers-that-put = {COPY(browsers, "Get the browsers t
                 value=REPLACE(
                     browsers,
                     "Get the privacy you deserve. Enhanced Tracking Protection is automatic in every Firefox browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -44,9 +42,7 @@ firefox-browsers-desktop = {COPY(browsers, "Desktop",)}
                 value=REPLACE(
                     browsers,
                     "Seriously private browsing. Firefox automatically blocks 2000+ online trackers from collecting information about what you do online.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -63,13 +59,7 @@ firefox-browsers-send-me-a-link = {COPY(browsers, "Send me a link",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-browsers-enterprise"),
-                value=REPLACE(
-                    browsers,
-                    "Enterprise",
-                    {
-                        "Enterprise": TERM_REFERENCE("brand-name-enterprise"),
-                    },
-                ),
+                value=REPLACE(browsers, "Enterprise", {"Enterprise": TERM_REFERENCE("brand-name-enterprise"),},),
             ),
         ]
         + transforms_from(
@@ -81,23 +71,11 @@ firefox-browsers-get-unmatched-data-protection = {COPY(browsers, "Get unmatched 
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-browsers-enterprise-packages"),
-                value=REPLACE(
-                    browsers,
-                    "Enterprise packages",
-                    {
-                        "Enterprise": TERM_REFERENCE("brand-name-enterprise"),
-                    },
-                ),
+                value=REPLACE(browsers, "Enterprise packages", {"Enterprise": TERM_REFERENCE("brand-name-enterprise"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-browsers-reality"),
-                value=REPLACE(
-                    browsers,
-                    "Reality",
-                    {
-                        "Reality": TERM_REFERENCE("brand-name-reality"),
-                    },
-                ),
+                value=REPLACE(browsers, "Reality", {"Reality": TERM_REFERENCE("brand-name-reality"),},),
             ),
         ]
         + transforms_from(
@@ -112,30 +90,19 @@ firefox-browsers-go-beyond-two-dimensions-and = {COPY(browsers, "Go beyond two d
                 value=REPLACE(
                     browsers,
                     "Build sites and refine your code with Firefox <strong>DevTools</strong>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "DevTools": TERM_REFERENCE("brand-name-devtools"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "DevTools": TERM_REFERENCE("brand-name-devtools"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-browsers-learn-more-about-devtools"),
-                value=REPLACE(
-                    browsers,
-                    "Learn more about DevTools",
-                    {
-                        "DevTools": TERM_REFERENCE("brand-name-devtools"),
-                    },
-                ),
+                value=REPLACE(browsers, "Learn more about DevTools", {"DevTools": TERM_REFERENCE("brand-name-devtools"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-browsers-join-firefox-and-get-the-most"),
                 value=REPLACE(
                     browsers,
                     "Join Firefox and get the most out of every product — across every device.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -143,11 +110,7 @@ firefox-browsers-go-beyond-two-dimensions-and = {COPY(browsers, "Go beyond two d
                 value=REPLACE(
                     browsers,
                     "Already have an account? <a %(fxa_attr)s>Sign In</a> or <a %(accounts_attr)s>learn more</a> about joining Firefox.",
-                    {
-                        "%%": "%",
-                        "%(fxa_attr)s": VARIABLE_REFERENCE("fxa_attr"),
-                        "%(accounts_attr)s": VARIABLE_REFERENCE("accounts_attr"),
-                    },
+                    {"%%": "%", "%(fxa_attr)s": VARIABLE_REFERENCE("fxa_attr"), "%(accounts_attr)s": VARIABLE_REFERENCE("accounts_attr"),},
                 ),
             ),
         ]

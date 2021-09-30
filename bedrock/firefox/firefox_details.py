@@ -41,10 +41,7 @@ class FirefoxDesktop(_ProductDetails):
 
     # Recommended/modern vs traditional/legacy platforms
     platform_classification = OrderedDict(
-        [
-            ("recommended", ("win64", "win64-msi", "win64-aarch64", "osx", "linux64")),
-            ("traditional", ("linux", "win", "win-msi")),
-        ]
+        [("recommended", ("win64", "win64-msi", "win64-aarch64", "osx", "linux64")), ("traditional", ("linux", "win", "win-msi")),]
     )
 
     # Human-readable channel names
@@ -316,12 +313,7 @@ class FirefoxDesktop(_ProductDetails):
 
 class FirefoxAndroid(_ProductDetails):
     # Human-readable architecture names
-    platform_labels = OrderedDict(
-        [
-            ("arm", "ARM devices\n(Android %s+)"),
-            ("x86", "Intel devices\n(Android %s+ x86 CPU)"),
-        ]
-    )
+    platform_labels = OrderedDict([("arm", "ARM devices\n(Android %s+)"), ("x86", "Intel devices\n(Android %s+ x86 CPU)"),])
 
     # Recommended/modern vs traditional/legacy platforms
     # Unused but required to match FirefoxDesktop
@@ -348,12 +340,7 @@ class FirefoxAndroid(_ProductDetails):
     }
 
     # Platform names defined in bouncer
-    platform_map = OrderedDict(
-        [
-            ("arm", "android"),
-            ("x86", "android-x86"),
-        ]
-    )
+    platform_map = OrderedDict([("arm", "android"), ("x86", "android-x86"),])
 
     # Product names defined in bouncer
     product_map = {

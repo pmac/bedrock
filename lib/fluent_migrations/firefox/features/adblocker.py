@@ -25,9 +25,7 @@ features-adblocker-how-to-block-annoying = {COPY(adblocker, "How to block annoyi
                 value=REPLACE(
                     adblocker,
                     "How to stop seeing too many ads and keep companies from following you around online. An ad blocker guide from the Firefox web browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -67,10 +65,7 @@ features-adblocker-find-the-right-ad-blocker = {COPY(adblocker, "Find the right 
                 value=REPLACE(
                     adblocker,
                     'There’s <a href="%(url)s">AdBlocker Ultimate</a> that gets rid of every single ad, but buyer beware. Some of your favorite newspapers and magazines rely on advertising. Too many people blocking their ads could put them out of business.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
             FTL.Message(
@@ -78,10 +73,7 @@ features-adblocker-find-the-right-ad-blocker = {COPY(adblocker, "Find the right 
                 value=REPLACE(
                     adblocker,
                     'Popup ads are the worst. Block them with <a href="%(url)s">Popup Blocker</a> and never deal with another annoying popup again.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
             FTL.Message(
@@ -135,9 +127,7 @@ features-adblocker-choose-your-level-of-protection = {COPY(adblocker, "Choose yo
                 value=REPLACE(
                     adblocker,
                     "To start, click on the Firefox menu in the top right-hand corner of your screen. It looks like three lines stacked on top of each other. In the drop-down menu, click on Content Blocking. You should see a blue pop-up with different selections.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -153,10 +143,7 @@ features-adblocker-go-easy-with-standard = {COPY(adblocker, "Go easy with Standa
                 value=REPLACE(
                     adblocker,
                     'If ads don’t bother you and you don’t mind being followed by trackers and third-party cookies, then the Standard setting should work for you. To get trackers off your tail in Standard mode, use a <a href="%(url)s">Private Browsing</a> window.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ]
@@ -172,9 +159,7 @@ features-adblocker-get-tough-with-strict = {COPY(adblocker, "Get tough with Stri
                 value=REPLACE(
                     adblocker,
                     "If seeing too many ads ruins your day, then the Strict mode is a better fit. This mode will block known third-party trackers and cookies in all Firefox windows.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -194,10 +179,7 @@ features-adblocker-take-a-bite-out-of-cookies = {COPY(adblocker, "Take a bite ou
                 value=REPLACE(
                     adblocker,
                     '<a href="%(url)s">Cookies</a> are sent by websites you visit. They live on your computer and monitor what you’ve been doing on a site. When an airline hikes your rates because you’ve looked at plane tickets once that day, that is the handiwork of a cookie.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
             FTL.Message(
@@ -205,9 +187,7 @@ features-adblocker-take-a-bite-out-of-cookies = {COPY(adblocker, "Take a bite ou
                 value=REPLACE(
                     adblocker,
                     "In Firefox, you can block all third-party cookies or just those set by trackers. Be aware that blocking all cookies can break some sites.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -223,11 +203,7 @@ features-adblocker-send-a-do-not-track-signal = {COPY(adblocker, "Send a Do Not 
                 value=REPLACE(
                     adblocker,
                     'If you don’t want your online behavior used for ads, you can send websites a polite “thanks but no thanks” letter by checking the <a href="%(url)s">Do Not Track</a> option of Firefox. Participation is voluntary, but the websites that participate will stop tracking you immediately.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -244,11 +220,7 @@ features-adblocker-in-some-cases-an-ad-blocker = {COPY(adblocker, "In some cases
                 value=REPLACE(
                     adblocker,
                     'If you want to learn more about ad blocking, there are hundreds of ad blocker extensions available for Firefox and other browsers. If want to try out the ad blockers Firefox uses, <a href="%(url)s">click here to download</a> a browser that puts privacy first.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]

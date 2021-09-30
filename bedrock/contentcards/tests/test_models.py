@@ -15,28 +15,16 @@ class TestGetDataFromFilePath(TestCase):
     def test_the_func(self):
         self.assertDictEqual(
             models.get_data_from_file_path(Path("content/home/dude.en-US.json")),
-            {
-                "locale": "en-US",
-                "card_name": "dude",
-                "page_name": "home",
-                "page_id": "home-en-US-dude",
-            },
+            {"locale": "en-US", "card_name": "dude", "page_name": "home", "page_id": "home-en-US-dude",},
         )
         self.assertDictEqual(
             models.get_data_from_file_path(Path("content/the-dude/10th.de.json")),
-            {
-                "locale": "de",
-                "card_name": "10th",
-                "page_name": "the-dude",
-                "page_id": "the-dude-de-10th",
-            },
+            {"locale": "de", "card_name": "10th", "page_name": "the-dude", "page_id": "the-dude-de-10th",},
         )
 
 
 @override_settings(
-    CONTENT_CARDS_PATH=str(DATA_PATH),
-    CONTENT_CARDS_URL="/media/",
-    STATIC_URL="/media/",
+    CONTENT_CARDS_PATH=str(DATA_PATH), CONTENT_CARDS_URL="/media/", STATIC_URL="/media/",
 )
 class TestContentCardModel(TestCase):
     def setUp(self):

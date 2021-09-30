@@ -10,15 +10,8 @@ from pathlib import Path
 
 TEST_DATA = Path(__file__).with_name("test_data")
 TEST_WP_BLOGS = {
-    "firefox": {
-        "url": "https://blog.mozilla.org/firefox/",
-        "name": "The Firefox Frontier",
-        "num_posts": 10,
-    },
-    "hacks": {
-        "url": "https://hacks.mozilla.org/",
-        "name": "Hacks",
-    },
+    "firefox": {"url": "https://blog.mozilla.org/firefox/", "name": "The Firefox Frontier", "num_posts": 10,},
+    "hacks": {"url": "https://hacks.mozilla.org/", "name": "Hacks",},
 }
 
 

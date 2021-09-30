@@ -24,43 +24,23 @@ new-platform-free-web-browser = {COPY(quantum, "Free Web Browser",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("new-platform-download-firefox"),
-                value=REPLACE(
-                    quantum,
-                    "Download Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(quantum, "Download Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("new-platform-download-the-fastest"),
-                value=REPLACE(
-                    quantum,
-                    "Download the fastest Firefox ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(quantum, "Download the fastest Firefox ever", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("new-platform-faster-page-loading"),
                 value=REPLACE(
                     quantum,
                     "Faster page loading, less memory usage and packed with features, the new Firefox is here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("new-platform-the-new-firefox"),
-                value=REPLACE(
-                    quantum,
-                    "The new <strong>Firefox</strong>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(quantum, "The new <strong>Firefox</strong>", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -72,13 +52,7 @@ new-platform-2x-faster = {COPY(quantum, "2x Faster",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("new-platform-the-best-firefox-ever"),
-                value=REPLACE(
-                    quantum,
-                    "The best Firefox ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(quantum, "The best Firefox ever", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -90,13 +64,7 @@ new-platform-lightweight = {COPY(quantum, "Lightweight",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("new-platform-uses-30-less-memory"),
-                value=REPLACE(
-                    quantum,
-                    "Uses 30% less memory than Chrome",
-                    {
-                        "Chrome": TERM_REFERENCE("brand-name-chrome"),
-                    },
-                ),
+                value=REPLACE(quantum, "Uses 30% less memory than Chrome", {"Chrome": TERM_REFERENCE("brand-name-chrome"),},),
             ),
         ]
         + transforms_from(
@@ -169,10 +137,7 @@ new-platform-need-help = {COPY(main, "Need help?",)}
                 value=REPLACE(
                     quantum,
                     "Download the fastest Firefox for Linux ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
             FTL.Message(
@@ -180,21 +145,13 @@ new-platform-need-help = {COPY(main, "Need help?",)}
                 value=REPLACE(
                     quantum,
                     "Faster page loading, less memory usage and packed with features, the new Firefox for Linux is here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("new-platform-firefox-for-linux"),
                 value=REPLACE(
-                    quantum,
-                    "Firefox for Linux",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    quantum, "Firefox for Linux", {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
         ]
@@ -211,10 +168,7 @@ new-platform-privacy-more-than = {COPY(quantum, "Privacy - more than a policy",)
                 value=REPLACE(
                     quantum,
                     "Your life, your business. Firefox blocks third-party tracking cookies on Linux.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
             FTL.Message(
@@ -222,10 +176,7 @@ new-platform-privacy-more-than = {COPY(quantum, "Privacy - more than a policy",)
                 value=REPLACE(
                     quantum,
                     "Speed, meet security. Firefox is two times faster with 30% less memory than Chrome.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Chrome": TERM_REFERENCE("brand-name-chrome"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Chrome": TERM_REFERENCE("brand-name-chrome"),},
                 ),
             ),
         ]
@@ -241,10 +192,7 @@ new-platform-open-source = {COPY(quantum, "Open source",)}
                 value=REPLACE(
                     quantum,
                     "Look under the hood. Like Linux, Firefox features are open source.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
         ],
@@ -283,10 +231,7 @@ new-platform-open-source = {COPY(quantum, "Open source",)}
                 value=REPLACE(
                     quantum,
                     "Download the fastest Firefox for Mac ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Mac": TERM_REFERENCE("brand-name-mac-short"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Mac": TERM_REFERENCE("brand-name-mac-short"),},
                 ),
             ),
             FTL.Message(
@@ -294,10 +239,7 @@ new-platform-open-source = {COPY(quantum, "Open source",)}
                 value=REPLACE(
                     quantum,
                     "Faster page loading, less memory usage and packed with features, the new Firefox for Mac is here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Mac": TERM_REFERENCE("brand-name-mac-short"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Mac": TERM_REFERENCE("brand-name-mac-short"),},
                 ),
             ),
             FTL.Message(
@@ -305,10 +247,7 @@ new-platform-open-source = {COPY(quantum, "Open source",)}
                 value=REPLACE(
                     quantum,
                     "Firefox respects <span>your privacy on Mac.</span>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Mac": TERM_REFERENCE("brand-name-mac-short"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Mac": TERM_REFERENCE("brand-name-mac-short"),},
                 ),
             ),
         ]
@@ -324,9 +263,7 @@ new-platform-privacy-comes-first = {COPY(quantum, "Privacy comes first",)}
                 value=REPLACE(
                     quantum,
                     "Firefox doesn’t spy on searches. We stop third-party tracking cookies and give you full control.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -334,10 +271,7 @@ new-platform-privacy-comes-first = {COPY(quantum, "Privacy comes first",)}
                 value=REPLACE(
                     quantum,
                     "Get speed and security. Firefox is fast on Mac because we don’t track your moves.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Mac": TERM_REFERENCE("brand-name-mac-short"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Mac": TERM_REFERENCE("brand-name-mac-short"),},
                 ),
             ),
         ]
@@ -383,10 +317,7 @@ new-platform-be-the-master-of-your = {COPY(quantum, "Be the master of your domai
                 value=REPLACE(
                     quantum,
                     "Download the fastest Firefox for Windows ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -394,10 +325,7 @@ new-platform-be-the-master-of-your = {COPY(quantum, "Be the master of your domai
                 value=REPLACE(
                     quantum,
                     "Faster page loading, less memory usage and packed with features, the new Firefox for Windows is here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -405,10 +333,7 @@ new-platform-be-the-master-of-your = {COPY(quantum, "Be the master of your domai
                 value=REPLACE(
                     quantum,
                     "Firefox fights for you <span>on Windows.</span>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -416,9 +341,7 @@ new-platform-be-the-master-of-your = {COPY(quantum, "Be the master of your domai
                 value=REPLACE(
                     quantum,
                     "Firefox moves fast and treats your data with care - no ad tracking and no slowdown.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -434,9 +357,7 @@ new-platform-common-sense-privacy = {COPY(quantum, "Common sense privacy",)}
                 value=REPLACE(
                     quantum,
                     "Live your life, Firefox isn’t watching. Choose what to share and when to share it.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -452,10 +373,7 @@ new-platform-seamless-setup = {COPY(quantum, "Seamless setup",)}
                 value=REPLACE(
                     quantum,
                     "Easy migration of preferences and bookmarks when you download Firefox for Windows.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
         ],

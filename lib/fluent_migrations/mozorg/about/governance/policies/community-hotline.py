@@ -26,9 +26,7 @@ community-hotline-community-participation = {COPY(community_hotline, "Community 
                 value=REPLACE(
                     community_hotline,
                     "The heart of Mozilla is people. We put people first and do our best to recognize, appreciate and respect the diversity of our global contributors. The Mozilla Project welcomes contributions from everyone who shares our goals and wants to contribute in a healthy and constructive manner within our community.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -36,11 +34,7 @@ community-hotline-community-participation = {COPY(community_hotline, "Community 
                 value=REPLACE(
                     community_hotline,
                     'To report violations of the Community Participation Guidelines <strong>in Mozilla’s communities</strong>, please click the “Report” button below. For more information on how to take and give a report, please read “<a href="%(howto)s">How to Report</a>”.',
-                    {
-                        "%%": "%",
-                        "%(howto)s": VARIABLE_REFERENCE("howto"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(howto)s": VARIABLE_REFERENCE("howto"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]

@@ -52,11 +52,7 @@ def caches_setting_for_tests(base=None, **params):
     return setting
 
 
-@override_settings(
-    CACHES=caches_setting_for_tests(
-        BACKEND="bedrock.base.cache.SimpleDictCache",
-    )
-)
+@override_settings(CACHES=caches_setting_for_tests(BACKEND="bedrock.base.cache.SimpleDictCache",))
 class SimpleDictCacheTests(TestCase):
     def setUp(self):
         self.factory = RequestFactory()

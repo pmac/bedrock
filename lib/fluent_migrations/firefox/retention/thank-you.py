@@ -27,21 +27,12 @@ thank-you-its-all-thanks-to-you = {COPY(thank_you, "It’s all thanks to you",)}
                 value=REPLACE(
                     thank_you,
                     "Choosing Firefox helps Mozilla make the Internet a better place. Here’s what you can do next:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("thank-you-make-firefox-your-default"),
-                value=REPLACE(
-                    thank_you,
-                    "Make Firefox your default browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(thank_you, "Make Firefox your default browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -54,13 +45,7 @@ thank-you-set-as-your-default = {COPY(thank_you, "Set as your default",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("thank-you-get-firefox-on-your-phone"),
-                value=REPLACE(
-                    thank_you,
-                    "Get Firefox on your phone",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(thank_you, "Get Firefox on your phone", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -72,23 +57,11 @@ thank-you-2-min-install = {COPY(thank_you, "2 min install",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("thank-you-download-firefox"),
-                value=REPLACE(
-                    thank_you,
-                    "Download Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(thank_you, "Download Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("thank-you-tell-your-friends-about"),
-                value=REPLACE(
-                    thank_you,
-                    "Tell your friends about Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(thank_you, "Tell your friends about Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -101,11 +74,7 @@ thank-you-1-min-share = {COPY(thank_you, "1 min share",)}
             FTL.Message(
                 id=FTL.Identifier("thank-you-join-me-in-the-fight-for"),
                 value=REPLACE(
-                    thank_you,
-                    "Join me in the fight for an open web by choosing Firefox!",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    thank_you, "Join me in the fight for an open web by choosing Firefox!", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -124,9 +93,7 @@ thank-you-stay-in-touch-for-more = {COPY(thank_you, "Stay in touch for more cool
                 value=REPLACE(
                     thank_you,
                     "Get the latest & greatest from Firefox delivered straight to your inbox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

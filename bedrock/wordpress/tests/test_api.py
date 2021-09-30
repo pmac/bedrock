@@ -7,11 +7,7 @@ from mock import patch
 
 
 TEST_WP_BLOGS = {
-    "firefox": {
-        "url": "https://blog.mozilla.org/firefox/",
-        "name": "The Firefox Frontier",
-        "num_posts": 10,
-    },
+    "firefox": {"url": "https://blog.mozilla.org/firefox/", "name": "The Firefox Frontier", "num_posts": 10,},
 }
 
 

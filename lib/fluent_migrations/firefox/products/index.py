@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("firefox-products-firefox-is-more-than-a-browser"),
-                value=REPLACE(
-                    products,
-                    "Firefox is more than a browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(products, "Firefox is more than a browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -34,13 +28,7 @@ firefox-products-its-a-whole-family-of-products = {COPY(products, "It’s a whol
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-products-firefox-is-more-than-a-browser-emphasis"),
-                value=REPLACE(
-                    products,
-                    "Firefox is <strong>more</strong> than a browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(products, "Firefox is <strong>more</strong> than a browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -55,22 +43,14 @@ firefox-products-sign-up-for-breach-alerts = {COPY(products, "Sign up for breach
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-products-firefox-browsers"),
-                value=REPLACE(
-                    products,
-                    "Firefox browsers",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(products, "Firefox browsers", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-products-get-the-browsers-that-block"),
                 value=REPLACE(
                     products,
                     "Get the browsers that block 2000+ data trackers automatically. Enhanced Tracking Protection comes standard in every Firefox browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -88,33 +68,15 @@ firefox-products-keep-your-passwords-safe-and = {COPY(products, "Keep your passw
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-products-download-lockwise"),
-                value=REPLACE(
-                    products,
-                    "Download Lockwise",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
-                ),
+                value=REPLACE(products, "Download Lockwise", {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-products-open-in-firefox"),
-                value=REPLACE(
-                    products,
-                    "Open in Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(products, "Open in Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-products-learn-more-about-lockwise"),
-                value=REPLACE(
-                    products,
-                    "Learn more about Lockwise",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
-                ),
+                value=REPLACE(products, "Learn more about Lockwise", {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},),
             ),
         ]
         + transforms_from(
@@ -130,32 +92,18 @@ firefox-products-discover-the-best-content = {COPY(products, "Discover the best 
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-products-get-pocket"),
-                value=REPLACE(
-                    products,
-                    "Get Pocket",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(products, "Get Pocket", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-products-learn-more-about-pocket"),
-                value=REPLACE(
-                    products,
-                    "Learn more about Pocket",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(products, "Learn more about Pocket", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-products-join-firefox-and-get-the-most"),
                 value=REPLACE(
                     products,
                     "Join Firefox and get the most out of every product — across every device.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(

@@ -86,11 +86,7 @@ redirectpatterns = (
     redirect(
         r"^firefox/update",
         "firefox.new",
-        query={
-            "utm_source": "firefox-browser",
-            "utm_medium": "firefox-browser",
-            "utm_campaign": "firefox-update-redirect",
-        },
+        query={"utm_source": "firefox-browser", "utm_medium": "firefox-browser", "utm_campaign": "firefox-update-redirect",},
     ),
     # Bug 868182, 986174
     redirect(r"^(m|(firefox/)?mobile)/features/?$", "firefox.browsers.mobile.index"),
@@ -195,12 +191,7 @@ redirectpatterns = (
     redirect(
         r"^firefox(?P<vers>/.+)/firstrun/eu/?$",
         "/firefox{vers}/firstrun/",
-        query={
-            "utm_source": "direct",
-            "utm_medium": "none",
-            "utm_campaign": "redirect",
-            "utm_content": "eu-firstrun-redirect",
-        },
+        query={"utm_source": "direct", "utm_medium": "none", "utm_campaign": "redirect", "utm_content": "eu-firstrun-redirect",},
     ),
     # bug 960543
     redirect(r"^firefox/(?P<vers>[23])\.0/eula", "/legal/eula/firefox-{vers}/"),
@@ -422,22 +413,12 @@ redirectpatterns = (
     redirect(
         r"^firefox(?:\/\d+\.\d+(?:\.\d+)?(?:a\d+)?)?/firstrun/learnmore/?$",
         "firefox.features.index",
-        query={
-            "utm_source": "firefox-browser",
-            "utm_medium": "firefox-browser",
-            "utm_campaign": "redirect",
-            "utm_content": "learnmore-tab",
-        },
+        query={"utm_source": "firefox-browser", "utm_medium": "firefox-browser", "utm_campaign": "redirect", "utm_content": "learnmore-tab",},
     ),
     redirect(
         r"^firefox/windows-10/welcome/?$",
         "https://support.mozilla.org/kb/how-change-your-default-browser-windows-10",
-        query={
-            "utm_source": "firefox-browser",
-            "utm_medium": "firefox-browser",
-            "utm_campaign": "redirect",
-            "utm_content": "windows10-welcome-tab",
-        },
+        query={"utm_source": "firefox-browser", "utm_medium": "firefox-browser", "utm_campaign": "redirect", "utm_content": "windows10-welcome-tab",},
     ),
     # bug 1369732
     redirect(r"^Firefox/?$", "firefox"),
@@ -470,11 +451,7 @@ redirectpatterns = (
     # bug 1421584, issue 7491
     redirect(r"^firefox/organizations/faq/?$", "firefox.enterprise.index"),
     # bug 1425865 - Amazon Fire TV goes to SUMO until we have a product page.
-    redirect(
-        r"^firefox/fire-tv/?$",
-        "https://support.mozilla.org/products/firefox-fire-tv/",
-        permanent=False,
-    ),
+    redirect(r"^firefox/fire-tv/?$", "https://support.mozilla.org/products/firefox-fire-tv/", permanent=False,),
     # bug 1430894
     redirect(r"^firefox/interest-dashboard/?", "https://support.mozilla.org/kb/firefox-add-technology-modernizing"),
     # bug 1419244

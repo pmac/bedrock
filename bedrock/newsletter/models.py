@@ -23,8 +23,7 @@ class NewsletterManager(models.Manager):
         count = 0
         for slug, data in new_data.items():
             self.create(
-                slug=slug,
-                data=data,
+                slug=slug, data=data,
             )
             count += 1
 
@@ -32,10 +31,7 @@ class NewsletterManager(models.Manager):
 
 
 class Newsletter(models.Model):
-    slug = models.SlugField(
-        unique=True,
-        help_text="The ID for the newsletter that will be used by clients",
-    )
+    slug = models.SlugField(unique=True, help_text="The ID for the newsletter that will be used by clients",)
     data = JSONField()
 
     objects = NewsletterManager()

@@ -21,29 +21,11 @@ class TestGeolocate(TestCase):
         self.assertDictEqual(self.get_country("FR"), {"country_code": "FR"})
         self.assertDictEqual(
             self.get_country(None),
-            {
-                "error": {
-                    "errors": [
-                        {
-                            "domain": "geolocation",
-                            "reason": "notFound",
-                            "message": "Not found",
-                        }
-                    ],
-                    "code": 404,
-                    "message": "Not found",
-                }
-            },
+            {"error": {"errors": [{"domain": "geolocation", "reason": "notFound", "message": "Not found",}], "code": 404, "message": "Not found",}},
         )
 
 
-geo_view = GeoRedirectView.as_view(
-    geo_urls={
-        "CA": "firefox.new",
-        "US": "firefox",
-    },
-    default_url="https://abide.dude",
-)
+geo_view = GeoRedirectView.as_view(geo_urls={"CA": "firefox.new", "US": "firefox",}, default_url="https://abide.dude",)
 
 
 @override_settings(DEV=False)
@@ -84,11 +66,7 @@ class TestGeoRedirectView(TestCase):
 
 
 geo_template_view = GeoTemplateView.as_view(
-    geo_template_names={
-        "DE": "firefox-klar.html",
-        "GB": "firefox-focus.html",
-    },
-    template_name="firefox-mobile.html",
+    geo_template_names={"DE": "firefox-klar.html", "GB": "firefox-focus.html",}, template_name="firefox-mobile.html",
 )
 
 

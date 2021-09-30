@@ -84,10 +84,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Edge is integrated into the Windows 10 platform and runs in a sandbox environment, meaning it isolates programs and prevents malicious programs from spying on your computer. It has a built-in SmartScreen that scans the reputation of sites you visit and blocks suspicious sites. To enhance privacy, Edge allows you to use biometrics or a PIN with Windows Hello instead of passwords for online authentication.",
-                    {
-                        "Edge": TERM_REFERENCE("brand-name-edge"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Edge": TERM_REFERENCE("brand-name-edge"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -95,11 +92,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "At Firefox, our <a %(attrs)s>privacy policy</a> is transparent and in plain language. We actually put a lot of work into making sure it was straightforward and easy to read. We pride ourselves in protecting our users security and privacy. With Enhanced Tracking Protection now on by default, we block 2000+ trackers automatically. Trackers are those little pieces of code that try to piece together what you're doing across multiple internet sites to build a composite and detailed picture of who you are, compromising your privacy all just to target better ads.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -107,11 +100,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Your <a %(attrs)s>Privacy Protections</a> shows you the trackers and cookies that pages have attempted to leave, and how many Firefox has blocked for you.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -119,10 +108,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "In Firefox, Private Browsing mode automatically erases your browsing information like passwords, cookies, and history, leaving no trace after you close out the session. Edge on the other hand, actually records browsing history in their private mode (called “InPrivate”) and it’s a relatively easy task for someone to reconstruct your full browsing history, regardless of whether your browsing was done in regular or InPrivate mode.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Edge": TERM_REFERENCE("brand-name-edge"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Edge": TERM_REFERENCE("brand-name-edge"),},
                 ),
             ),
             FTL.Message(
@@ -130,9 +116,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Both browsers are relatively equal in terms of data encryption. However, if online privacy and transparency are important to you, then Firefox is clearly a better choice here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -140,9 +124,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Firefox is a fast and open source browser, which means users can customize their browsing experience in every way possible. Firefox also allows the casual user several different ways to customize the UI with applying different themes and toolbar configurations. Since our browser has always been open source we have a large following of devoted developers who have created an extensive library of add-ons and browser extensions.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -150,10 +132,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Since Edge has moved to the processor intensive Chromium platform, you can expect it to run a little slower, especially if you have multiple programs running at once. However, with Chromium platform comes a massive library of extensions as well as a decent level of UI customization that Edge did not have before it’s move to Chromium.",
-                    {
-                        "Edge": TERM_REFERENCE("brand-name-edge"),
-                        "Chromium": TERM_REFERENCE("brand-name-chromium"),
-                    },
+                    {"Edge": TERM_REFERENCE("brand-name-edge"), "Chromium": TERM_REFERENCE("brand-name-chromium"),},
                 ),
             ),
             FTL.Message(
@@ -161,9 +140,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Edge has some nice UI features, like their tab previews which can make it easy to find the right open tabs if you’ve got a lot of them open. Another helpful tab-related feature lets you set aside any active tabs that you aren’t using but don’t want to close down.",
-                    {
-                        "Edge": TERM_REFERENCE("brand-name-edge"),
-                    },
+                    {"Edge": TERM_REFERENCE("brand-name-edge"),},
                 ),
             ),
             FTL.Message(
@@ -184,10 +161,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Firefox and Edge both offer excellent reading modes. With Firefox you just tap on the small icon in the search bar and the browser strips down all unnecessary elements and presents you a clean looking article. In Edge you just tap on the small book icon and browser to get a clean easy-to-read UI.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Edge": TERM_REFERENCE("brand-name-edge"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Edge": TERM_REFERENCE("brand-name-edge"),},
                 ),
             ),
             FTL.Message(
@@ -195,11 +169,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "Firefox also includes lots of handy built-in features by default like <a %(attrs)s>Enhanced Tracking Protection</a>, a built-in screenshot tool, large file sending and more.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -282,9 +252,7 @@ def migrate(ctx):
                 value=REPLACE(
                     edge,
                     "The bottom line is that while we suggest using Firefox, the best browser for you ultimately will be the one that fits your individual needs with extension support, browsing tools customization, speed, privacy and security.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

@@ -174,10 +174,7 @@ redirectpatterns = (
     redirect(
         r"^mozillacareers$",
         "https://wiki.mozilla.org/People/mozillacareers",
-        query={
-            "utm_medium": "redirect",
-            "utm_source": "mozillacareers-vanity",
-        },
+        query={"utm_medium": "redirect", "utm_source": "mozillacareers-vanity",},
     ),
     # Bug 1090468
     redirect(r"^security/transition\.txt$", "/media/security/transition.txt"),
@@ -422,11 +419,7 @@ redirectpatterns = (
     redirect(
         r"^css-?grid/?$",
         "https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Grids",
-        query={
-            "utm_source": "redirect",
-            "utm_medium": "collateral",
-            "utm_campaign": "css-grid",
-        },
+        query={"utm_source": "redirect", "utm_medium": "collateral", "utm_campaign": "css-grid",},
     ),
     # Bug 1361194, Issue 8375
     redirect(r"^internethealth/?$", "https://foundation.mozilla.org/internet-health/"),
@@ -483,11 +476,7 @@ redirectpatterns = (
     redirect(
         r"^builders/?$",
         "https://builders.mozilla.community/",
-        query={
-            "utm_source": "www.mozilla.org",
-            "utm_medium": "referral",
-            "utm_campaign": "builders-redirect",
-        },
+        query={"utm_source": "www.mozilla.org", "utm_medium": "referral", "utm_campaign": "builders-redirect",},
     ),
     # Issue 6824
     redirect(r"^technology/?$", "https://labs.mozilla.org/"),
@@ -507,24 +496,14 @@ redirectpatterns = (
     # Issue 8375
     redirect(r"^internet-health(/.*)?", "https://foundation.mozilla.org/internet-health/"),
     # Issue 8949
-    redirect(
-        r"^donate/?$",
-        "https://donate.mozilla.org/",
-        query={
-            "utm_source": "mozilla.org",
-            "utm_content": "shortlink",
-        },
-    ),
+    redirect(r"^donate/?$", "https://donate.mozilla.org/", query={"utm_source": "mozilla.org", "utm_content": "shortlink",},),
     redirect(r"^about/governance/policies/security/plugin-whitelist-policy/?$", "https://wiki.mozilla.org/Plugins/Firefox_Whitelist"),
     redirect(r"^about/governance/policies/security-group/tld-idn/?$", "https://wiki.mozilla.org/IDN_Display_Algorithm"),
     # Issue 9560
     redirect(
         r"^openletter/?$",
         "https://foundation.mozilla.org/blog/mozilla-urges-facebook-and-twitter-halt-dangerous-recommendations/",
-        query={
-            "utm_source": "mozilla.org",
-            "utm_content": "shortlink",
-        },
+        query={"utm_source": "mozilla.org", "utm_content": "shortlink",},
     ),
     # Bug 1673476
     redirect(r"^/about/governance/policies/security-group/certs/?$", "https://wiki.mozilla.org/CA"),

@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("firefox-new-download-firefox"),
-                value=REPLACE(
-                    "firefox/new/trailhead.lang",
-                    "Download Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("firefox/new/trailhead.lang", "Download Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-download-mozilla-firefox"),
@@ -42,22 +36,14 @@ def migrate(ctx):
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-download-the-fastest-firefox"),
-                value=REPLACE(
-                    "firefox/new/trailhead.lang",
-                    "Download the fastest Firefox ever",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("firefox/new/trailhead.lang", "Download the fastest Firefox ever", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-faster-page-loading-less-memory"),
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Faster page loading, less memory usage and packed with features, the new Firefox is here.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -65,29 +51,19 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Automatic privacy is here. Download Firefox to block over 2000 trackers.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-get-the-latest-firefox"),
-                value=REPLACE(
-                    "firefox/new/trailhead.lang",
-                    "Get the latest Firefox browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("firefox/new/trailhead.lang", "Get the latest Firefox browser.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-firefox-shows-you-how-many"),
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Firefox shows you how many data-collecting trackers are blocked with <strong>Enhanced Tracking Protection</strong>.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -95,10 +71,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "<strong>Firefox Lockwise</strong> makes the passwords you save in Firefox secure and available on all your devices.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
             FTL.Message(
@@ -106,30 +79,19 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "<strong>Firefox Monitor</strong> alerts you if we know your information is a part of another company’s data breach.",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-join-firefox"),
-                value=REPLACE(
-                    "firefox/new/trailhead.lang",
-                    "Join Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("firefox/new/trailhead.lang", "Join Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-firefox-lockwise-makes"),
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "<strong>Firefox Lockwise</strong> makes the passwords you save in Firefox available on all your devices.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
             FTL.Message(
@@ -137,10 +99,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Download Firefox <br>for Windows",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Windows": TERM_REFERENCE("brand-name-windows"),},
                 ),
             ),
             FTL.Message(
@@ -148,10 +107,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Download Firefox <br>for macOS",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "macOS": TERM_REFERENCE("brand-name-mac"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "macOS": TERM_REFERENCE("brand-name-mac"),},
                 ),
             ),
             FTL.Message(
@@ -159,10 +115,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "Download Firefox <br>for Linux",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Linux": TERM_REFERENCE("brand-name-linux"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Linux": TERM_REFERENCE("brand-name-linux"),},
                 ),
             ),
             FTL.Message(
@@ -170,9 +123,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "firefox/new/trailhead.lang",
                     "You’ve already got the browser. Now get even more from Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -188,13 +139,7 @@ def migrate(ctx):
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-get-more-from-firefox"),
-                value=REPLACE(
-                    "firefox/new/trailhead.lang",
-                    "Get More From Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE("firefox/new/trailhead.lang", "Get More From Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ],
     )
@@ -233,11 +178,7 @@ firefox-new-just-download-the-browser = {COPY(trailhead, "Just Download The Brow
                 value=REPLACE(
                     trailhead,
                     'You’re using an insecure, outdated operating system <a href="%(url)s">no longer supported by Firefox</a>.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -245,22 +186,12 @@ firefox-new-just-download-the-browser = {COPY(trailhead, "Just Download The Brow
                 value=REPLACE(
                     trailhead,
                     'Your download should begin automatically. Didn’t work? <a id="%(id)s" href="%(fallback_url)s">Try downloading again</a>.',
-                    {
-                        "%%": "%",
-                        "%(id)s": VARIABLE_REFERENCE("id"),
-                        "%(fallback_url)s": VARIABLE_REFERENCE("fallback_url"),
-                    },
+                    {"%%": "%", "%(id)s": VARIABLE_REFERENCE("id"), "%(fallback_url)s": VARIABLE_REFERENCE("fallback_url"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-new-firefox-is-more-than-a-browser"),
-                value=REPLACE(
-                    trailhead,
-                    "Firefox is more than a browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(trailhead, "Firefox is more than a browser.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(

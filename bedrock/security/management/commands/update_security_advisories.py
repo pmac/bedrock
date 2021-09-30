@@ -109,10 +109,7 @@ def add_hofers(filename, data):
     HallOfFamer.objects.filter(program=program).delete()
     for hofer in data["names"]:
         HallOfFamer.objects.create(
-            program=program,
-            name=hofer["name"],
-            date=hofer["date"],
-            url=hofer.get("url", ""),
+            program=program, name=hofer["name"], date=hofer["date"], url=hofer.get("url", ""),
         )
 
 
@@ -224,35 +221,18 @@ class Command(CronCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            "--quiet",
-            action="store_true",
-            dest="quiet",
-            default=False,
-            help="Do not print output to stdout.",
+            "--quiet", action="store_true", dest="quiet", default=False, help="Do not print output to stdout.",
         )
         parser.add_argument(
-            "--skip-git",
-            action="store_true",
-            dest="no_git",
-            default=False,
-            help="No update, just import all files",
+            "--skip-git", action="store_true", dest="no_git", default=False, help="No update, just import all files",
         )
         parser.add_argument(
-            "--clear-db",
-            action="store_true",
-            dest="clear_db",
-            default=False,
-            help="Clear all security advisory data and load all files",
+            "--clear-db", action="store_true", dest="clear_db", default=False, help="Clear all security advisory data and load all files",
         )
 
     def handle_safe(self, quiet, no_git, clear_db, **options):
         force = no_git or clear_db
-        repo = GitRepo(
-            ADVISORIES_PATH,
-            ADVISORIES_REPO,
-            branch_name=ADVISORIES_BRANCH,
-            name="Security Advisories",
-        )
+        repo = GitRepo(ADVISORIES_PATH, ADVISORIES_REPO, branch_name=ADVISORIES_BRANCH, name="Security Advisories",)
 
         def printout(msg, ending=None):
             if not quiet:

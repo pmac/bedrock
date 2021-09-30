@@ -58,11 +58,7 @@ class Command(BaseCommand):
                 obj = ContentfulEntry.objects.get(contentful_id=page_id)
             except ContentfulEntry.DoesNotExist:
                 ContentfulEntry.objects.create(
-                    contentful_id=page_id,
-                    content_type=ctype,
-                    language=language,
-                    data_hash=hash,
-                    data=page_data,
+                    contentful_id=page_id, content_type=ctype, language=language, data_hash=hash, data=page_data,
                 )
                 added_count += 1
             else:

@@ -28,13 +28,7 @@ def migrate(ctx):
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page4-wallet-keys-phone-firefox"),
-                value=REPLACE(
-                    page4,
-                    "Wallet. Keys. Phone. <strong>Firefox.</strong>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page4, "Wallet. Keys. Phone. <strong>Firefox.</strong>", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -46,23 +40,11 @@ welcome-page4-take-privacy-with-you-on-every = {COPY(page4, "Take privacy with y
         + [
             FTL.Message(
                 id=FTL.Identifier("welcome-page4-get-the-firefox-app"),
-                value=REPLACE(
-                    page4,
-                    "Get the Firefox App",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page4, "Get the Firefox App", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page4-get-firefox-on-your-phone"),
-                value=REPLACE(
-                    page4,
-                    "Get Firefox on your Phone",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page4, "Get Firefox on your Phone", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -74,13 +56,7 @@ welcome-page4-send-the-download-link-right = {COPY(page4, "Send the download lin
         + [
             FTL.Message(
                 id=FTL.Identifier("welcome-page4-download-firefox-for-your"),
-                value=REPLACE(
-                    page4,
-                    "Download Firefox for your smartphone and tablet.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page4, "Download Firefox for your smartphone and tablet.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page4-firefox-private-safe-browser"),
@@ -107,10 +83,7 @@ welcome-page4-get-data-trackers-off-your = {COPY(page4, "Get data trackers off y
                 value=REPLACE(
                     page4,
                     'Enhanced Tracking Protection <a href="%(privacy)s">blocks 2000+ trackers</a> from chasing you around the web.',
-                    {
-                        "%%": "%",
-                        "%(privacy)s": VARIABLE_REFERENCE("privacy"),
-                    },
+                    {"%%": "%", "%(privacy)s": VARIABLE_REFERENCE("privacy"),},
                 ),
             ),
         ]

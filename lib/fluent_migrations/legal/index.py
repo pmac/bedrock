@@ -29,9 +29,7 @@ legal-back-to-legal = {COPY(index, "Back to Legal",)}
                 value=REPLACE(
                     index,
                     "Special thanks to all of you who help report abuses of Mozilla marks, participate in governance forums, give feedback on our localizations & legal terms, and contribute your skills to the success of the Mozilla project.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -45,23 +43,10 @@ legal-our-websites = {COPY(index, "Our Websites",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("legal-firefox-services"),
-                value=REPLACE(
-                    index,
-                    "Firefox Services",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(index, "Firefox Services", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
-                id=FTL.Identifier("legal-webmaker"),
-                value=REPLACE(
-                    index,
-                    "Webmaker",
-                    {
-                        "Webmaker": TERM_REFERENCE("brand-name-webmaker"),
-                    },
-                ),
+                id=FTL.Identifier("legal-webmaker"), value=REPLACE(index, "Webmaker", {"Webmaker": TERM_REFERENCE("brand-name-webmaker"),},),
             ),
         ]
         + transforms_from(
@@ -73,25 +58,10 @@ legal-downloadable-software-notices = {COPY(index, "Downloadable software notice
             index=index,
         )
         + [
-            FTL.Message(
-                id=FTL.Identifier("legal-firefox"),
-                value=REPLACE(
-                    index,
-                    "Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
-            ),
+            FTL.Message(id=FTL.Identifier("legal-firefox"), value=REPLACE(index, "Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),),
             FTL.Message(
                 id=FTL.Identifier("legal-thunderbird"),
-                value=REPLACE(
-                    index,
-                    "Thunderbird",
-                    {
-                        "Thunderbird": TERM_REFERENCE("brand-name-thunderbird"),
-                    },
-                ),
+                value=REPLACE(index, "Thunderbird", {"Thunderbird": TERM_REFERENCE("brand-name-thunderbird"),},),
             ),
         ]
         + transforms_from(
@@ -104,13 +74,7 @@ legal-acceptable-use-policy = {COPY(index, "Acceptable Use Policy",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("legal-firefox-cloud-services"),
-                value=REPLACE(
-                    index,
-                    "Firefox Cloud Services: Terms of Service",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(index, "Firefox Cloud Services: Terms of Service", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ],
     )

@@ -19,12 +19,7 @@ from bedrock.security.utils import (
 
 
 def test_check_hof_data():
-    good_names = [
-        {
-            "name": "El Dudarino",
-            "date": date(2018, 3, 20),
-        }
-    ]
+    good_names = [{"name": "El Dudarino", "date": date(2018, 3, 20),}]
     good_data = {"names": good_names * 200}
     # should not raise exception
     check_hof_data(good_data)
@@ -157,9 +152,7 @@ def test_generate_yml_advisories_html(rts_mock):
                     "title": "Another sampile title, this time with more length!",
                     "reporter": "A Nameless Evilcorp Employee",
                     "description": "Another short description",
-                    "bugs": [
-                        {"url": "https://example.com/warning.html", "desc": "A different site that is totally not bugzilla"},
-                    ],
+                    "bugs": [{"url": "https://example.com/warning.html", "desc": "A different site that is totally not bugzilla"},],
                 },
             ),
         ]
@@ -199,9 +192,7 @@ def test_generate_yml_advisories_html_non_cve(rts_mock):
                     "title": "Another sampile title, this time with more length!",
                     "reporter": "A Nameless Evilcorp Employee",
                     "description": "Another short description",
-                    "bugs": [
-                        {"url": "https://example.com/warning.html", "desc": "A different site that is totally not bugzilla"},
-                    ],
+                    "bugs": [{"url": "https://example.com/warning.html", "desc": "A different site that is totally not bugzilla"},],
                 },
             ),
         ]
@@ -236,9 +227,7 @@ def test_generate_yml_advisories_missing_things(rts_mock):
                     "title": "Another sampile title, this time with more length!",
                     "reporter": "A Nameless Evilcorp Employee",
                     "description": "Another short description",
-                    "bugs": [
-                        {"url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1289085", "desc": "Bug 1289085"},
-                    ],
+                    "bugs": [{"url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1289085", "desc": "Bug 1289085"},],
                 },
             ),
         ]

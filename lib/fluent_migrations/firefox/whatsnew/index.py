@@ -37,13 +37,7 @@ whatsnew-s2d-want-privacy-on-every-device = {COPY(whatsnew, "Want privacy on eve
         + [
             FTL.Message(
                 id=FTL.Identifier("whatsnew-s2d-you-got-it-get-firefox-for"),
-                value=REPLACE(
-                    whatsnew,
-                    "You got it. Get Firefox for mobile.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(whatsnew, "You got it. Get Firefox for mobile.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("whatsnew-s2d-send-firefox-to-your-phone"),
@@ -53,13 +47,7 @@ whatsnew-s2d-want-privacy-on-every-device = {COPY(whatsnew, "Want privacy on eve
             ),
             FTL.Message(
                 id=FTL.Identifier("whatsnew-s2d-download-firefox-for-your"),
-                value=REPLACE(
-                    whatsnew,
-                    "Download Firefox for your smartphone and tablet.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(whatsnew, "Download Firefox for your smartphone and tablet.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ],
     )

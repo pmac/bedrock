@@ -71,27 +71,11 @@ def geolocate(request):
     country_code = get_country_from_request(request)
     if country_code is None:
         return JsonResponse(
-            {
-                "error": {
-                    "errors": [
-                        {
-                            "domain": "geolocation",
-                            "reason": "notFound",
-                            "message": "Not found",
-                        }
-                    ],
-                    "code": 404,
-                    "message": "Not found",
-                }
-            },
+            {"error": {"errors": [{"domain": "geolocation", "reason": "notFound", "message": "Not found",}], "code": 404, "message": "Not found",}},
             status=404,
         )
 
-    return JsonResponse(
-        {
-            "country_code": country_code,
-        }
-    )
+    return JsonResponse({"country_code": country_code,})
 
 
 # file names and max seconds since last run
@@ -103,26 +87,15 @@ DB_INFO_FILE = getenv("AWS_DB_JSON_DATA_FILE", f"{settings.DATA_PATH}/bedrock_db
 GIT_SHA = getenv("GIT_SHA")
 BUCKET_NAME = getenv("AWS_DB_S3_BUCKET", "bedrock-db-dev")
 REGION_NAME = os.getenv("AWS_DB_REGION", "us-west-2")
-S3_BASE_URL = "https://s3-{}.amazonaws.com/{}".format(
-    REGION_NAME,
-    BUCKET_NAME,
-)
+S3_BASE_URL = "https://s3-{}.amazonaws.com/{}".format(REGION_NAME, BUCKET_NAME,)
 
 
 def get_l10n_repo_info():
     repo = git.GitRepo(settings.LOCALES_PATH, settings.LOCALES_REPO)
     fluent_repo = git.GitRepo(settings.FLUENT_REPO_PATH, settings.FLUENT_REPO_URL)
     return (
-        {
-            "latest_ref": repo.current_hash,
-            "last_updated": repo.last_updated,
-            "repo_url": repo.clean_remote_url,
-        },
-        {
-            "latest_ref": fluent_repo.current_hash,
-            "last_updated": fluent_repo.last_updated,
-            "repo_url": fluent_repo.clean_remote_url,
-        },
+        {"latest_ref": repo.current_hash, "last_updated": repo.last_updated, "repo_url": repo.clean_remote_url,},
+        {"latest_ref": fluent_repo.current_hash, "last_updated": fluent_repo.last_updated, "repo_url": fluent_repo.clean_remote_url,},
     )
 
 

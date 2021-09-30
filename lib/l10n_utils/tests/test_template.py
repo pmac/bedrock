@@ -41,9 +41,7 @@ class TestL10nBlocks(TestCase):
 
 @patch.object(jinja_env.loader, "searchpath", TEMPLATE_DIRS)
 @override_settings(
-    LOCALES_PATH=LOCALES_PATH,
-    ROOT=ROOT,
-    ROOT_URLCONF="lib.l10n_utils.tests.test_files.urls",
+    LOCALES_PATH=LOCALES_PATH, ROOT=ROOT, ROOT_URLCONF="lib.l10n_utils.tests.test_files.urls",
 )
 class TestTransBlocks(TestCase):
     def test_trans_block_works(self):

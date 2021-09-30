@@ -215,10 +215,7 @@ def send_to_device_ajax(request):
         if platform in MESSAGES["email"]:
             try:
                 basket.subscribe(
-                    email,
-                    MESSAGES["email"][platform],
-                    source_url=request.POST.get("source-url"),
-                    lang=locale,
+                    email, MESSAGES["email"][platform], source_url=request.POST.get("source-url"), lang=locale,
                 )
             except basket.BasketException:
                 return JsonResponse({"success": False, "errors": ["system"]}, status=400)

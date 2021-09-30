@@ -19,9 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     page1,
                     "More than a browser - Firefox Monitor is your lookout for hackers",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
             FTL.Message(
@@ -29,9 +27,7 @@ def migrate(ctx):
                 value=REPLACE(
                     page1,
                     "Take the next step to protect your privacy online with the Firefox family of products.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -39,9 +35,7 @@ def migrate(ctx):
                 value=REPLACE(
                     page1,
                     "Stay ahead of hackers. Check for data breaches with Firefox Monitor.",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
         ]
@@ -60,9 +54,7 @@ welcome-page1-firefox-monitor = { -brand-name-firefox-monitor }
                 value=REPLACE(
                     page1,
                     "Firefox Monitor shows you if your information has been leaked in a known data breach, and alerts you in case it happens in the future.",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
         ]
@@ -78,11 +70,7 @@ welcome-page1-stay-ahead-of-hackers = {COPY(page1, "Stay ahead of hackers",)}
                 value=REPLACE(
                     page1,
                     'Find ways to protect your info with <a href="%(security_tips)s">Monitor Security Tips</a>.',
-                    {
-                        "%%": "%",
-                        "%(security_tips)s": VARIABLE_REFERENCE("security_tips"),
-                        "Monitor": TERM_REFERENCE("brand-name-monitor"),
-                    },
+                    {"%%": "%", "%(security_tips)s": VARIABLE_REFERENCE("security_tips"), "Monitor": TERM_REFERENCE("brand-name-monitor"),},
                 ),
             ),
         ]
@@ -98,10 +86,7 @@ welcome-page1-stay-in-the-know = {COPY(page1, "Stay in the know",)}
                 value=REPLACE(
                     page1,
                     'Were you one of 100,985,047 invited to the <a href="%(evite_breach)s">Evite data breach “party”</a>?',
-                    {
-                        "%%": "%",
-                        "%(evite_breach)s": VARIABLE_REFERENCE("evite_breach"),
-                    },
+                    {"%%": "%", "%(evite_breach)s": VARIABLE_REFERENCE("evite_breach"),},
                 ),
             ),
         ]

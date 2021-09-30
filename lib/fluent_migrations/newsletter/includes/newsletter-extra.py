@@ -40,44 +40,26 @@ newsletter-form-text = {COPY(main, "Text",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("newsletter-form-get-firefox-news"),
-                value=REPLACE(
-                    main,
-                    "Get Firefox news",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(main, "Get Firefox news", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletter-form-im-okay-with-mozilla"),
                 value=REPLACE(
                     main,
                     'I’m okay with Mozilla handling my info as explained in <a href="%s">this Privacy Notice</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("url"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletter-form-we-will-only-send"),
-                value=REPLACE(
-                    main,
-                    "We will only send you Mozilla-related information.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(main, "We will only send you Mozilla-related information.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletter-form-if-you-havent-previously"),
                 value=REPLACE(
                     main,
                     "If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]

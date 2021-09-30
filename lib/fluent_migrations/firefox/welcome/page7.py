@@ -16,23 +16,11 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("page7-make-it-harder-for-facebook"),
-                value=REPLACE(
-                    page7,
-                    "Make it harder for Facebook to track you",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
-                ),
+                value=REPLACE(page7, "Make it harder for Facebook to track you", {"Facebook": TERM_REFERENCE("brand-name-facebook"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("page7-its-okay-to-like-facebook"),
-                value=REPLACE(
-                    page7,
-                    "It’s okay to like Facebook",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
-                ),
+                value=REPLACE(page7, "It’s okay to like Facebook", {"Facebook": TERM_REFERENCE("brand-name-facebook"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("page7-if-you-still-kinda-like-facebook"),
@@ -48,13 +36,7 @@ def migrate(ctx):
             ),
             FTL.Message(
                 id=FTL.Identifier("page7-get-facebook-container"),
-                value=REPLACE(
-                    page7,
-                    "Get Facebook Container",
-                    {
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                    },
-                ),
+                value=REPLACE(page7, "Get Facebook Container", {"Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),},),
             ),
         ]
         + transforms_from(
@@ -92,10 +74,7 @@ page7-that-sneaky-little-button = {COPY(page7, "That sneaky little button",)}
                 value=REPLACE(
                     page7,
                     "Those innocent-looking F buttons from Facebook track your web activity, even if you don’t have an account. Facebook Container blocks them.",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                    },
+                    {"Facebook": TERM_REFERENCE("brand-name-facebook"), "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),},
                 ),
             ),
         ]
@@ -111,20 +90,12 @@ page7-stay-ahead-of-hackers = {COPY(page7, "Stay ahead of hackers",)}
                 value=REPLACE(
                     page7,
                     "Firefox Monitor lets you find out what hackers might already know about you and helps you stay a step ahead of them. (And it’s free.)",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("page7-get-firefox-monitor"),
-                value=REPLACE(
-                    page7,
-                    "Get Firefox Monitor",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
-                ),
+                value=REPLACE(page7, "Get Firefox Monitor", {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},),
             ),
         ]
         + transforms_from(

@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("welcome-page6-make-firefox-your-default"),
-                value=REPLACE(
-                    page6,
-                    "Make Firefox your default browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page6, "Make Firefox your default browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -37,30 +31,16 @@ welcome-page6-make-sure-youre-protected = {COPY(page6, "Make sure you’re prote
                 value=REPLACE(
                     page6,
                     "When you choose Firefox, you support a better web for you and everyone else. Now take the next step to protect yourself.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page6-get-the-firefox-app"),
-                value=REPLACE(
-                    page6,
-                    "Get the Firefox App",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page6, "Get the Firefox App", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page6-get-firefox-on-your-phone"),
-                value=REPLACE(
-                    page6,
-                    "Get Firefox on your Phone",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page6, "Get Firefox on your Phone", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -72,13 +52,7 @@ welcome-page6-scan-the-qr-code-to-get-started = {COPY(page6, "Scan the QR code t
         + [
             FTL.Message(
                 id=FTL.Identifier("welcome-page6-qr-code-to-scan-for-firefox"),
-                value=REPLACE(
-                    page6,
-                    "QR code to scan for Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(page6, "QR code to scan for Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -93,9 +67,7 @@ welcome-page6-choose-automatic-privacy = {COPY(page6, "Choose automatic privacy"
                 value=REPLACE(
                     page6,
                     "Companies keep finding new ways to poach your personal data. Firefox is the browser with a mission of finding new ways to protect you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]

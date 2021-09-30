@@ -33,9 +33,7 @@ opt-out-confirmation-get-help = {COPY(opt_out_confirmation, "Get help",)}
                 value=REPLACE(
                     opt_out_confirmation,
                     "Subscribe to occasional newsletter updates from Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

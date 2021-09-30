@@ -18,9 +18,7 @@ class FraudReportForm(forms.Form):
     input_url = forms.URLField(
         max_length=2000,
         required=True,
-        error_messages={
-            "required": _lazy("Please enter a URL."),
-        },
+        error_messages={"required": _lazy("Please enter a URL."),},
         widget=forms.TextInput(
             attrs={
                 "size": 40,
@@ -40,17 +38,8 @@ class FraudReportForm(forms.Form):
             ("Distributing modified Firefox/malware", _lazy("Distributing modified Firefox/malware")),
         ),
         required=True,
-        error_messages={
-            "required": _lazy("Please select a category."),
-        },
-        widget=forms.Select(
-            attrs={
-                "title": _lazy("Category"),
-                "class": "required",
-                "required": "required",
-                "aria-required": "true",
-            }
-        ),
+        error_messages={"required": _lazy("Please select a category."),},
+        widget=forms.Select(attrs={"title": _lazy("Category"), "class": "required", "required": "required", "aria-required": "true",}),
     )
     input_product = forms.ChoiceField(
         choices=(
@@ -60,17 +49,8 @@ class FraudReportForm(forms.Form):
             ("Other Mozilla Product/Project", _lazy("Other Mozilla Product/Project (specify)")),
         ),
         required=True,
-        error_messages={
-            "required": _lazy("Please select a product."),
-        },
-        widget=forms.Select(
-            attrs={
-                "title": _lazy("Product"),
-                "class": "required",
-                "required": "required",
-                "aria-required": "true",
-            }
-        ),
+        error_messages={"required": _lazy("Please select a product."),},
+        widget=forms.Select(attrs={"title": _lazy("Product"), "class": "required", "required": "required", "aria-required": "true",}),
     )
     input_specific_product = forms.CharField(max_length=254, required=False, widget=forms.TextInput(attrs={"size": 20, "class": "fill-width"}))
     input_details = forms.CharField(required=False, widget=forms.Textarea(attrs={"rows": "", "cols": "", "class": "fill-width"}))
@@ -81,9 +61,7 @@ class FraudReportForm(forms.Form):
     input_email = forms.EmailField(
         max_length=254,
         required=False,
-        error_messages={
-            "invalid": _lazy("Please enter a valid email address"),
-        },
+        error_messages={"invalid": _lazy("Please enter a valid email address"),},
         widget=forms.TextInput(attrs={"size": 20, "class": "fill-width"}),
     )
     # honeypot

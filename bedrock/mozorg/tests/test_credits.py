@@ -29,12 +29,7 @@ class TestCredits(TestCase):
         )
         self.assertListEqual(
             self.credits_file.rows,
-            [
-                ["Tantek Çelik", "CELIK"],
-                ["The Dude", "DUDE"],
-                ["Theodore Donald Kerabatsos", "KERABATSOS"],
-                ["Walter Sobchak", "SOBCHAK"],
-            ],
+            [["Tantek Çelik", "CELIK"], ["The Dude", "DUDE"], ["Theodore Donald Kerabatsos", "KERABATSOS"], ["Walter Sobchak", "SOBCHAK"],],
         )
 
     def test_credits_ordered_no_sortkey(self):

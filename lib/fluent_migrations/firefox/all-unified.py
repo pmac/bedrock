@@ -39,9 +39,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Download the Firefox Browser in English (US) and more than 90 other languages",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -49,9 +47,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Everyone deserves access to the internet — your language should never be a barrier. That’s why — with the help of dedicated volunteers around the world — we make the Firefox Browser available in more than 90 languages.",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -59,39 +55,23 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Choose which Firefox Browser to download in your language",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-all-firefox-privacy-notice"),
-                value=REPLACE(
-                    all_unified,
-                    "Firefox Privacy Notice",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(all_unified, "Firefox Privacy Notice", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-all-learn-about-firefox"),
-                value=REPLACE(
-                    all_unified,
-                    "Learn about Firefox browsers",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(all_unified, "Learn about Firefox browsers", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-all-the-standard-firefox"),
                 value=REPLACE(
                     all_unified,
                     "The standard Firefox browser — fast and private. If you’re not sure which Firefox to choose, choose this.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -99,9 +79,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Get a sneak peek at the latest Firefox browser features before they’re released.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -109,9 +87,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Test your sites against soon-to-be-released Firefox browser features with powerful, flexible DevTools that are on by default.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -119,9 +95,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Count on stability and ease of use with this Firefox browser built for enterprise.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -129,9 +103,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     "Windows installers for corporate IT that simplify the configuration, deployment and management of the Firefox Browser.",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -139,10 +111,7 @@ firefox-all-32-bit-installers = {COPY(all_unified, "32-bit installers",)}
                 value=REPLACE(
                     all_unified,
                     'Choose a 32-bit installer for computers with 32-bit processors — or for older or less powerful computers. <a href="%(url)s">If you aren’t sure</a> whether to choose a 64-bit or 32-bit installer, we recommend you go with 32-bit.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
             FTL.Message(

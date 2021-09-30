@@ -189,12 +189,7 @@ class MitreCVE(models.Model):
         product_data = []
         for prod_name, versions in self.product_versions().items():
             product_data.append(
-                {
-                    "product_name": prod_name,
-                    "version": {
-                        "version_data": [{"version_value": vers, "version_affected": "<"} for vers in versions],
-                    },
-                }
+                {"product_name": prod_name, "version": {"version_data": [{"version_value": vers, "version_affected": "<"} for vers in versions],},}
             )
 
         return product_data
@@ -213,43 +208,9 @@ class MitreCVE(models.Model):
             "data_type": "CVE",
             "data_format": "MITRE",
             "data_version": "4.0",
-            "CVE_data_meta": {
-                "ID": self.id,
-                "ASSIGNER": "security@mozilla.org",
-            },
-            "affects": {
-                "vendor": {
-                    "vendor_data": [
-                        {
-                            "vendor_name": "Mozilla",
-                            "product": {
-                                "product_data": self.get_product_data(),
-                            },
-                        }
-                    ]
-                }
-            },
-            "problemtype": {
-                "problemtype_data": [
-                    {
-                        "description": [
-                            {
-                                "lang": "eng",
-                                "value": self.title,
-                            }
-                        ]
-                    }
-                ]
-            },
-            "references": {
-                "reference_data": self.get_reference_data(),
-            },
-            "description": {
-                "description_data": [
-                    {
-                        "lang": "eng",
-                        "value": self.get_description(),
-                    }
-                ]
-            },
+            "CVE_data_meta": {"ID": self.id, "ASSIGNER": "security@mozilla.org",},
+            "affects": {"vendor": {"vendor_data": [{"vendor_name": "Mozilla", "product": {"product_data": self.get_product_data(),},}]}},
+            "problemtype": {"problemtype_data": [{"description": [{"lang": "eng", "value": self.title,}]}]},
+            "references": {"reference_data": self.get_reference_data(),},
+            "description": {"description_data": [{"lang": "eng", "value": self.get_description(),}]},
         }

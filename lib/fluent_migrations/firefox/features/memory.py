@@ -18,11 +18,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("features-memory-firefox-browser-use-less"),
                 value=REPLACE(
-                    memory,
-                    "Firefox Browser: Use less memory, get more speed",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    memory, "Firefox Browser: Use less memory, get more speed", {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -30,29 +26,17 @@ def migrate(ctx):
                 value=REPLACE(
                     memory,
                     "Is your computer slow? Your browser might be using too much memory. Switch to Firefox today for more speed.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("features-memory-less-memory-usage-than-chrome"),
-                value=REPLACE(
-                    memory,
-                    "Less memory usage than Chrome",
-                    {
-                        "Chrome": TERM_REFERENCE("brand-name-chrome"),
-                    },
-                ),
+                value=REPLACE(memory, "Less memory usage than Chrome", {"Chrome": TERM_REFERENCE("brand-name-chrome"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("features-memory-if-your-web-browser-uses"),
                 value=REPLACE(
-                    memory,
-                    "If your web browser uses too much memory, switch to Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    memory, "If your web browser uses too much memory, switch to Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -68,9 +52,7 @@ features-memory-speed-up-your-computer = {COPY(memory, "Speed up your computer",
                 value=REPLACE(
                     memory,
                     "Every computer program you run takes up some memory. When too much is used, your system can slooooowww down. Firefox aims for a balance — using enough memory to let you browse smoothly and leaving plenty of memory to keep your computer responsive.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -107,11 +89,7 @@ features-memory-browse-faster-privately = {COPY(memory, "Browse faster, privatel
                 value=REPLACE(
                     memory,
                     'Explore the web faster with <a href="%(url)s">Firefox Private Browsing</a>. Only Firefox’s private mode includes tracking protection which blocks ads with trackers from loading on pages. Decluttering sites means web pages can load faster.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

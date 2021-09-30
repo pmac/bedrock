@@ -17,22 +17,14 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("about-learn-about-mozilla"),
-                value=REPLACE(
-                    about_2019,
-                    "Learn About Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(about_2019, "Learn About Mozilla", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("about-mozilla-makes-browsers-apps-desc"),
                 value=REPLACE(
                     about_2019,
                     "Mozilla makes browsers, apps, code and tools that put people before profit. Our mission: Keep the internet open and accessible to all.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -40,9 +32,7 @@ def migrate(ctx):
                 value=REPLACE(
                     about_2019,
                     "Mozilla makes browsers, apps, code and tools that put people before profit.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -59,23 +49,14 @@ about-our-leadership-has-been-at = {COPY(about_2019, "Our leadership has been at
         + [
             FTL.Message(
                 id=FTL.Identifier("about-firefox-fast-for-good"),
-                value=REPLACE(
-                    about_2019,
-                    "Firefox: Fast for Good",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(about_2019, "Firefox: Fast for Good", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("about-when-you-use-the-new-firefox"),
                 value=REPLACE(
                     about_2019,
                     "When you use the new Firefox, you get a blazing fast experience while supporting Mozilla’s mission to keep the internet healthy, weird and welcoming to all.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -111,9 +92,7 @@ about-talking-internet-issues-irl = {COPY(about_2019, "Talking Internet Issues I
                 value=REPLACE(
                     about_2019,
                     "In Mozilla’s IRL podcast, host Manoush Zomorodi shares real stories of life online and real talk about the future of the Web.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -127,11 +106,7 @@ about-corporation-foundation-not = {COPY(about_2019, "Corporation. Foundation. N
             FTL.Message(
                 id=FTL.Identifier("about-learn-about-the-mozilla-foundation"),
                 value=REPLACE(
-                    about_2019,
-                    "Learn about the Mozilla Foundation",
-                    {
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
+                    about_2019, "Learn about the Mozilla Foundation", {"Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},
                 ),
             ),
             FTL.Message(
@@ -139,20 +114,12 @@ about-corporation-foundation-not = {COPY(about_2019, "Corporation. Foundation. N
                 value=REPLACE(
                     about_2019,
                     "Mozilla puts people over profit in everything we say, build and do. In fact, there’s a non-profit Foundation at the heart of our enterprise.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("about-the-mozilla-manifesto"),
-                value=REPLACE(
-                    about_2019,
-                    "The Mozilla Manifesto",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(about_2019, "The Mozilla Manifesto", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -169,10 +136,7 @@ about-a-global-view = {COPY(about_2019, "A Global View",)}
                 value=REPLACE(
                     about_2019,
                     'With <a href="%(url)s">offices all over the world</a>, we consider the internet from multiple cultures and contexts.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ]
@@ -190,13 +154,7 @@ about-800-bottles-of-cold-brew-coffee = {COPY(about_2019, "<strong>800</strong> 
         + [
             FTL.Message(
                 id=FTL.Identifier("about-work-at-mozilla"),
-                value=REPLACE(
-                    about_2019,
-                    "Work at Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(about_2019, "Work at Mozilla", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -208,13 +166,7 @@ about-join-a-mission-driven-organization = {COPY(about_2019, "Join a mission-dri
         + [
             FTL.Message(
                 id=FTL.Identifier("about-mozilla-careers"),
-                value=REPLACE(
-                    about_2019,
-                    "Mozilla Careers",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(about_2019, "Mozilla Careers", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -228,13 +180,7 @@ about-get-involved = {COPY(about_2019, "Get Involved",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("about-get-the-mozilla-newsletter"),
-                value=REPLACE(
-                    about_2019,
-                    "Get The Mozilla Newsletter",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(about_2019, "Get The Mozilla Newsletter", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(

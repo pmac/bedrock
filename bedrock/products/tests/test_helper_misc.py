@@ -70,37 +70,17 @@ TEST_VPN_PLAN_ID_MATRIX = {
 }
 
 TEST_VPN_VARIABLE_PRICING = {
-    "at": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["de"],
-    },
-    "be": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["nl"],
-        "alt": {
-            "fr": TEST_VPN_PLAN_ID_MATRIX["euro"]["fr"],
-        },
-    },
+    "at": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["de"],},
+    "be": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["nl"], "alt": {"fr": TEST_VPN_PLAN_ID_MATRIX["euro"]["fr"],},},
     "ch": {
         "default": TEST_VPN_PLAN_ID_MATRIX["chf"]["de"],
-        "alt": {
-            "fr": TEST_VPN_PLAN_ID_MATRIX["chf"]["fr"],
-            "it": TEST_VPN_PLAN_ID_MATRIX["chf"]["it"],
-        },
+        "alt": {"fr": TEST_VPN_PLAN_ID_MATRIX["chf"]["fr"], "it": TEST_VPN_PLAN_ID_MATRIX["chf"]["it"],},
     },
-    "de": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["de"],
-    },
-    "es": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["es"],
-    },
-    "fr": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["fr"],
-    },
-    "it": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["euro"]["it"],
-    },
-    "us": {
-        "default": TEST_VPN_PLAN_ID_MATRIX["usd"]["en"],
-    },
+    "de": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["de"],},
+    "es": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["es"],},
+    "fr": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["fr"],},
+    "it": {"default": TEST_VPN_PLAN_ID_MATRIX["euro"]["it"],},
+    "us": {"default": TEST_VPN_PLAN_ID_MATRIX["usd"]["en"],},
 }
 
 jinja_env = Jinja2.get_default()

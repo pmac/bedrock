@@ -17,11 +17,7 @@ PROD_DETAILS_DIR = os.path.join(TEST_DATA_DIR, "product_details_json")
 
 GOOD_PLATS = {"Windows": {}, "OS X": {}, "Linux": {}}
 GOOD_BUILDS = {
-    "en-US": {
-        "25.0": GOOD_PLATS,  # current release
-        "26.0b2": GOOD_PLATS,
-        "27.0a1": GOOD_PLATS,
-    },
+    "en-US": {"25.0": GOOD_PLATS, "26.0b2": GOOD_PLATS, "27.0a1": GOOD_PLATS,},  # current release
     "de": {"25.0": GOOD_PLATS},
     "fr": {"24.0": GOOD_PLATS},  # prev release
 }
@@ -118,26 +114,22 @@ class TestFirefoxDesktop(TestCase):
     def test_get_download_url(self):
         url = self.firefox_desktop.get_download_url("release", "17.0.1", "osx", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-latest-ssl"), ("os", "osx"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-latest-ssl"), ("os", "osx"), ("lang", "pt-BR")],
         )
         # Windows 64-bit
         url = self.firefox_desktop.get_download_url("release", "38.0", "win64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-stub"), ("os", "win64"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-stub"), ("os", "win64"), ("lang", "en-US")],
         )
         # Windows 64-bit MSI installer
         url = self.firefox_desktop.get_download_url("release", "38.0", "win64-msi", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-msi-latest-ssl"), ("os", "win64"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-msi-latest-ssl"), ("os", "win64"), ("lang", "en-US")],
         )
         # Linux 64-bit
         url = self.firefox_desktop.get_download_url("release", "17.0.1", "linux64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-latest-ssl"), ("os", "linux64"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-latest-ssl"), ("os", "linux64"), ("lang", "en-US")],
         )
 
     def test_get_download_url_esr(self):
@@ -147,36 +139,23 @@ class TestFirefoxDesktop(TestCase):
         # MSI installer
         url = self.firefox_desktop.get_download_url("esr", "28.0a2", "win-msi", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-msi-latest-ssl"),
-                ("os", "win"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-msi-latest-ssl"), ("os", "win"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr", "28.0a2", "win64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-esr-latest-ssl"), ("os", "win64"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-latest-ssl"), ("os", "win64"), ("lang", "en-US")],
         )
         url = self.firefox_desktop.get_download_url("esr", "28.0a2", "osx", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-esr-latest-ssl"), ("os", "osx"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-latest-ssl"), ("os", "osx"), ("lang", "en-US")],
         )
         url = self.firefox_desktop.get_download_url("esr", "28.0a2", "linux", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-esr-latest-ssl"), ("os", "linux"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-latest-ssl"), ("os", "linux"), ("lang", "en-US")],
         )
         url = self.firefox_desktop.get_download_url("esr", "28.0a2", "linux64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_esr_next(self):
@@ -185,57 +164,27 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "win", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-latest-ssl"),
-                ("os", "win"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-latest-ssl"), ("os", "win"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "win64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "win64-msi", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-msi-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-msi-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "osx", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-latest-ssl"), ("os", "osx"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "linux", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-latest-ssl"), ("os", "linux"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("esr_next", "52.4.1esr", "linux64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-esr-next-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-esr-next-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_devedition(self):
@@ -245,54 +194,28 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-devedition-stub"), ("os", "win"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-stub"), ("os", "win"), ("lang", "en-US")],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-stub"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-stub"), ("os", "win64"), ("lang", "en-US"),],
         )
         # MSI installer
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win64-msi", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-msi-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-msi-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "osx", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "osx"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_devedition_full(self):
@@ -302,48 +225,23 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "win"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "win"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win64", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "osx", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "osx"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux64", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_devedition_l10n(self):
@@ -354,54 +252,28 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-devedition-stub"), ("os", "win"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-stub"), ("os", "win"), ("lang", "pt-BR")],
         )
         # MSI installer
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win-msi", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-msi-latest-ssl"),
-                ("os", "win"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-msi-latest-ssl"), ("os", "win"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "win64", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-stub"),
-                ("os", "win64"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-stub"), ("os", "win64"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "osx", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "osx"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("alpha", "28.0a2", "linux64", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-devedition-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-devedition-latest-ssl"), ("os", "linux64"), ("lang", "pt-BR"),],
         )
 
     def test_get_download_url_nightly(self):
@@ -411,50 +283,28 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-nightly-stub"), ("os", "win"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-stub"), ("os", "win"), ("lang", "en-US")],
         )
         # MSI installer
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win64-msi", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-msi-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-msi-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-nightly-stub"), ("os", "win64"), ("lang", "en-US")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-stub"), ("os", "win64"), ("lang", "en-US")],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "osx", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "osx"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "linux"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux64", "en-US", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_nightly_full(self):
@@ -464,48 +314,23 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "win"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "win"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win64", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "win64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "win64"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "osx", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "osx"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "osx"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "linux"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "linux"), ("lang", "en-US"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux64", "en-US", True, True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-ssl"),
-                ("os", "linux64"),
-                ("lang", "en-US"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-ssl"), ("os", "linux64"), ("lang", "en-US"),],
         )
 
     def test_get_download_url_nightly_l10n(self):
@@ -516,50 +341,28 @@ class TestFirefoxDesktop(TestCase):
         """
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-nightly-stub"), ("os", "win"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-stub"), ("os", "win"), ("lang", "pt-BR")],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win64", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-nightly-stub"), ("os", "win64"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-stub"), ("os", "win64"), ("lang", "pt-BR")],
         )
         # MSI installer
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "win64-msi", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-msi-latest-l10n-ssl"),
-                ("os", "win64"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-msi-latest-l10n-ssl"), ("os", "win64"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "osx", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-l10n-ssl"),
-                ("os", "osx"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-l10n-ssl"), ("os", "osx"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-l10n-ssl"),
-                ("os", "linux"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-l10n-ssl"), ("os", "linux"), ("lang", "pt-BR"),],
         )
         url = self.firefox_desktop.get_download_url("nightly", "50.0a1", "linux64", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "firefox-nightly-latest-l10n-ssl"),
-                ("os", "linux64"),
-                ("lang", "pt-BR"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "firefox-nightly-latest-l10n-ssl"), ("os", "linux64"), ("lang", "pt-BR"),],
         )
 
     def test_get_download_url_scene2_funnelcake(self):
@@ -574,14 +377,7 @@ class TestFirefoxDesktop(TestCase):
         url = self.firefox_desktop.get_download_url("release", "45.0", "win", "de", locale_in_transition=True)
         self.assertEqual(url, "/de" + scene2)
 
-        url = self.firefox_desktop.get_download_url(
-            "release",
-            "45.0",
-            "win",
-            "fr",
-            locale_in_transition=True,
-            funnelcake_id="64",
-        )
+        url = self.firefox_desktop.get_download_url("release", "45.0", "win", "fr", locale_in_transition=True, funnelcake_id="64",)
         self.assertEqual(url, "/fr" + scene2 + "?f=64")
 
     def get_download_url_ssl(self):
@@ -592,22 +388,19 @@ class TestFirefoxDesktop(TestCase):
         # is enabled by default for stub installers)
         url = self.firefox_desktop.get_download_url("release", "27.0", "win", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-stub"), ("os", "win"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-stub"), ("os", "win"), ("lang", "pt-BR")],
         )
 
         # SSL-enabled links will be used for OS X builds
         url = self.firefox_desktop.get_download_url("release", "27.0", "osx", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-latest-ssl"), ("os", "osx"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-latest-ssl"), ("os", "osx"), ("lang", "pt-BR")],
         )
 
         # SSL-enabled links will be used for Linux builds
         url = self.firefox_desktop.get_download_url("release", "27.0", "linux", "pt-BR", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "firefox-latest-ssl"), ("os", "linux"), ("lang", "pt-BR")],
+            parse_qsl(urlparse(url).query), [("product", "firefox-latest-ssl"), ("os", "linux"), ("lang", "pt-BR")],
         )
 
     def test_filter_builds_by_locale_name(self):
@@ -660,9 +453,7 @@ class TestFirefoxDesktop(TestCase):
     def test_esr_versions(self):
         """ESR versions should be dynamic based on data."""
         with patch.object(
-            self.firefox_desktop._storage,
-            "data",
-            Mock(return_value=dict(FIREFOX_ESR="24.2")),
+            self.firefox_desktop._storage, "data", Mock(return_value=dict(FIREFOX_ESR="24.2")),
         ):
             assert self.firefox_desktop.esr_major_versions == [24]
             assert self.firefox_desktop.esr_minor_versions == ["24.2"]
@@ -670,9 +461,7 @@ class TestFirefoxDesktop(TestCase):
     def test_esr_versions_prev(self):
         """ESR versions should show previous when available."""
         with patch.object(
-            self.firefox_desktop._storage,
-            "data",
-            Mock(return_value=dict(FIREFOX_ESR="24.6.0", FIREFOX_ESR_NEXT="31.0.0")),
+            self.firefox_desktop._storage, "data", Mock(return_value=dict(FIREFOX_ESR="24.6.0", FIREFOX_ESR_NEXT="31.0.0")),
         ):
             assert self.firefox_desktop.esr_major_versions == [24, 31]
             assert self.firefox_desktop.esr_minor_versions == ["24.6.0", "31.0.0"]
@@ -680,9 +469,7 @@ class TestFirefoxDesktop(TestCase):
     def test_esr_versions_no_latest(self):
         """ESR versions should not blow up if current version is broken."""
         with patch.object(
-            self.firefox_desktop._storage,
-            "data",
-            Mock(return_value=dict(LATEST_FIREFOX_VERSION="Phoenix", FIREFOX_ESR="Albuquerque")),
+            self.firefox_desktop._storage, "data", Mock(return_value=dict(LATEST_FIREFOX_VERSION="Phoenix", FIREFOX_ESR="Albuquerque")),
         ):
             assert self.firefox_desktop.esr_major_versions == []
             assert self.firefox_desktop.esr_minor_versions == []
@@ -690,18 +477,14 @@ class TestFirefoxDesktop(TestCase):
     def test_latest_major_version(self):
         """latest_major_version should return an int of the major version."""
         with patch.object(
-            self.firefox_desktop._storage,
-            "data",
-            Mock(return_value=dict(LATEST_FIREFOX_VERSION="18.0.1")),
+            self.firefox_desktop._storage, "data", Mock(return_value=dict(LATEST_FIREFOX_VERSION="18.0.1")),
         ):
             assert self.firefox_desktop.latest_major_version("release") == 18
 
     def test_latest_major_version_no_int(self):
         """latest_major_version should return 0 when no int."""
         with patch.object(
-            self.firefox_desktop._storage,
-            "data",
-            Mock(return_value=dict(LATEST_FIREFOX_VERSION="Phoenix")),
+            self.firefox_desktop._storage, "data", Mock(return_value=dict(LATEST_FIREFOX_VERSION="Phoenix")),
         ):
             assert self.firefox_desktop.latest_major_version("release") == 0
 
@@ -730,25 +513,11 @@ class TestFirefoxDesktop(TestCase):
         assert "-f64" not in url
 
         url = self.firefox_desktop.get_download_url(
-            "release",
-            "45.0",
-            "win",
-            "en-US",
-            force_direct=True,
-            force_full_installer=True,
-            funnelcake_id="64",
+            "release", "45.0", "win", "en-US", force_direct=True, force_full_installer=True, funnelcake_id="64",
         )
         assert "-f64" not in url
 
-        url = self.firefox_desktop.get_download_url(
-            "release",
-            "45.0",
-            "win",
-            "en-US",
-            force_direct=True,
-            force_funnelcake=True,
-            funnelcake_id="64",
-        )
+        url = self.firefox_desktop.get_download_url("release", "45.0", "win", "en-US", force_direct=True, force_funnelcake=True, funnelcake_id="64",)
         assert "-f64" not in url
 
         url = self.firefox_desktop.get_download_url("release", "45.0", "osx", "de", force_direct=True, funnelcake_id="64")
@@ -795,18 +564,14 @@ class TestFirefoxAndroid(TestCase):
     def test_latest_release_version(self):
         """latest_version should return the latest release version."""
         with patch.object(
-            self.firefox_android._storage,
-            "data",
-            Mock(return_value=dict(version="22.0.1")),
+            self.firefox_android._storage, "data", Mock(return_value=dict(version="22.0.1")),
         ):
             assert self.firefox_android.latest_version("release") == "22.0.1"
 
     def test_latest_beta_version(self):
         """latest_version should return the latest beta version."""
         with patch.object(
-            self.firefox_android._storage,
-            "data",
-            Mock(return_value=dict(beta_version="23.0")),
+            self.firefox_android._storage, "data", Mock(return_value=dict(beta_version="23.0")),
         ):
             assert self.firefox_android.latest_version("beta") == "23.0"
 
@@ -826,21 +591,11 @@ class TestFirefoxAndroid(TestCase):
         """
         url = self.firefox_android.get_download_url("nightly", "arm", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "fennec-nightly-latest"),
-                ("os", "android"),
-                ("lang", "multi"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "fennec-nightly-latest"), ("os", "android"), ("lang", "multi"),],
         )
         url = self.firefox_android.get_download_url("nightly", "x86", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "fennec-nightly-latest"),
-                ("os", "android-x86"),
-                ("lang", "multi"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "fennec-nightly-latest"), ("os", "android-x86"), ("lang", "multi"),],
         )
 
     def test_get_download_url_beta(self):
@@ -859,17 +614,11 @@ class TestFirefoxAndroid(TestCase):
         """
         url = self.firefox_android.get_download_url("beta", "arm", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "fennec-beta-latest"), ("os", "android"), ("lang", "multi")],
+            parse_qsl(urlparse(url).query), [("product", "fennec-beta-latest"), ("os", "android"), ("lang", "multi")],
         )
         url = self.firefox_android.get_download_url("beta", "x86", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [
-                ("product", "fennec-beta-latest"),
-                ("os", "android-x86"),
-                ("lang", "multi"),
-            ],
+            parse_qsl(urlparse(url).query), [("product", "fennec-beta-latest"), ("os", "android-x86"), ("lang", "multi"),],
         )
 
     def test_get_download_url_release(self):
@@ -888,24 +637,18 @@ class TestFirefoxAndroid(TestCase):
         """
         url = self.firefox_android.get_download_url("release", "arm", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "fennec-latest"), ("os", "android"), ("lang", "multi")],
+            parse_qsl(urlparse(url).query), [("product", "fennec-latest"), ("os", "android"), ("lang", "multi")],
         )
         url = self.firefox_android.get_download_url("release", "x86", "multi", True)
         self.assertListEqual(
-            parse_qsl(urlparse(url).query),
-            [("product", "fennec-latest"), ("os", "android-x86"), ("lang", "multi")],
+            parse_qsl(urlparse(url).query), [("product", "fennec-latest"), ("os", "android-x86"), ("lang", "multi")],
         )
 
 
 class TestFirefoxIos(TestCase):
     def setUp(self):
         self.firefox_ios = FirefoxIOS(json_dir=PROD_DETAILS_DIR)
-        self.patcher = patch.object(
-            self.firefox_ios._storage,
-            "data",
-            Mock(return_value=dict(ios_version="5.0", ios_beta_version="6.0")),
-        )
+        self.patcher = patch.object(self.firefox_ios._storage, "data", Mock(return_value=dict(ios_version="5.0", ios_beta_version="6.0")),)
         self.patcher.start()
 
     def tearDown(self):

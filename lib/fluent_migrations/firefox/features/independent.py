@@ -18,11 +18,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("features-independent-firefox-a-different"),
                 value=REPLACE(
-                    independent,
-                    "Firefox, a different browser for different times. Browse free.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    independent, "Firefox, a different browser for different times. Browse free.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -35,23 +31,14 @@ features-independent-browse-the-internet = {COPY(independent, "Browse the Intern
         + [
             FTL.Message(
                 id=FTL.Identifier("features-independent-firefox-rebel-with-a"),
-                value=REPLACE(
-                    independent,
-                    "Firefox: Rebel with a cause",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(independent, "Firefox: Rebel with a cause", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("features-independent-firefox-is-independent"),
                 value=REPLACE(
                     independent,
                     "Firefox is independent and a part of the non-profit Mozilla, which fights for your online rights, keeps corporate powers in check and makes the Internet accessible to everyone, everywhere.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -67,9 +54,7 @@ features-independent-no-strings-attached = {COPY(independent, "No strings attach
                 value=REPLACE(
                     independent,
                     "Firefox is built by a non-profit. That means we can do things that others can’t, like build new products and features without a hidden agenda. We champion your right to privacy with tools like Private Browsing with Tracking Protection.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -101,9 +86,7 @@ features-independent-a-browser-on-a-mission = {COPY(independent, "A browser on a
                 value=REPLACE(
                     independent,
                     "In addition to fighting for your online rights, we also keep corporate powers in check, while working with allies all around the globe to nurture healthy Internet practices. So when you choose Firefox, we’re choosing you, too.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -111,10 +94,7 @@ features-independent-a-browser-on-a-mission = {COPY(independent, "A browser on a
                 value=REPLACE(
                     independent,
                     "Firefox is a browser with a conscience. As part of the technology non-profit Mozilla, we fight for your online rights, keep corporate powers in check and help educate developing countries on healthy Internet practices. So when you choose Firefox, we’re choosing you, too.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

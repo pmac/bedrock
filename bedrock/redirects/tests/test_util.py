@@ -83,12 +83,7 @@ class TestNoRedirectUrlPattern(TestCase):
 
     def test_no_redirect(self):
         """Should be able to skip redirects."""
-        resolver = get_resolver(
-            [
-                no_redirect(r"^iam/the/walrus/$"),
-                redirect(r"^iam/the/.*/$", "/coo/coo/cachoo/"),
-            ]
-        )
+        resolver = get_resolver([no_redirect(r"^iam/the/walrus/$"), redirect(r"^iam/the/.*/$", "/coo/coo/cachoo/"),])
         middleware = RedirectsMiddleware(resolver=resolver)
         resp = middleware.process_request(self.rf.get("/iam/the/walrus/"))
         self.assertIsNone(resp)
@@ -106,12 +101,7 @@ class TestNoRedirectUrlPattern(TestCase):
         """
         Should be able to set regex flags for redirect URL.
         """
-        resolver = get_resolver(
-            [
-                redirect(r"^iam/the/walrus/$", "/coo/coo/cachoo/"),
-                no_redirect(r"^iam/the/walrus/$", re_flags="i"),
-            ]
-        )
+        resolver = get_resolver([redirect(r"^iam/the/walrus/$", "/coo/coo/cachoo/"), no_redirect(r"^iam/the/walrus/$", re_flags="i"),])
         middleware = RedirectsMiddleware(resolver=resolver)
         resp = middleware.process_request(self.rf.get("/IAm/The/Walrus/"))
         self.assertIsNone(resp)
@@ -355,10 +345,7 @@ class TestRedirectUrlPattern(TestCase):
         Should be able to set regex flags for redirect URL.
         """
         resolver = get_resolver(
-            [
-                redirect(r"^iam/the/walrus/$", "/coo/coo/cachoo/"),
-                redirect(r"^iam/the/walrus/$", "/dammit/donnie/", re_flags="i"),
-            ]
+            [redirect(r"^iam/the/walrus/$", "/coo/coo/cachoo/"), redirect(r"^iam/the/walrus/$", "/dammit/donnie/", re_flags="i"),]
         )
         middleware = RedirectsMiddleware(resolver=resolver)
         resp = middleware.process_request(self.rf.get("/IAm/The/Walrus/"))

@@ -42,9 +42,7 @@ class TestHostnameMiddleware(TestCase):
         self.assertEqual(self.response["X-Backend-Server"], "foobar.oregon-b")
 
     @override_settings(
-        MIDDLEWARE=(list(settings.MIDDLEWARE) + ["bedrock.mozorg.middleware.HostnameMiddleware"]),
-        HOSTNAME="foobar",
-        CLUSTER_NAME="el-dudarino",
+        MIDDLEWARE=(list(settings.MIDDLEWARE) + ["bedrock.mozorg.middleware.HostnameMiddleware"]), HOSTNAME="foobar", CLUSTER_NAME="el-dudarino",
     )
     def test_request(self):
         response = self.client.get("/en-US/")

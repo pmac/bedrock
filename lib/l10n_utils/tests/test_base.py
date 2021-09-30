@@ -17,9 +17,7 @@ jinja_env = Jinja2.get_default()
 
 @patch.object(jinja_env.env.loader, "searchpath", TEMPLATE_DIRS)
 @override_settings(
-    ROOT=ROOT,
-    DEV=False,
-    ROOT_URLCONF="lib.l10n_utils.tests.test_files.urls",
+    ROOT=ROOT, DEV=False, ROOT_URLCONF="lib.l10n_utils.tests.test_files.urls",
 )
 class TestRender(TestCase):
     def _test(self, path, template, locale, accept_lang, status, destination=None, active_locales=None, add_active_locales=None):
@@ -103,11 +101,7 @@ class TestRender(TestCase):
         req = RequestFactory().get(path)
         l10n_utils.render(req, template, activation_files=activation_files)
         fal_mock.assert_has_calls(
-            [
-                call("dude"),
-                call("walter"),
-            ],
-            any_order=True,
+            [call("dude"), call("walter"),], any_order=True,
         )
         tft_mock.assert_called_with(template)
 

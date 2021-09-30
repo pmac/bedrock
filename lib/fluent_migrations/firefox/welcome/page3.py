@@ -17,11 +17,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("welcome-page3-get-the-free-account-that"),
                 value=REPLACE(
-                    page3,
-                    "Get the free account that protects your privacy. Join Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    page3, "Get the free account that protects your privacy. Join Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -37,10 +33,7 @@ welcome-page3-no-account-required-but-you = {COPY(page3, "No account required. B
                 value=REPLACE(
                     page3,
                     "The Firefox browser collects so little data about you, we don’t even require your email address. But when you use it to create a Firefox account, we can protect your privacy across more of your online life.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox account": TERM_REFERENCE("brand-name-firefox-account"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox account": TERM_REFERENCE("brand-name-firefox-account"),},
                 ),
             ),
         ]
@@ -57,13 +50,7 @@ welcome-page3-facebook-container = { -brand-name-facebook-container }
         + [
             FTL.Message(
                 id=FTL.Identifier("welcome-page3-get-a-container-to-keep-facebook"),
-                value=REPLACE(
-                    page3,
-                    "Get a container to keep Facebook out of your business.",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
-                ),
+                value=REPLACE(page3, "Get a container to keep Facebook out of your business.", {"Facebook": TERM_REFERENCE("brand-name-facebook"),},),
             ),
         ]
         + transforms_from(

@@ -27,9 +27,7 @@ firefox-developer-page-title = { -brand-name-firefox-developer-edition }
                 value=REPLACE(
                     developer_quantum,
                     "Firefox Developer Edition is the blazing fast browser that offers cutting edge developer tools and latest features like CSS Grid support and framework debugging",
-                    {
-                        "Firefox Developer Edition": TERM_REFERENCE("brand-name-firefox-developer-edition"),
-                    },
+                    {"Firefox Developer Edition": TERM_REFERENCE("brand-name-firefox-developer-edition"),},
                 ),
             ),
         ]
@@ -53,9 +51,7 @@ firefox-developer-design-code-test = {COPY(developer_quantum, "Design. Code. Tes
                 value=REPLACE(
                     developer_quantum,
                     "Build and Perfect your sites<br> with Firefox DevTools",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
         ]
@@ -124,9 +120,7 @@ firefox-developer-all-the-latest = {COPY(developer_quantum, "All the latest deve
                 value=REPLACE(
                     developer_quantum,
                     "A <strong>separate profile and path</strong> so you can easily run it alongside Release or Beta Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -144,29 +138,19 @@ firefox-developer-inactive-css = {COPY(developer_quantum, "Inactive CSS",)}
                 value=REPLACE(
                     developer_quantum,
                     "Firefox DevTools now grays out CSS declarations that don’t have an effect on the page. When you hover over the info icon, you’ll see a useful message about why the CSS is not being applied, including a hint about how to fix the problem.",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-developer-firefox-devtools"),
-                value=REPLACE(
-                    developer_quantum,
-                    "Firefox DevTools",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
-                ),
+                value=REPLACE(developer_quantum, "Firefox DevTools", {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-developer-the-new-firefox-devtools"),
                 value=REPLACE(
                     developer_quantum,
                     "The new Firefox DevTools are powerful, flexible, and best of all, hackable. This includes a best-in-class JavaScript debugger, which can target multiple browsers and is built in React and Redux.",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
         ]
@@ -186,9 +170,7 @@ firefox-developer-want-to-be-on-the-cutting-edge = {COPY(developer_quantum, "Wan
                 value=REPLACE(
                     developer_quantum,
                     "Firefox Nightly receives daily updates and allows you to access features months before they go mainstream.",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
             FTL.Message(
@@ -196,9 +178,7 @@ firefox-developer-want-to-be-on-the-cutting-edge = {COPY(developer_quantum, "Wan
                 value=REPLACE(
                     developer_quantum,
                     "Firefox Quantum includes a new CSS engine, written in Rust, that has state-of-the-art innovations and is blazingly fast.",
-                    {
-                        "Firefox Quantum": TERM_REFERENCE("brand-name-firefox-quantum"),
-                    },
+                    {"Firefox Quantum": TERM_REFERENCE("brand-name-firefox-quantum"),},
                 ),
             ),
             FTL.Message(
@@ -206,9 +186,7 @@ firefox-developer-want-to-be-on-the-cutting-edge = {COPY(developer_quantum, "Wan
                 value=REPLACE(
                     developer_quantum,
                     "Firefox is the only browser with tools built specifically for building and designing with CSS Grid. These tools allow you to visualize the grid, display associated area names, preview transformations on the grid and much more.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -226,9 +204,7 @@ firefox-developer-shapes-editor = {COPY(developer_quantum, "Shapes Editor",)}
                 value=REPLACE(
                     developer_quantum,
                     "Firefox DevTools has a brand new shape path editor that takes the guesswork out of fine-tuning your shape-outside and clip-path shapes by allowing you to very easily fine-tune your adjustments with a visual editor.",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
             FTL.Message(
@@ -236,9 +212,7 @@ firefox-developer-shapes-editor = {COPY(developer_quantum, "Shapes Editor",)}
                 value=REPLACE(
                     developer_quantum,
                     "Firefox DevTools has a brand new shape path editor that takes the guesswork out of fine-tuning your shadow-outside and clip-path shapes by allowing you to very easily fine-tune your adjustments with a visual editor.",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
         ]
@@ -255,9 +229,7 @@ firefox-developer-fonts-panel = {COPY(developer_quantum, "Fonts Panel",)}
                 value=REPLACE(
                     developer_quantum,
                     "The new fonts panel in Firefox DevTools gives developers quick access to all of the information they need about the fonts being used in an element. It also includes valuable information such as the font source, weight, style and more.",
-                    {
-                        "Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),
-                    },
+                    {"Firefox DevTools": TERM_REFERENCE("brand-name-firefox-devtools"),},
                 ),
             ),
             FTL.Message(
@@ -274,11 +246,7 @@ firefox-developer-fonts-panel = {COPY(developer_quantum, "Fonts Panel",)}
             FTL.Message(
                 id=FTL.Identifier("firefox-developer-download-the-firefox-browser"),
                 value=REPLACE(
-                    developer_quantum,
-                    "Download the Firefox browser made for developers",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    developer_quantum, "Download the Firefox browser made for developers", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],
@@ -304,9 +272,7 @@ firefox-developer-fonts-panel = {COPY(developer_quantum, "Fonts Panel",)}
                 value=REPLACE(
                     developer_quantum,
                     "Firefox has been rebuilt from the ground-up to be faster, sleeker, and more powerful than ever.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],
@@ -332,10 +298,7 @@ firefox-developer-fonts-panel = {COPY(developer_quantum, "Fonts Panel",)}
                 value=REPLACE(
                     developer_quantum,
                     "This isn’t just an update. This is Firefox Quantum: A brand new Firefox that has been rebuilt from the ground-up to be faster, sleeker, and more powerful than ever.",
-                    {
-                        "Firefox Quantum": TERM_REFERENCE("brand-name-firefox-quantum"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox Quantum": TERM_REFERENCE("brand-name-firefox-quantum"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

@@ -54,13 +54,7 @@ def test_get_ids_from_files():
 
 def make_mfsa(mfsa_id):
     update_security_advisories.add_or_update_advisory(
-        {
-            "mfsa_id": mfsa_id,
-            "title": "The Dude is insecure",
-            "impact": "High",
-            "announced": "December 25, 2015",
-            "fixed_in": ["Firefox 43.0.1"],
-        },
+        {"mfsa_id": mfsa_id, "title": "The Dude is insecure", "impact": "High", "announced": "December 25, 2015", "fixed_in": ["Firefox 43.0.1"],},
         "The Dude minds, man!",
     )
 

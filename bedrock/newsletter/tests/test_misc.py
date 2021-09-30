@@ -13,22 +13,14 @@ newsletters_mock.return_value = newsletters
 class TestNewsletterModel(TestCase):
     def setUp(self):
         Newsletter.objects.create(
-            slug="dude",
-            data={"title": "Abide", "languages": ["en"]},
+            slug="dude", data={"title": "Abide", "languages": ["en"]},
         )
         Newsletter.objects.create(
-            slug="donnie",
-            data={"title": "Walrus", "languages": ["de"]},
+            slug="donnie", data={"title": "Walrus", "languages": ["de"]},
         )
         self.data = {
-            "dude": {
-                "title": "Abide",
-                "languages": ["en"],
-            },
-            "donnie": {
-                "title": "Walrus",
-                "languages": ["de"],
-            },
+            "dude": {"title": "Abide", "languages": ["en"],},
+            "donnie": {"title": "Walrus", "languages": ["de"],},
         }
 
     def test_refresh_with_change(self):

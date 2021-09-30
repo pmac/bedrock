@@ -17,11 +17,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("send-to-device-send-firefox"),
                 value=REPLACE(
-                    "firefox/sendto.lang",
-                    "Send Firefox to your smartphone or tablet",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    "firefox/sendto.lang", "Send Firefox to your smartphone or tablet", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

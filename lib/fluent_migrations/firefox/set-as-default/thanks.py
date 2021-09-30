@@ -16,22 +16,12 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("set-as-default-thanks-set-as-default-thanks-for-choosing-firefox"),
-                value=REPLACE(
-                    set_default_thanks,
-                    "Thanks for choosing Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(set_default_thanks, "Thanks for choosing Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("set-as-default-thanks-success-your-default-browser"),
                 value=REPLACE(
-                    set_default_thanks,
-                    "Success! Your default browser is set to Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    set_default_thanks, "Success! Your default browser is set to Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -39,9 +29,7 @@ def migrate(ctx):
                 value=REPLACE(
                     set_default_thanks,
                     "Looks like you’re using a different browser right now. Make sure you have Firefox downloaded on your device.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -49,9 +37,7 @@ def migrate(ctx):
                 value=REPLACE(
                     set_default_thanks,
                     "You’re almost done. Just change your default browser to Firefox in the settings panel on your screen.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -67,10 +53,7 @@ set-as-default-thanks-having-trouble-setting-your = {COPY(set_default_thanks, "H
                 value=REPLACE(
                     set_default_thanks,
                     'Here’s everything you need to know about setting your default browser on <a href="%(android)s">Android devices</a>.',
-                    {
-                        "%%": "%",
-                        "%(android)s": VARIABLE_REFERENCE("android"),
-                    },
+                    {"%%": "%", "%(android)s": VARIABLE_REFERENCE("android"),},
                 ),
             ),
             FTL.Message(
@@ -78,10 +61,7 @@ set-as-default-thanks-having-trouble-setting-your = {COPY(set_default_thanks, "H
                 value=REPLACE(
                     set_default_thanks,
                     'Here’s everything you need to know about setting your default browser on <a href="%(ios)s">iOS devices</a>.',
-                    {
-                        "%%": "%",
-                        "%(ios)s": VARIABLE_REFERENCE("ios"),
-                    },
+                    {"%%": "%", "%(ios)s": VARIABLE_REFERENCE("ios"),},
                 ),
             ),
         ]
@@ -94,13 +74,7 @@ set-as-default-thanks-youre-all-set = {COPY(set_default_thanks, "You’re all se
         + [
             FTL.Message(
                 id=FTL.Identifier("set-as-default-thanks-get-firefox-for-mobile"),
-                value=REPLACE(
-                    set_default_thanks,
-                    "Get Firefox for mobile",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(set_default_thanks, "Get Firefox for mobile", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -113,13 +87,7 @@ set-as-default-thanks-download-the-app = {COPY(set_default_thanks, "Download the
         + [
             FTL.Message(
                 id=FTL.Identifier("set-as-default-thanks-join-firefox"),
-                value=REPLACE(
-                    set_default_thanks,
-                    "Join Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(set_default_thanks, "Join Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -136,11 +104,7 @@ set-as-default-thanks-having-trouble = {COPY(set_default_thanks, "Having trouble
                 value=REPLACE(
                     set_default_thanks,
                     'Here’s everything you need to know about setting your default browser on <a href="%(android)s">Android devices</a> or <a href="%(desktop)s">desktop computers</a>.',
-                    {
-                        "%%": "%",
-                        "%(android)s": VARIABLE_REFERENCE("android"),
-                        "%(desktop)s": VARIABLE_REFERENCE("desktop"),
-                    },
+                    {"%%": "%", "%(android)s": VARIABLE_REFERENCE("android"), "%(desktop)s": VARIABLE_REFERENCE("desktop"),},
                 ),
             ),
         ],

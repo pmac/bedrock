@@ -22,13 +22,7 @@ participation-community-participation = {COPY(participation, "Community Particip
         + [
             FTL.Message(
                 id=FTL.Identifier("participation-mozilla-community"),
-                value=REPLACE(
-                    participation,
-                    "Mozilla Community Participation Guidelines",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Mozilla Community Participation Guidelines", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -43,9 +37,7 @@ participation-version-31-updated = {COPY(participation, "Version 3.1 – Updated
                 value=REPLACE(
                     participation,
                     "The heart of Mozilla is people. We put people first and do our best to recognize, appreciate and respect the diversity of our global contributors. The Mozilla Project welcomes contributions from everyone who shares our goals and wants to contribute in a healthy and constructive manner within our community. As such, we have adopted this code of conduct and require all those who participate to agree and adhere to these Community Participation Guidelines in order to help us create a safe and positive community experience for all.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -78,9 +70,7 @@ participation-any-other-dimension = {COPY(participation, "Any other dimension of
                 value=REPLACE(
                     participation,
                     "Openness, collaboration and participation are core aspects of our work — from development on Firefox to collaboratively designing curriculum. We gain strength from diversity and actively seek participation from those who enhance it. These guidelines exist to enable diverse individuals and groups to interact and collaborate to mutual advantage. This document outlines both expected and prohibited behavior.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -96,70 +86,43 @@ participation-when-and-how-to-use = {COPY(participation, "When and How to Use Th
                 value=REPLACE(
                     participation,
                     "These guidelines outline our behavior expectations as members of the Mozilla community in all Mozilla activities, both offline and online. Your participation is contingent upon following these guidelines in all Mozilla activities, including but not limited to:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-working-in-mozilla"),
-                value=REPLACE(
-                    participation,
-                    "Working in Mozilla spaces.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Working in Mozilla spaces.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-working-with-other"),
                 value=REPLACE(
                     participation,
                     "Working with other Mozillians and other Mozilla community participants virtually or co-located.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-representing-mozilla"),
-                value=REPLACE(
-                    participation,
-                    "Representing Mozilla at public events.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Representing Mozilla at public events.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-representing-mozilla-social"),
                 value=REPLACE(
                     participation,
                     "Representing Mozilla in social media (official accounts, staff accounts, personal accounts, Facebook pages).",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Facebook": TERM_REFERENCE("brand-name-facebook"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-participating-in-mozilla"),
-                value=REPLACE(
-                    participation,
-                    "Participating in Mozilla offsites and trainings.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Participating in Mozilla offsites and trainings.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-participating-in-mozilla-related"),
                 value=REPLACE(
                     participation,
                     "Participating in Mozilla-related forums, mailing lists, wikis, websites, chat channels, bugs, group or person-to-person meetings, and Mozilla-related correspondence.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -167,11 +130,7 @@ participation-when-and-how-to-use = {COPY(participation, "When and How to Use Th
                 value=REPLACE(
                     participation,
                     'These guidelines work in conjunction with our Anti-Harassment/Discrimination Policies<a href="%(note1)s">[1]</a>, which sets out protections for, and obligations of, Mozilla employees. The Anti-Harassment/Discrimination Policy is crafted with specific legal definitions and requirements in mind.',
-                    {
-                        "%%": "%",
-                        "%(note1)s": VARIABLE_REFERENCE("note1"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(note1)s": VARIABLE_REFERENCE("note1"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -179,9 +138,7 @@ participation-when-and-how-to-use = {COPY(participation, "When and How to Use Th
                 value=REPLACE(
                     participation,
                     "While these guidelines / code of conduct are specifically aimed at Mozilla’s work and community, we recognize that it is possible for actions taken outside of Mozilla’s online or inperson spaces to have a deep impact on community health. (For example, in the past, we publicly identified an anonymous posting aimed at a Mozilla employee in a non-Mozilla forum as clear grounds for removal from the Mozilla community.) This is an active topic in the diversity and inclusion realm. We anticipate wide-ranging discussions among our communities about appropriate boundaries.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -217,11 +174,7 @@ participation-lead-by-example = {COPY(participation, "Lead by Example",)}
                 value=REPLACE(
                     participation,
                     'By matching your actions with your words, you become a person others want to follow. Your actions influence others to behave and respond in ways that are valuable and appropriate for our organizational outcomes. Design your community and your work for inclusion. Hold yourself and others accountable for inclusive behaviors. Make decisions based on the highest good for <a href="%(mission)s">Mozilla’s mission</a>.',
-                    {
-                        "%%": "%",
-                        "%(mission)s": VARIABLE_REFERENCE("mission"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(mission)s": VARIABLE_REFERENCE("mission"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -257,9 +210,7 @@ participation-consequences-of-unacceptable = {COPY(participation, "Consequences 
                 value=REPLACE(
                     participation,
                     "Bad behavior from any Mozillian, including those with decision-making authority, will not be tolerated. Intentional efforts to exclude people (except as part of a consequence of the guidelines or other official action) from Mozilla activities are not acceptable and will be dealt with appropriately.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -276,11 +227,7 @@ participation-anyone-asked-to-stop = {COPY(participation, "Anyone asked to stop 
                 value=REPLACE(
                     participation,
                     'Mozilla Staff are held accountable, in addition to these guidelines, to Mozilla’s staff Anti-Harassment/Discrimination Policies <a href="%(note1)s">[1]</a>. Mozilla staff in violation of these guidelines may be subject to further consequences, such as disciplinary action, up to and including termination of employment. For contractors or vendors, violation of these guidelines may affect continuation or renewal of contract.',
-                    {
-                        "%%": "%",
-                        "%(note1)s": VARIABLE_REFERENCE("note1"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(note1)s": VARIABLE_REFERENCE("note1"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -297,11 +244,7 @@ participation-reporting = {COPY(participation, "Reporting",)}
                 value=REPLACE(
                     participation,
                     'If you believe you’re experiencing unacceptable behavior that will not be tolerated as outlined above, <a href="%(hotline)s">please use our hotline to report</a>. Reports go directly to Mozilla’s Employment Counsel and HR People Partners and are triaged by the Community Participation Guidelines Response Lead.',
-                    {
-                        "%%": "%",
-                        "%(hotline)s": VARIABLE_REFERENCE("hotline"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(hotline)s": VARIABLE_REFERENCE("hotline"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -315,23 +258,13 @@ participation-after-receiving-a = {COPY(participation, "After receiving a concis
             FTL.Message(
                 id=FTL.Identifier("participation-additional-resources"),
                 value=REPLACE(
-                    participation,
-                    'Additional Resources: <a href="%s">How to Report</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("missing-var"),
-                    },
+                    participation, 'Additional Resources: <a href="%s">How to Report</a>', {"%%": "%", "%s": VARIABLE_REFERENCE("missing-var"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-questions-cpg-questionsmozillacom"),
                 value=REPLACE(
-                    participation,
-                    'Questions: <a href="%s">cpg-questions@mozilla.com</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("missing-var"),
-                    },
+                    participation, 'Questions: <a href="%s">cpg-questions@mozilla.com</a>', {"%%": "%", "%s": VARIABLE_REFERENCE("missing-var"),},
                 ),
             ),
         ]
@@ -345,42 +278,26 @@ participation-if-you-feel-you-have = {COPY(participation, "If you feel you have 
         + [
             FTL.Message(
                 id=FTL.Identifier("participation-mozilla-spaces"),
-                value=REPLACE(
-                    participation,
-                    "Mozilla Spaces",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Mozilla Spaces", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-each-physical-or-virtual"),
                 value=REPLACE(
                     participation,
                     "Each physical or virtual Mozilla space shall have a designated contact.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-mozilla-events"),
-                value=REPLACE(
-                    participation,
-                    "Mozilla Events",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(participation, "Mozilla Events", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("participation-all-mozilla-events"),
                 value=REPLACE(
                     participation,
                     "All Mozilla events will have designated a specific safety guideline with emergency and anti-abuse contacts at the event as well as online. These contacts will be posted prominently throughout the event, and in print and online materials. Event leaders are requested to speak at the event about the guidelines and to ask participants to review and agree to them when they sign up for the event.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -388,10 +305,7 @@ participation-if-you-feel-you-have = {COPY(participation, "If you feel you have 
                 value=REPLACE(
                     participation,
                     'Reports will receive an email notice of receipt. Once an incident has been investigated and a decision has been communicated to the relevant parties, all have the opportunity to appeal this decision by sending an email to <a href="%(mailto_questions)s">cpg-questions@mozilla.com</a>.',
-                    {
-                        "%%": "%",
-                        "%(mailto_questions)s": VARIABLE_REFERENCE("mailto_questions"),
-                    },
+                    {"%%": "%", "%(mailto_questions)s": VARIABLE_REFERENCE("mailto_questions"),},
                 ),
             ),
         ]
@@ -407,11 +321,7 @@ participation-ask-questions = {COPY(participation, "Ask questions",)}
                 value=REPLACE(
                     participation,
                     'Everyone is encouraged to ask questions about these guidelines. If you are organizing an event or activity, reach out for tips building inclusion for your event, activity or space. Your input is welcome and you will always get a response within 24 hours (or on the next weekday, if it is the weekend) if you reach out to <a href="%(mailto_questions)s">cpg-questions@mozilla.com</a>. Please <a href="%(changelog)s">review this change log</a> for updates to this document.',
-                    {
-                        "%%": "%",
-                        "%(mailto_questions)s": VARIABLE_REFERENCE("mailto_questions"),
-                        "%(changelog)s": VARIABLE_REFERENCE("changelog"),
-                    },
+                    {"%%": "%", "%(mailto_questions)s": VARIABLE_REFERENCE("mailto_questions"), "%(changelog)s": VARIABLE_REFERENCE("changelog"),},
                 ),
             ),
         ]
@@ -427,11 +337,7 @@ participation-license-and-attribution = {COPY(participation, "License and attrib
                 value=REPLACE(
                     participation,
                     'This set of guidelines is distributed under a <a href="%(license)s" rel="license">Creative Commons Attribution-ShareAlike license</a>.',
-                    {
-                        "%%": "%",
-                        "%(license)s": VARIABLE_REFERENCE("license"),
-                        "Creative Commons": TERM_REFERENCE("brand-name-creative-commons"),
-                    },
+                    {"%%": "%", "%(license)s": VARIABLE_REFERENCE("license"), "Creative Commons": TERM_REFERENCE("brand-name-creative-commons"),},
                 ),
             ),
             FTL.Message(
@@ -465,9 +371,7 @@ participation-modifications-to-these = {COPY(participation, "Modifications to th
                 value=REPLACE(
                     participation,
                     "Mozilla may amend the guidelines from time to time and may also vary the procedures it sets out where appropriate in a particular case. Your agreement to comply with the guidelines will be deemed agreement to any changes to it. This policy does not form part of any Mozilla employee’s contract of employment or otherwise have contractual effect.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -475,10 +379,7 @@ participation-modifications-to-these = {COPY(participation, "Modifications to th
                 value=REPLACE(
                     participation,
                     '[1] The anti-harassment policy is accessible to paid staff <a href="%s">here</a>.',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("missing-var"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("missing-var"),},
                 ),
             ),
         ],

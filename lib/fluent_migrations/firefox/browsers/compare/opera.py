@@ -19,10 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Firefox vs. Opera: Which is the better browser for you?",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -30,10 +27,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Compare Opera to the Firefox Browser to find out which is the best browser for you.",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"), "Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -41,10 +35,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Comparing Firefox Browser with Opera",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"), "Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -66,9 +57,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Opera’s privacy policy lacks some specificity in its explanation of which types of information it collects and how, in certain sections, it says they collect names of account holders, IP addresses and search terms. What seems confusing and troubling is the section about International data transfers; when, how often and why they need to transfer your data internationally is not explained.",
-                    {
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -76,11 +65,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Firefox’s <a %(attrs)s>privacy policy</a> is very transparent in describing what personal information we collect with the only end goal being to give you greater control over the information you share online.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -88,9 +73,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "As far as actual privacy protections in the Opera browser, it does offer a robust Private mode that allows you to surf the web without the browser tracking your activity. Also in normal browsing mode, you can also turn off some data collection features by digging into the settings to enable the ad blocker and adjust other security features.",
-                    {
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -98,11 +81,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "With the latest version of Firefox, <a %(attrs)s>Enhanced Tracking Protection</a> is turned on by default in normal browsing mode, so you don’t have to mess around with the settings just to protect yourself from trackers. With Enhanced Tracking Protection, Firefox actively blocks thousands of third-party trackers that try to follow you around the web. You are provided with a personalized protection report that shows how often Firefox blocked third-party cookies, social media trackers, fingerprinting tools and cryptominers as you browse the web.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -139,10 +118,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Like Firefox, Opera delivers a scrolling tab experience, which means that when you open more tabs than will fit on screen, it scrolls them off screen instead of just continuously shrinking them down. Also both Firefox and Opera have a screenshot tool that lets you capture a snapshot of your screen or part of the page. However, the Opera tool doesn’t give you the ability to create one huge capture of the whole webpage, only the visible portion.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -194,9 +170,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "In addition to the regular mobile app, Opera has two other mobile versions of its browser: Touch and Mini. Touch is light on features but it’s designed to use on the go with only one hand. The Mini version aims at lowering data usage and increased speeds on slow connections by downgrading images and stripping away content.",
-                    {
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                    },
+                    {"Opera": TERM_REFERENCE("brand-name-opera"),},
                 ),
             ),
             FTL.Message(
@@ -204,11 +178,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "We also offer an additional, albeit experimental version of our Firefox mobile app, <a %(attrs)s>Firefox Preview</a>, which focuses on speed and security.",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -228,10 +198,7 @@ def migrate(ctx):
                 value=REPLACE(
                     opera,
                     "Overall, Opera is a solid browser, with a clean interface and a lot of useful features available. There are, however, some serious privacy concerns as well as an issue with it using a lot of processing power. Although Opera has some really terrific ease of use features, we still believe Firefox remains a superior browser based on performance and with a transparent user-privacy stance and strict privacy protections.",
-                    {
-                        "Opera": TERM_REFERENCE("brand-name-opera"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Opera": TERM_REFERENCE("brand-name-opera"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

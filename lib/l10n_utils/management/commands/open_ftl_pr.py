@@ -127,10 +127,5 @@ class Command(FTLRepoCommand):
             return
 
         title, body = self.commit_message.split("\n\n")
-        pr = self.github.create_pull(
-            title=title,
-            body=body,
-            base="master",
-            head=self.branch_name,
-        )
+        pr = self.github.create_pull(title=title, body=body, base="master", head=self.branch_name,)
         self.stdout.write(f"Opened a pull-request: {pr.html_url}")

@@ -31,10 +31,7 @@ CACHES["l10n"] = {
     "BACKEND": "bedrock.base.cache.SimpleDictCache",
     "LOCATION": "l10n",
     "TIMEOUT": DOTLANG_CACHE,
-    "OPTIONS": {
-        "MAX_ENTRIES": 5000,
-        "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-    },
+    "OPTIONS": {"MAX_ENTRIES": 5000, "CULL_FREQUENCY": 4,},  # 1/4 entries deleted if max reached
 }
 
 # cache for Fluent files
@@ -42,20 +39,14 @@ CACHES["fluent"] = {
     "BACKEND": "bedrock.base.cache.SimpleDictCache",
     "LOCATION": "fluent",
     "TIMEOUT": FLUENT_CACHE_TIMEOUT,
-    "OPTIONS": {
-        "MAX_ENTRIES": 5000,
-        "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-    },
+    "OPTIONS": {"MAX_ENTRIES": 5000, "CULL_FREQUENCY": 4,},  # 1/4 entries deleted if max reached
 }
 
 # cache for product details
 CACHES["product-details"] = {
     "BACKEND": "bedrock.base.cache.SimpleDictCache",
     "LOCATION": "product-details",
-    "OPTIONS": {
-        "MAX_ENTRIES": 200,  # currently 104 json files
-        "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-    },
+    "OPTIONS": {"MAX_ENTRIES": 200, "CULL_FREQUENCY": 4,},  # currently 104 json files  # 1/4 entries deleted if max reached
 }
 
 # cache for release notes
@@ -73,10 +64,7 @@ CACHES["release-notes"] = {
 CACHES["externalfiles"] = {
     "BACKEND": "bedrock.base.cache.SimpleDictCache",
     "LOCATION": "externalfiles",
-    "OPTIONS": {
-        "MAX_ENTRIES": 10,  # currently 2 files
-        "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-    },
+    "OPTIONS": {"MAX_ENTRIES": 10, "CULL_FREQUENCY": 4,},  # currently 2 files  # 1/4 entries deleted if max reached
 }
 
 # cache for generated QR codes
@@ -84,10 +72,7 @@ CACHES["qrcode"] = {
     "BACKEND": "bedrock.base.cache.SimpleDictCache",
     "LOCATION": "qrcode",
     "TIMEOUT": None,
-    "OPTIONS": {
-        "MAX_ENTRIES": 20,
-        "CULL_FREQUENCY": 4,  # 1/4 entries deleted if max reached
-    },
+    "OPTIONS": {"MAX_ENTRIES": 20, "CULL_FREQUENCY": 4,},  # 1/4 entries deleted if max reached
 }
 
 MEDIA_URL = CDN_BASE_URL + MEDIA_URL

@@ -27,11 +27,7 @@ error-page-its-probably-just-a-server-error = {COPY(error_page, "It’s probably
                 value=REPLACE(
                     error_page,
                     "You can also try refreshing this page or go to <a href=%(firefox)s>firefox.com</a> or <a href=%(mozilla)s>mozilla.org</a>",
-                    {
-                        "%%": "%",
-                        "%(firefox)s": VARIABLE_REFERENCE("firefox"),
-                        "%(mozilla)s": VARIABLE_REFERENCE("mozilla"),
-                    },
+                    {"%%": "%", "%(firefox)s": VARIABLE_REFERENCE("firefox"), "%(mozilla)s": VARIABLE_REFERENCE("mozilla"),},
                 ),
             ),
         ],

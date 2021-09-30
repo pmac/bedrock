@@ -173,11 +173,7 @@ URLS = flatten(
         url_test(
             "/firefox/update/and/stuff/",
             "/firefox/new/",
-            query={
-                "utm_source": "firefox-browser",
-                "utm_medium": "firefox-browser",
-                "utm_campaign": "firefox-update-redirect",
-            },
+            query={"utm_source": "firefox-browser", "utm_medium": "firefox-browser", "utm_campaign": "firefox-update-redirect",},
         ),
         # bug 868182
         url_test("/firefox/mobile/faq/?os=firefox-os", "https://support.mozilla.org/products/firefox-os"),
@@ -265,10 +261,7 @@ URLS = flatten(
         url_test(
             "/mozillacareers",
             "https://wiki.mozilla.org/People/mozillacareers",
-            query={
-                "utm_medium": "redirect",
-                "utm_source": "mozillacareers-vanity",
-            },
+            query={"utm_medium": "redirect", "utm_source": "mozillacareers-vanity",},
         ),
         # Bug 987852 & 1201914
         url_test("/MPL/Revision-FAQ.html", "/MPL/Revision-FAQ/"),
@@ -732,12 +725,7 @@ URLS = flatten(
         url_test(
             "/firefox/42.0/firstrun/eu/",
             "/firefox/42.0/firstrun/",
-            query={
-                "utm_source": "direct",
-                "utm_medium": "none",
-                "utm_campaign": "redirect",
-                "utm_content": "eu-firstrun-redirect",
-            },
+            query={"utm_source": "direct", "utm_medium": "none", "utm_campaign": "redirect", "utm_content": "eu-firstrun-redirect",},
         ),
         # bug 845983
         url_test("/metrofirefox/random/stuff/", "/firefox/random/stuff/"),
@@ -942,11 +930,7 @@ URLS = flatten(
         url_test(
             "/css-grid",
             "https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Grids",
-            query={
-                "utm_source": "redirect",
-                "utm_medium": "collateral",
-                "utm_campaign": "css-grid",
-            },
+            query={"utm_source": "redirect", "utm_medium": "collateral", "utm_campaign": "css-grid",},
         ),
         # Bug 1361194, issue 8375
         url_test("/internethealth", "https://foundation.mozilla.org/internet-health/"),
@@ -1089,11 +1073,7 @@ URLS = flatten(
         url_test(
             "/builders{,/}",
             "https://builders.mozilla.community/",
-            query={
-                "utm_source": "www.mozilla.org",
-                "utm_medium": "referral",
-                "utm_campaign": "builders-redirect",
-            },
+            query={"utm_source": "www.mozilla.org", "utm_medium": "referral", "utm_campaign": "builders-redirect",},
         ),
         # Issue 6824
         url_test("/technology/", "https://labs.mozilla.org/"),
@@ -1136,10 +1116,7 @@ URLS = flatten(
         url_test(
             "/openletter/",
             "https://foundation.mozilla.org/blog/mozilla-urges-facebook-and-twitter-halt-dangerous-recommendations/",
-            query={
-                "utm_source": "mozilla.org",
-                "utm_content": "shortlink",
-            },
+            query={"utm_source": "mozilla.org", "utm_content": "shortlink",},
         ),
         # Bug 1673476
         url_test("/about/governance/policies/security-group/certs/", "https://wiki.mozilla.org/CA"),

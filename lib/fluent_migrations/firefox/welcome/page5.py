@@ -19,9 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     page5,
                     "Firefox Lockwise — password manager — take your passwords everywhere",
-                    {
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
         ]
@@ -37,31 +35,16 @@ welcome-page5-theres-an-easier-way-to-deal = {COPY(page5, "There’s an easier w
                 value=REPLACE(
                     page5,
                     "Let Firefox save them for you. Then use Firefox Lockwise to safely access your passwords across all your apps, on all of your devices.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page5-get-the-lockwise-app"),
-                value=REPLACE(
-                    page5,
-                    "Get the Lockwise App",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
-                ),
+                value=REPLACE(page5, "Get the Lockwise App", {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page5-get-firefox-lockwise-on-your"),
-                value=REPLACE(
-                    page5,
-                    "Get Firefox Lockwise on your Phone",
-                    {
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
-                ),
+                value=REPLACE(page5, "Get Firefox Lockwise on your Phone", {"Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},),
             ),
         ]
         + transforms_from(
@@ -76,9 +59,7 @@ welcome-page5-send-the-download-link-right = {COPY(page5, "Send the download lin
                 value=REPLACE(
                     page5,
                     "Download Firefox Lockwise for your smartphone and tablet.",
-                    {
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
         ]
@@ -98,9 +79,7 @@ welcome-page5-no-more-making-up-new-passwords = {COPY(page5, "No more making up 
                 value=REPLACE(
                     page5,
                     "Lockwise will recommend new, strong passwords whenever you set up a new login.",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
+                    {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},
                 ),
             ),
         ]
@@ -116,9 +95,7 @@ welcome-page5-help-during-a-breach = {COPY(page5, "Help during a breach",)}
                 value=REPLACE(
                     page5,
                     "Lockwise will let you know if your saved logins have been part of a corporate data breach, so you can change them asap.",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
+                    {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},
                 ),
             ),
         ]

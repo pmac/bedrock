@@ -25,9 +25,7 @@ privacy-principles-data-privacy-principles = {COPY(principles, "Data Privacy Pri
                 value=REPLACE(
                     principles,
                     "Mozilla is an open source project with a mission to improve your Internet experience. This is a driving force behind our privacy practices.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -35,11 +33,7 @@ privacy-principles-data-privacy-principles = {COPY(principles, "Data Privacy Pri
                 value=REPLACE(
                     principles,
                     'The following five principles stem from the <a href="%(link)s">Mozilla Manifesto</a> and inform how we:',
-                    {
-                        "%%": "%",
-                        "%(link)s": VARIABLE_REFERENCE("link"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(link)s": VARIABLE_REFERENCE("link"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]

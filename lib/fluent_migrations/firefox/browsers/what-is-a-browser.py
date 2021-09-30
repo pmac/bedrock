@@ -58,10 +58,7 @@ what-is-a-browser-a-web-browser-long = {COPY(what_is_a_browser, "A web browser t
                 value=REPLACE(
                     what_is_a_browser,
                     'Sadly, not all browser makers choose to interpret the format in the same way. For users, this means that a website can look and function differently. Creating consistency between browsers, so that any user can enjoy the internet, regardless of the browser they choose, is called <a href="%(standards)s">web standards</a>.',
-                    {
-                        "%%": "%",
-                        "%(standards)s": VARIABLE_REFERENCE("standards"),
-                    },
+                    {"%%": "%", "%(standards)s": VARIABLE_REFERENCE("standards"),},
                 ),
             ),
             FTL.Message(
@@ -69,10 +66,7 @@ what-is-a-browser-a-web-browser-long = {COPY(what_is_a_browser, "A web browser t
                 value=REPLACE(
                     what_is_a_browser,
                     'When the web browser fetches data from an internet connected server and it then uses a piece of software called a rendering engine to translate that data into text and images. This data is written in <a href="%(html)s">Hypertext Markup Language</a> (HTML) and web browsers read this code to create what we see, hear and experience on the internet.',
-                    {
-                        "%%": "%",
-                        "%(html)s": VARIABLE_REFERENCE("html"),
-                    },
+                    {"%%": "%", "%(html)s": VARIABLE_REFERENCE("html"),},
                 ),
             ),
             FTL.Message(
@@ -80,11 +74,7 @@ what-is-a-browser-a-web-browser-long = {COPY(what_is_a_browser, "A web browser t
                 value=REPLACE(
                     what_is_a_browser,
                     '<a href="%(hyperlink)s">Hyperlinks</a> allow users to follow a path to other pages or sites on the web. Every webpage, image and video has its own unique <a href="%(url)s">Uniform Resource Locator</a> (URL), which is also known as a web address. When a browser visits a server for data, the web address tells the browser where to look for each item that is described in the html, which then tells the browser where it goes on the web page.',
-                    {
-                        "%%": "%",
-                        "%(hyperlink)s": VARIABLE_REFERENCE("hyperlink"),
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(hyperlink)s": VARIABLE_REFERENCE("hyperlink"), "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ]
@@ -100,10 +90,7 @@ what-is-a-browser-cookies-not-the = {COPY(what_is_a_browser, "Cookies (not the y
                 value=REPLACE(
                     what_is_a_browser,
                     'Websites save information about you in files called <a href="%(cookies)s">cookies</a>. They are saved on your computer for the next time you visit that site. Upon your return, the website code will read that file to see that it’s you. For example, when you go to a website and the page remembers your username and password – that’s made possible by a cookie.',
-                    {
-                        "%%": "%",
-                        "%(cookies)s": VARIABLE_REFERENCE("cookies"),
-                    },
+                    {"%%": "%", "%(cookies)s": VARIABLE_REFERENCE("cookies"),},
                 ),
             ),
         ]
@@ -121,9 +108,7 @@ what-is-a-browser-understanding = {COPY(what_is_a_browser, "Understanding privac
                 value=REPLACE(
                     what_is_a_browser,
                     "Nearly all major browsers have a private browsing setting. These exist to hide the browsing history from other users on the same computer. Many people think that private browsing or incognito mode will hide both their identity and browsing history from internet service providers, governments and advertisers. They don’t. These settings just clear the history on your system, which is helpful if you’re dealing with sensitive personal information on a shared or public computer. Firefox goes beyond that.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -131,9 +116,7 @@ what-is-a-browser-understanding = {COPY(what_is_a_browser, "Understanding privac
                 value=REPLACE(
                     what_is_a_browser,
                     "Firefox helps you be more private online by letting you block trackers from following you around the web.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -150,10 +133,7 @@ what-is-a-browser-most-major-web = {COPY(what_is_a_browser, "Most major web brow
                 value=REPLACE(
                     what_is_a_browser,
                     "All browser makers develop their products to display images and video as quickly and smoothly as possible making it easy for you to make the most of the web. They all work hard to make sure users have a browser that is fast, powerful and easy to use. Where they differ is why. It’s important to choose the right browser for you. Mozilla builds Firefox to ensure that users have control over their online lives and to ensure that the internet is a global, public resource, accessible to all.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

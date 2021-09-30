@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("manifesto-the-mozilla-manifesto"),
-                value=REPLACE(
-                    manifesto,
-                    "The Mozilla Manifesto",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(manifesto, "The Mozilla Manifesto", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -64,13 +58,7 @@ manifesto-10 = {COPY(manifesto, "10",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("manifesto-the-mozilla-manifesto-addendum"),
-                value=REPLACE(
-                    manifesto,
-                    "The Mozilla Manifesto Addendum",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(manifesto, "The Mozilla Manifesto Addendum", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -92,9 +80,7 @@ manifesto-show-your-support = {COPY(manifesto, "Show Your Support",)}
                 value=REPLACE(
                     manifesto,
                     "An internet with these qualities will not come to life on its own. Individuals and organizations must embed these aspirations into internet technology and into the human experience with the internet. The Mozilla Manifesto and Addendum represent Mozilla’s commitment to advancing these aspirations. We aim to work together with people and organizations everywhere who share these goals to make the internet an even better place for everyone.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -107,13 +93,7 @@ manifesto-i-support-the-vision-of = {COPY(manifesto, "I support the vision of a 
         + [
             FTL.Message(
                 id=FTL.Identifier("manifesto-share-on-twitter"),
-                value=REPLACE(
-                    manifesto,
-                    "Share on Twitter",
-                    {
-                        "Twitter": TERM_REFERENCE("brand-name-twitter"),
-                    },
-                ),
+                value=REPLACE(manifesto, "Share on Twitter", {"Twitter": TERM_REFERENCE("brand-name-twitter"),},),
             ),
         ]
         + transforms_from(
@@ -132,13 +112,7 @@ manifesto-explore-how-the-web-works = {COPY(manifesto, "Explore how the web work
         + [
             FTL.Message(
                 id=FTL.Identifier("manifesto-see-how-mozilla-works"),
-                value=REPLACE(
-                    manifesto,
-                    "See how Mozilla works to put your privacy first",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(manifesto, "See how Mozilla works to put your privacy first", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -163,11 +137,7 @@ manifesto-learn-how-to-collaborate = {COPY(manifesto, "Learn how to collaborate 
             FTL.Message(
                 id=FTL.Identifier("manifesto-visualize-who-you-interact"),
                 value=REPLACE(
-                    manifesto,
-                    "Visualize who you interact with on the web with Lightbeam",
-                    {
-                        "Lightbeam": TERM_REFERENCE("brand-name-lightbeam"),
-                    },
+                    manifesto, "Visualize who you interact with on the web with Lightbeam", {"Lightbeam": TERM_REFERENCE("brand-name-lightbeam"),},
                 ),
             ),
         ]
@@ -180,13 +150,7 @@ manifesto-learn-about-creating-web = {COPY(manifesto, "Learn about creating web 
         + [
             FTL.Message(
                 id=FTL.Identifier("manifesto-host-or-join-a-maker-party"),
-                value=REPLACE(
-                    manifesto,
-                    "Host or join a Maker Party",
-                    {
-                        "Maker Party": TERM_REFERENCE("brand-name-maker-party"),
-                    },
-                ),
+                value=REPLACE(manifesto, "Host or join a Maker Party", {"Maker Party": TERM_REFERENCE("brand-name-maker-party"),},),
             ),
         ]
         + transforms_from(
@@ -201,11 +165,7 @@ manifesto-love-the-web = {COPY(manifesto, "Love the web?",)}
             FTL.Message(
                 id=FTL.Identifier("manifesto-get-the-mozilla-newsletter"),
                 value=REPLACE(
-                    manifesto,
-                    "Get the Mozilla newsletter and help us keep it open and free.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    manifesto, "Get the Mozilla newsletter and help us keep it open and free.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ],
@@ -217,13 +177,7 @@ manifesto-love-the-web = {COPY(manifesto, "Love the web?",)}
         [
             FTL.Message(
                 id=FTL.Identifier("manifesto-details-the-mozilla-manifesto"),
-                value=REPLACE(
-                    manifesto,
-                    "The Mozilla Manifesto",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(manifesto, "The Mozilla Manifesto", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -239,10 +193,7 @@ manifesto-details-the-internet-is-becoming = {COPY(manifesto, "The Internet is b
                 value=REPLACE(
                     manifesto,
                     "The Mozilla project is a global community of people who believe that openness, innovation, and opportunity are key to the continued health of the Internet. We have worked together since 1998 to ensure that the Internet is developed in a way that benefits everyone. We are best known for creating the Mozilla Firefox web browser.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -250,9 +201,7 @@ manifesto-details-the-internet-is-becoming = {COPY(manifesto, "The Internet is b
                 value=REPLACE(
                     manifesto,
                     "The Mozilla project uses a community-based approach to create world-class open source software and to develop new types of collaborative activities. We create communities of people involved in making the Internet experience better for all of us.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -269,10 +218,7 @@ manifesto-details-the-goals-for = {COPY(manifesto, "The goals for the Manifesto 
                 value=REPLACE(
                     manifesto,
                     "articulate a vision for the Internet that Mozilla participants want the Mozilla Foundation to pursue;",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},
                 ),
             ),
         ]
@@ -288,9 +234,7 @@ manifesto-details-speak-to-people = {COPY(manifesto, "speak to people whether or
                 value=REPLACE(
                     manifesto,
                     "make Mozilla contributors proud of what we're doing and motivate us to continue; and",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -306,10 +250,7 @@ manifesto-details-provide-a-framework = {COPY(manifesto, "provide a framework fo
                 value=REPLACE(
                     manifesto,
                     "These principles will not come to life on their own. People are needed to make the Internet open and participatory - people acting as individuals, working together in groups, and leading others. The Mozilla Foundation is committed to advancing the principles set out in the Mozilla Manifesto. We invite others to join us and make the Internet an ever better place for everyone.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},
                 ),
             ),
         ]
@@ -332,44 +273,26 @@ manifesto-details-magnifying-the = {COPY(manifesto, "Magnifying the public benef
         + [
             FTL.Message(
                 id=FTL.Identifier("manifesto-details-advancing-the"),
-                value=REPLACE(
-                    manifesto,
-                    "Advancing the Mozilla Manifesto",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(manifesto, "Advancing the Mozilla Manifesto", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("manifesto-details-there-are-many"),
                 value=REPLACE(
                     manifesto,
                     "There are many different ways of advancing the principles of the Mozilla Manifesto. We welcome a broad range of activities, and anticipate the same creativity that Mozilla participants have shown in other areas of the project. For individuals not deeply involved in the Mozilla project, one basic and very effective way to support the Manifesto is to use Mozilla Firefox and other products that embody the principles of the Manifesto.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("manifesto-details-mozilla-foundation"),
-                value=REPLACE(
-                    manifesto,
-                    "Mozilla Foundation Pledge",
-                    {
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
-                ),
+                value=REPLACE(manifesto, "Mozilla Foundation Pledge", {"Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("manifesto-details-the-mozilla-foundation-pleges"),
                 value=REPLACE(
                     manifesto,
                     "The Mozilla Foundation pledges to support the Mozilla Manifesto in its activities. Specifically, we will:",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},
                 ),
             ),
         ]
@@ -386,9 +309,7 @@ manifesto-details-build-and-deliver = {COPY(manifesto, "build and deliver great 
                 value=REPLACE(
                     manifesto,
                     "use the Mozilla assets (intellectual property such as copyrights and trademarks, infrastructure, funds, and reputation) to keep the Internet an open platform;",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -404,9 +325,7 @@ manifesto-details-promote-models = {COPY(manifesto, "promote models for creating
                 value=REPLACE(
                     manifesto,
                     "promote the Mozilla Manifesto principles in public discourse and within the Internet industry.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -433,10 +352,7 @@ manifesto-details-invitation = {COPY(manifesto, "Invitation",)}
                 value=REPLACE(
                     manifesto,
                     "The Mozilla Foundation invites all others who support the principles of the Mozilla Manifesto to join with us, and to find new ways to make this vision of the Internet a reality.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Mozilla Foundation": TERM_REFERENCE("brand-name-mozilla-foundation"),},
                 ),
             ),
         ],

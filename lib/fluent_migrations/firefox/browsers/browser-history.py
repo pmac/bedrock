@@ -31,10 +31,7 @@ browser-history-in-1950-computers = {COPY(browser_history, "In 1950, computers t
                 value=REPLACE(
                     browser_history,
                     '<a href="%(arpanet)s">ARPANET</a> was the first successful networking project and in 1969 the first message was sent from the computer science lab at University of California, Los Angeles (UCLA) to Stanford Research Institute (SRI), also in California.',
-                    {
-                        "%%": "%",
-                        "%(arpanet)s": VARIABLE_REFERENCE("arpanet"),
-                    },
+                    {"%%": "%", "%(arpanet)s": VARIABLE_REFERENCE("arpanet"),},
                 ),
             ),
         ]
@@ -51,10 +48,7 @@ browser-history-web-era = {COPY(browser_history, "Web Era",)}
                 value=REPLACE(
                     browser_history,
                     'British computer scientist Tim Berners-Lee created the first web server and graphical web browser in 1990 while <a href="%(cern)s">working at CERN</a>, the European Organization for Nuclear Research, in Switzerland. He called his new window into the internet “WorldWideWeb.” It was an easy-to-use graphical interface created for the NeXT computer. For the first time, text documents were linked together over a public network—the web as we know it.',
-                    {
-                        "%%": "%",
-                        "%(cern)s": VARIABLE_REFERENCE("cern"),
-                    },
+                    {"%%": "%", "%(cern)s": VARIABLE_REFERENCE("cern"),},
                 ),
             ),
         ]
@@ -209,11 +203,7 @@ browser-history-browsing-the-web = {COPY(browser_history, "Browsing the Web Toda
                 value=REPLACE(
                     browser_history,
                     'In the future, the web will likely stray further from its hypertext roots to become a vast sea of interactive experiences. Virtual reality has been on the horizon for decades (at least since the release of Lawnmower Man in 1992 and the Nintendo Virtual Boy in 1995), but the web may finally bring it to the masses. Firefox now has support for <a href="%(vr)s">WebVR and A-Frame</a>, which let developers quickly and easily build virtual reality websites. Most modern mobile devices support <a href="%(vr)s">WebVR</a>, and can easily be used as headsets with simple cardboard cases. A 3D virtual reality web like the one imagined by science fiction author Neal Stephenson may be just around the corner. If that’s the case, the web browser itself may completely disappear and become a true window into another world.',
-                    {
-                        "%%": "%",
-                        "%(vr)s": VARIABLE_REFERENCE("vr"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(vr)s": VARIABLE_REFERENCE("vr"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -221,10 +211,7 @@ browser-history-browsing-the-web = {COPY(browser_history, "Browsing the Web Toda
                 value=REPLACE(
                     browser_history,
                     "Whatever the future of the web holds, Mozilla and Firefox will be there for users, ensuring that they have powerful tools to experience the web and all it has to offer. The web is for everyone, and everyone should have control of their online experience. That’s why we give Firefox tools to protect user privacy and we never sell user data to advertisers.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]

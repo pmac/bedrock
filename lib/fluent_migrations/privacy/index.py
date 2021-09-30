@@ -16,23 +16,11 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("privacy-index-mozilla-privacy"),
-                value=REPLACE(
-                    index,
-                    "Mozilla Privacy",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(index, "Mozilla Privacy", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-index-contact-mozilla"),
-                value=REPLACE(
-                    index,
-                    "Contact Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(index, "Contact Mozilla", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -45,12 +33,7 @@ privacy-index-if-you-want-to-make-a-correction = {COPY(index, "If you want to ma
             FTL.Message(
                 id=FTL.Identifier("privacy-index-see-here-for-data-subject"),
                 value=REPLACE(
-                    index,
-                    '<a href="%(dsar)s">See here for Data Subject Access Requests.</a>',
-                    {
-                        "%%": "%",
-                        "%(dsar)s": VARIABLE_REFERENCE("dsar"),
-                    },
+                    index, '<a href="%(dsar)s">See here for Data Subject Access Requests.</a>', {"%%": "%", "%(dsar)s": VARIABLE_REFERENCE("dsar"),},
                 ),
             ),
             FTL.Message(
@@ -58,10 +41,7 @@ privacy-index-if-you-want-to-make-a-correction = {COPY(index, "If you want to ma
                 value=REPLACE(
                     index,
                     'For product support requests, please <a href="%(sumo)s">visit our forums</a>.',
-                    {
-                        "%%": "%",
-                        "%(sumo)s": VARIABLE_REFERENCE("sumo"),
-                    },
+                    {"%%": "%", "%(sumo)s": VARIABLE_REFERENCE("sumo"),},
                 ),
             ),
         ]
@@ -112,11 +92,7 @@ privacy-index-transparency-report = {COPY(index, "Transparency Report",)}
                 value=REPLACE(
                     index,
                     'As an open source project, transparency and openness are an essential part of Mozilla’s founding principles. Our codebases are open and auditable. Our development work is open. Our bi-annual <a href="%(report)s">Transparency Report</a> also demonstrates our commitment to these principles.',
-                    {
-                        "%%": "%",
-                        "%(report)s": VARIABLE_REFERENCE("report"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(report)s": VARIABLE_REFERENCE("report"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -124,11 +100,7 @@ privacy-index-transparency-report = {COPY(index, "Transparency Report",)}
                 value=REPLACE(
                     index,
                     'To review and comment on proposed changes to our privacy policies, <a href="%(group)s"> subscribe to Mozilla’s governance group</a>.',
-                    {
-                        "%%": "%",
-                        "%(group)s": VARIABLE_REFERENCE("group"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(group)s": VARIABLE_REFERENCE("group"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -136,11 +108,7 @@ privacy-index-transparency-report = {COPY(index, "Transparency Report",)}
                 value=REPLACE(
                     index,
                     'To review and comment on proposed changes to our privacy policies <a href="%(group)s"> subscribe to Mozilla’s Governance Group</a>.',
-                    {
-                        "%%": "%",
-                        "%(group)s": VARIABLE_REFERENCE("group"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(group)s": VARIABLE_REFERENCE("group"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -148,32 +116,17 @@ privacy-index-transparency-report = {COPY(index, "Transparency Report",)}
                 value=REPLACE(
                     index,
                     'Read more about our ongoing privacy and security public policy work on <a href="%(blog)s">Mozilla\'s Open Policy and Advocacy Blog</a>.',
-                    {
-                        "%%": "%",
-                        "%(blog)s": VARIABLE_REFERENCE("blog"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(blog)s": VARIABLE_REFERENCE("blog"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-index-mozilla-websites-communications"),
-                value=REPLACE(
-                    index,
-                    "Mozilla Websites, Communications &amp; Cookies",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(index, "Mozilla Websites, Communications &amp; Cookies", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("privacy-index-firefox-fire-tv"),
                 value=REPLACE(
-                    index,
-                    "Firefox for Fire TV",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Fire TV": TERM_REFERENCE("brand-name-fire-tv"),
-                    },
+                    index, "Firefox for Fire TV", {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Fire TV": TERM_REFERENCE("brand-name-fire-tv"),},
                 ),
             ),
         ]

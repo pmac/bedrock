@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("set-as-default-landing-make-firefox-your-default"),
-                value=REPLACE(
-                    whatsnew_73,
-                    "Make Firefox your default browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(whatsnew_73, "Make Firefox your default browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -37,9 +31,7 @@ set-as-default-landing-make-sure-youre-protected = {COPY(whatsnew_73, "Make sure
                 value=REPLACE(
                     whatsnew_73,
                     "Thanks for using the latest Firefox browser. When you choose Firefox, you support a better web for you and everyone else. Now take the next step to protect yourself.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -55,9 +47,7 @@ set-as-default-landing-choose-automatic-privacy = {COPY(whatsnew_73, "Choose aut
                 value=REPLACE(
                     whatsnew_73,
                     "Companies keep finding new ways to poach your personal data. Firefox is the browser with a mission of finding new ways to protect you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -109,9 +99,7 @@ set-as-default-landing-choose-corporate-independence = {COPY(whatsnew_73, "Choos
                 value=REPLACE(
                     whatsnew_73,
                     "The internet keeps finding new ways to poach your personal data. Firefox is the only browser with a mission of finding new ways to protect you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(

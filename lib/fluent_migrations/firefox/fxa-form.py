@@ -19,9 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "main.lang",
                     "<strong>Enter your email</strong> to access Firefox Accounts.",
-                    {
-                        "Firefox Accounts": TERM_REFERENCE("brand-name-firefox-accounts"),
-                    },
+                    {"Firefox Accounts": TERM_REFERENCE("brand-name-firefox-accounts"),},
                 ),
             ),
             FTL.Message(
@@ -29,11 +27,7 @@ def migrate(ctx):
                 value=REPLACE(
                     "main.lang",
                     'By proceeding, you agree to the <a href="%(url1)s">Terms of Service</a> and <a href="%(url2)s">Privacy Notice</a>.',
-                    {
-                        "%%": "%",
-                        "%(url1)s": VARIABLE_REFERENCE("url1"),
-                        "%(url2)s": VARIABLE_REFERENCE("url2"),
-                    },
+                    {"%%": "%", "%(url1)s": VARIABLE_REFERENCE("url1"), "%(url2)s": VARIABLE_REFERENCE("url2"),},
                 ),
             ),
         ],

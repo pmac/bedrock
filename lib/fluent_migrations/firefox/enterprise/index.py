@@ -19,10 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     index,
                     "Get Firefox for your enterprise with ESR and Rapid Release",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "ESR": TERM_REFERENCE("brand-name-esr"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "ESR": TERM_REFERENCE("brand-name-esr"),},
                 ),
             ),
             FTL.Message(
@@ -30,21 +27,12 @@ def migrate(ctx):
                 value=REPLACE(
                     index,
                     "Get unmatched data protection on the release cadence that suits you with Firefox for enterprise. Download ESR and Rapid Release.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "ESR": TERM_REFERENCE("brand-name-esr"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "ESR": TERM_REFERENCE("brand-name-esr"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-enterprise"),
-                value=REPLACE(
-                    index,
-                    "Enterprise",
-                    {
-                        "Enterprise": TERM_REFERENCE("brand-name-enterprise"),
-                    },
-                ),
+                value=REPLACE(index, "Enterprise", {"Enterprise": TERM_REFERENCE("brand-name-enterprise"),},),
             ),
         ]
         + transforms_from(
@@ -57,13 +45,7 @@ firefox-enterprise-downloads = {COPY(index, "Downloads",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-get-firefox-for-your-enterprise"),
-                value=REPLACE(
-                    index,
-                    "Get Firefox for your enterprise",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(index, "Get Firefox for your enterprise", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-get-the-firefox-extended-support"),
@@ -90,9 +72,7 @@ firefox-enterprise-unmatched-data-protection = {COPY(index, "Unmatched data prot
                 value=REPLACE(
                     index,
                     "The Firefox browser is open source and provides Enhanced Tracking Protection — all part of our longstanding commitment to data protection.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -109,10 +89,7 @@ firefox-enterprise-deploy-when-and-how-you-want = {COPY(index, "Deploy when and 
                 value=REPLACE(
                     index,
                     "With install packages and a wide expansion of group policies and features, deployment is faster and more flexible than ever — and a breeze in Windows and MacOS environments.",
-                    {
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                        "MacOS": TERM_REFERENCE("brand-name-mac"),
-                    },
+                    {"Windows": TERM_REFERENCE("brand-name-windows"), "MacOS": TERM_REFERENCE("brand-name-mac"),},
                 ),
             ),
         ]
@@ -126,23 +103,11 @@ firefox-enterprise-get-rapid-releases-to-make = {COPY(index, "Get rapid releases
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-enterprise-downloads"),
-                value=REPLACE(
-                    index,
-                    "Enterprise downloads",
-                    {
-                        "Enterprise": TERM_REFERENCE("brand-name-enterprise"),
-                    },
-                ),
+                value=REPLACE(index, "Enterprise downloads", {"Enterprise": TERM_REFERENCE("brand-name-enterprise"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-windows-64-bit"),
-                value=REPLACE(
-                    index,
-                    "Windows 64-bit",
-                    {
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
-                ),
+                value=REPLACE(index, "Windows 64-bit", {"Windows": TERM_REFERENCE("brand-name-windows"),},),
             ),
         ]
         + transforms_from(
@@ -158,10 +123,7 @@ firefox-enterprise-select-your-download = {COPY(index, "Select your download",)}
                 value=REPLACE(
                     index,
                     "Firefox browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -169,10 +131,7 @@ firefox-enterprise-select-your-download = {COPY(index, "Select your download",)}
                 value=REPLACE(
                     index,
                     "Firefox browser - MSI installer",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Firefox browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Firefox browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -214,14 +173,7 @@ firefox-enterprise-documentation-and-community = {COPY(index, "Documentation and
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-sample-plist-for-configuration"),
-                value=REPLACE(
-                    index,
-                    'Sample <a href="%s">plist for configuration profile</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                    },
-                ),
+                value=REPLACE(index, 'Sample <a href="%s">plist for configuration profile</a>', {"%%": "%", "%s": VARIABLE_REFERENCE("url"),},),
             ),
         ]
         + transforms_from(
@@ -233,24 +185,14 @@ firefox-enterprise-pkg-installer = {COPY(index, "PKG installer",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-windows-32-bit"),
-                value=REPLACE(
-                    index,
-                    "Windows 32-bit",
-                    {
-                        "Windows": TERM_REFERENCE("brand-name-windows"),
-                    },
-                ),
+                value=REPLACE(index, "Windows 32-bit", {"Windows": TERM_REFERENCE("brand-name-windows"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-enterprise-download-firefox-esr-or-rapid"),
                 value=REPLACE(
                     index,
                     'Download Firefox ESR or Rapid Release for<br> <a href="%(firefox_all)s">another language or platform.</a>',
-                    {
-                        "%%": "%",
-                        "%(firefox_all)s": VARIABLE_REFERENCE("firefox_all"),
-                        "Firefox ESR": TERM_REFERENCE("brand-name-firefox-esr"),
-                    },
+                    {"%%": "%", "%(firefox_all)s": VARIABLE_REFERENCE("firefox_all"), "Firefox ESR": TERM_REFERENCE("brand-name-firefox-esr"),},
                 ),
             ),
         ],

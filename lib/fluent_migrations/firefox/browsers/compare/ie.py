@@ -19,10 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "Firefox vs. Internet Explorer: Which is the better browser for you?",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -30,10 +27,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "Compare Internet Explorer to the Firefox Browser to find out which is the better browser for you.",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"), "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -91,11 +85,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "If you haven’t moved on from using Internet Explorer, the security risk factor alone should be enough to convince you. <a %(attrs)s>Microsoft’s own security chief has warned</a> millions of people who continue to use Internet Explorer as their main web browser that they are placing themselves in “peril.”",
-                    {
-                        "%%": "%",
-                        "%(attrs)s": VARIABLE_REFERENCE("attrs"),
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                    },
+                    {"%%": "%", "%(attrs)s": VARIABLE_REFERENCE("attrs"), "Internet Explorer": TERM_REFERENCE("brand-name-ie"),},
                 ),
             ),
             FTL.Message(
@@ -103,10 +93,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "Microsoft is no longer supporting new development for Internet Explorer, which means security concerns are rampant. Microsoft openly acknowledges the fact that vulnerabilities exist within basically every version of Internet Explorer.",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                        "Microsoft": TERM_REFERENCE("brand-name-microsoft"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"), "Microsoft": TERM_REFERENCE("brand-name-microsoft"),},
                 ),
             ),
             FTL.Message(
@@ -133,9 +120,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "Alarmingly, 4 to 5% of all desktop web traffic comes through Internet Explorer. That might not seem like a lot, but in reality it means millions of people are being served a poor internet experience with slow loading and rendering times, pages that won’t display properly — all on top of the security issues already discussed.",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"),},
                 ),
             ),
             FTL.Message(
@@ -143,9 +128,7 @@ def migrate(ctx):
                 value=REPLACE(
                     ie,
                     "Really the only reasons to use Internet Explorer are for developers to test what their sites look like on an older browser or if a company has business-critical apps that only work with the Internet Explorer browser.",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"),},
                 ),
             ),
             FTL.Message(

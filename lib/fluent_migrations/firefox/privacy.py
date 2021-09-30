@@ -16,22 +16,12 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-firefox-privacy-promise"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Firefox Privacy Promise",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Firefox Privacy Promise", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-firefox-takes-less-data-keeps"),
                 value=REPLACE(
-                    privacy_hub,
-                    "Firefox takes less data, keeps it safe, and with no secrets.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    privacy_hub, "Firefox takes less data, keeps it safe, and with no secrets.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -39,9 +29,7 @@ def migrate(ctx):
                 value=REPLACE(
                     privacy_hub,
                     "Firefox products are designed to protect your <strong>privacy</strong>",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -69,32 +57,19 @@ firefox-privacy-hub-youll-always-know-where-you = {COPY(privacy_hub, "You’ll a
                 value=REPLACE(
                     privacy_hub,
                     'There’s no hidden agenda here. Our business doesn’t depend on secretly abusing your trust. Our <a href="%(privacy)s">Privacy Notice</a> is actually readable. Anyone in the world can attend our <a href="%(meetings)s">weekly company meetings</a>. If you want to dig into every datapoint we collect, our code is open. And so are we.',
-                    {
-                        "%%": "%",
-                        "%(privacy)s": VARIABLE_REFERENCE("privacy"),
-                        "%(meetings)s": VARIABLE_REFERENCE("meetings"),
-                    },
+                    {"%%": "%", "%(privacy)s": VARIABLE_REFERENCE("privacy"), "%(meetings)s": VARIABLE_REFERENCE("meetings"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-why-trust-firefox"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Why trust Firefox?",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Why trust Firefox?", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-because-we-put-people-first"),
                 value=REPLACE(
                     privacy_hub,
                     'Because we put people first. In fact, we’re backed by a <a href="%(foundation)s">non-profit</a>. From day one, it’s been our mission to protect the internet and everyone on it',
-                    {
-                        "%%": "%",
-                        "%(foundation)s": VARIABLE_REFERENCE("foundation"),
-                    },
+                    {"%%": "%", "%(foundation)s": VARIABLE_REFERENCE("foundation"),},
                 ),
             ),
         ]
@@ -111,9 +86,7 @@ firefox-privacy-hub-your-privacy-by-the-product = {COPY(privacy_hub, "Your priva
                 value=REPLACE(
                     privacy_hub,
                     "Firefox products work differently — because they’re designed to protect your privacy first.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -126,32 +99,18 @@ firefox-privacy-hub-learn-about-our-products = {COPY(privacy_hub, "Learn about o
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-firefox-privacy-by-the"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Firefox privacy, by the product",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Firefox privacy, by the product", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-firefox-protects-your-privacy"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Firefox protects your privacy in every product.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Firefox protects your privacy in every product.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-firefox-protects-your-privacy-strong"),
                 value=REPLACE(
                     privacy_hub,
                     "Firefox <strong>protects</strong> your privacy in every product",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -168,9 +127,7 @@ firefox-privacy-hub-2000-trackers-blocked-automatically = {COPY(privacy_hub, "2,
                 value=REPLACE(
                     privacy_hub,
                     "Tracking has become an epidemic online: companies follow every move, click and purchase, collecting data to predict and influence what you’ll do next. We think that’s a gross invasion of your privacy. That’s why Firefox mobile and desktop browsers have Enhanced Tracking Protection on by default.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -178,20 +135,12 @@ firefox-privacy-hub-2000-trackers-blocked-automatically = {COPY(privacy_hub, "2,
                 value=REPLACE(
                     privacy_hub,
                     "If you want to see what Firefox is blocking for you, visit this page on your Firefox desktop browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-see-what-firefox-has-blocked"),
-                value=REPLACE(
-                    privacy_hub,
-                    "See what Firefox has blocked for you",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "See what Firefox has blocked for you", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -203,23 +152,11 @@ firefox-privacy-hub-get-enhanced-tracking-protection = {COPY(privacy_hub, "Get E
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-download-the-firefox-browser"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Download the Firefox browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Download the Firefox browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-update-your-firefox-browser"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Update your Firefox browser",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Update your Firefox browser", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -249,11 +186,7 @@ firefox-privacy-hub-protection-beyond-tracking = {COPY(privacy_hub, "Protection 
                 value=REPLACE(
                     privacy_hub,
                     "More than %s trackers blocked each day for Firefox users worldwide",
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("trackers"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("trackers"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -269,9 +202,7 @@ firefox-privacy-hub-firefox-monitor = { -brand-name-firefox-monitor }
                 value=REPLACE(
                     privacy_hub,
                     "When you enter your email address in Firefox Monitor, we forget it immediately after we’ve checked for a match in known data breaches — unless you authorize us to continue monitoring new breaches for your personal information.",
-                    {
-                        "Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),
-                    },
+                    {"Firefox Monitor": TERM_REFERENCE("brand-name-firefox-monitor"),},
                 ),
             ),
         ]
@@ -288,20 +219,12 @@ firefox-privacy-hub-firefox-lockwise = { -brand-name-firefox-lockwise }
                 value=REPLACE(
                     privacy_hub,
                     "The passwords and credentials you save in Firefox Lockwise are encrypted on all your devices, so not even we can see them.",
-                    {
-                        "Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),
-                    },
+                    {"Firefox Lockwise": TERM_REFERENCE("brand-name-firefox-lockwise"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-learn-more-about-lockwise"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Learn more about Lockwise",
-                    {
-                        "Lockwise": TERM_REFERENCE("brand-name-lockwise"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Learn more about Lockwise", {"Lockwise": TERM_REFERENCE("brand-name-lockwise"),},),
             ),
         ]
         + transforms_from(
@@ -316,9 +239,7 @@ firefox-privacy-hub-firefox-send = { -brand-name-firefox-send }
                 value=REPLACE(
                     privacy_hub,
                     "We can’t see the names or content of the large files you share through Firefox Send because they’re encrypted end-to-end — you choose who sees what you send, and you can even set an expiration date and password.",
-                    {
-                        "Firefox Send": TERM_REFERENCE("brand-name-firefox-send"),
-                    },
+                    {"Firefox Send": TERM_REFERENCE("brand-name-firefox-send"),},
                 ),
             ),
         ]
@@ -335,20 +256,12 @@ firefox-privacy-hub-pocket = { -brand-name-pocket }
                 value=REPLACE(
                     privacy_hub,
                     "Pocket recommends high-quality, human-curated articles without collecting your browsing history or sharing your personal information with advertisers.",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
+                    {"Pocket": TERM_REFERENCE("brand-name-pocket"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-get-pocket"),
-                value=REPLACE(
-                    privacy_hub,
-                    "Get Pocket",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(privacy_hub, "Get Pocket", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-your-firefox-account"),
@@ -400,12 +313,7 @@ firefox-privacy-hub-pocket = { -brand-name-pocket }
             FTL.Message(
                 id=FTL.Identifier("firefox-privacy-hub-read-the-privacy-notice-for"),
                 value=REPLACE(
-                    privacy_hub,
-                    'Read the <a href="%s">Privacy Notice</a> for our products',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                    },
+                    privacy_hub, 'Read the <a href="%s">Privacy Notice</a> for our products', {"%%": "%", "%s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ],

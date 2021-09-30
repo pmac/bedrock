@@ -41,11 +41,7 @@ not-found-page-go-back = {COPY(not_found, "Go Back",)}
                 value=REPLACE(
                     not_found,
                     "<a href=%(explore)s>Explore</a> the entire family for Firefox products designed to respect your privacy.",
-                    {
-                        "%%": "%",
-                        "%(explore)s": VARIABLE_REFERENCE("explore"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(explore)s": VARIABLE_REFERENCE("explore"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -53,11 +49,7 @@ not-found-page-go-back = {COPY(not_found, "Go Back",)}
                 value=REPLACE(
                     not_found,
                     "<a href=%(download)s>Download</a> the Firefox browser for your mobile device or desktop",
-                    {
-                        "%%": "%",
-                        "%(download)s": VARIABLE_REFERENCE("download"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(download)s": VARIABLE_REFERENCE("download"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

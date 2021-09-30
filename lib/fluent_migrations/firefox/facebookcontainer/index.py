@@ -41,21 +41,13 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("facebook-container-facebook-well-contained-keep"),
                 value=REPLACE(
-                    index,
-                    "Facebook. Well contained. Keep the rest of your life to yourself.",
-                    {
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
+                    index, "Facebook. Well contained. Keep the rest of your life to yourself.", {"Facebook": TERM_REFERENCE("brand-name-facebook"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("facebook-container-get-the-facebook-container"),
                 value=REPLACE(
-                    index,
-                    "Get the Facebook Container Extension",
-                    {
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                    },
+                    index, "Get the Facebook Container Extension", {"Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),},
                 ),
             ),
             FTL.Message(
@@ -63,10 +55,7 @@ def migrate(ctx):
                 value=REPLACE(
                     index,
                     "Download Firefox and get the Facebook Container Extension",
-                    {
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Facebook Container": TERM_REFERENCE("brand-name-facebook-container"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -74,9 +63,7 @@ def migrate(ctx):
                 value=REPLACE(
                     index,
                     "The Facebook Container Extension is not available on mobile devices.",
-                    {
-                        "Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),
-                    },
+                    {"Facebook Container": TERM_REFERENCE("brand-name-facebook-container"),},
                 ),
             ),
             FTL.Message(
@@ -125,11 +112,7 @@ facebook-container-install-and-contain = {COPY(index, "Install and contain",)}
                 value=REPLACE(
                     index,
                     'Installing the <a href="%(fbcontainer)s">extension</a> is easy and, once activated, will open Facebook in a blue tab each time you use it. Use and enjoy Facebook normally. Facebook will still be able to send you advertising and recommendations on their site, but it will be much harder for Facebook to use your activity collected <strong>off Facebook</strong> to send you ads and other targeted messages.',
-                    {
-                        "%%": "%",
-                        "%(fbcontainer)s": VARIABLE_REFERENCE("fbcontainer"),
-                        "Facebook": TERM_REFERENCE("brand-name-facebook"),
-                    },
+                    {"%%": "%", "%(fbcontainer)s": VARIABLE_REFERENCE("fbcontainer"), "Facebook": TERM_REFERENCE("brand-name-facebook"),},
                 ),
             ),
             FTL.Message(
@@ -137,10 +120,7 @@ facebook-container-install-and-contain = {COPY(index, "Install and contain",)}
                 value=REPLACE(
                     index,
                     "About Firefox and Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -148,22 +128,12 @@ facebook-container-install-and-contain = {COPY(index, "Install and contain",)}
                 value=REPLACE(
                     index,
                     'We’re backed by <a href="%(mozilla)s">Mozilla</a>, the not-for-profit organization that puts people over profit to give everyone more power online. We created this extension because we believe that you should have easy-to-use tools that help you manage your privacy and security.',
-                    {
-                        "%%": "%",
-                        "%(mozilla)s": VARIABLE_REFERENCE("mozilla"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"%%": "%", "%(mozilla)s": VARIABLE_REFERENCE("mozilla"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("facebook-container-browse-freely-with-firefox"),
-                value=REPLACE(
-                    index,
-                    "Browse freely with Firefox today.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(index, "Browse freely with Firefox today.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ],
     )

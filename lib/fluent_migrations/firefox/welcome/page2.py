@@ -16,13 +16,7 @@ def migrate(ctx):
         [
             FTL.Message(
                 id=FTL.Identifier("welcome-page2-pocket-save-news-videos-stories"),
-                value=REPLACE(
-                    page2,
-                    "Pocket - Save news, videos, stories and more",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(page2, "Pocket - Save news, videos, stories and more", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
         ]
         + transforms_from(
@@ -37,20 +31,12 @@ welcome-page2-your-time-online-is-worth = {COPY(page2, "Your time online is wort
                 value=REPLACE(
                     page2,
                     "Discover and save stories in Pocket — and come back to them when you’re free.",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
+                    {"Pocket": TERM_REFERENCE("brand-name-pocket"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("welcome-page2-activate-pocket"),
-                value=REPLACE(
-                    page2,
-                    "Activate Pocket",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
-                ),
+                value=REPLACE(page2, "Activate Pocket", {"Pocket": TERM_REFERENCE("brand-name-pocket"),},),
             ),
         ]
         + transforms_from(
@@ -65,10 +51,7 @@ welcome-page2-pocket = { -brand-name-pocket }
                 value=REPLACE(
                     page2,
                     "Pocket is built right into Firefox, so you can easily save stories as you find them, then read them later on any device.",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Pocket": TERM_REFERENCE("brand-name-pocket"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -84,9 +67,7 @@ welcome-page2-save-content-from-everywhere = {COPY(page2, "Save content from eve
                 value=REPLACE(
                     page2,
                     "Grab articles, videos, and links from any website by clicking the Pocket icon in your browser toolbar.",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
+                    {"Pocket": TERM_REFERENCE("brand-name-pocket"),},
                 ),
             ),
         ]
@@ -102,9 +83,7 @@ welcome-page2-discover-new-stories = {COPY(page2, "Discover new stories",)}
                 value=REPLACE(
                     page2,
                     "Pocket shows recommended stories every time you open a new tab. Save the ones that interest you.",
-                    {
-                        "Pocket": TERM_REFERENCE("brand-name-pocket"),
-                    },
+                    {"Pocket": TERM_REFERENCE("brand-name-pocket"),},
                 ),
             ),
         ]

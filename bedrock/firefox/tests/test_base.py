@@ -129,10 +129,7 @@ class TestInstallerHelp(TestCase):
         All buttons should show when channel is invalid.
         """
         self.client.get(
-            self.url,
-            {
-                "channel": "dude",
-            },
+            self.url, {"channel": "dude",},
         )
         self.button_mock.assert_has_calls(
             [
@@ -177,10 +174,7 @@ class TestInstallerHelp(TestCase):
         There should be only one button when the channel is given.
         """
         self.client.get(
-            self.url,
-            {
-                "channel": "beta",
-            },
+            self.url, {"channel": "beta",},
         )
         self.button_mock.assert_called_once_with(
             "beta", alt_copy=Markup("Download Now"), button_class="mzp-t-md", force_direct=True, force_full_installer=True, locale=None

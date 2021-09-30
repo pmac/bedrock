@@ -30,10 +30,7 @@ best-browser-the-internet-has-become = {COPY(best_browser, "The internet has bec
                 value=REPLACE(
                     best_browser,
                     "In the mid-nineties, Netscape, Internet Explorer and AOL dominated the landscape. It was a simpler time when the sweet melody of dial-up internet rang across the land. You learned the meaning of patience waiting for web pages to load. Back then, all that mattered was browser speed.",
-                    {
-                        "Internet Explorer": TERM_REFERENCE("brand-name-ie"),
-                        "Netscape": TERM_REFERENCE("brand-name-netscape"),
-                    },
+                    {"Internet Explorer": TERM_REFERENCE("brand-name-ie"), "Netscape": TERM_REFERENCE("brand-name-netscape"),},
                 ),
             ),
         ]
@@ -50,9 +47,7 @@ best-browser-when-you-use-a-browser = {COPY(best_browser, "When you use a browse
                 value=REPLACE(
                     best_browser,
                     "Marshall Erwin, Senior Director of Trust and Security at Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -70,9 +65,7 @@ best-browser-a-browser-is-still = {COPY(best_browser, "A browser is still a tool
                 value=REPLACE(
                     best_browser,
                     "This is one of the many reasons to choose the Firefox browser: Firefox blocks third-party trackers by default. We have other reasons and we’ll get into those later.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -136,11 +129,7 @@ best-browser-another-way-to-stop = {COPY(best_browser, "Another way to stop trac
                 value=REPLACE(
                     best_browser,
                     'One easy way to check is to visit a browser’s content setting page and privacy policy. The privacy webpage should outline if your data is shared and why. It’s why the <a href="%(privacy)s">Firefox privacy notice</a> is easy to read and easy to find.',
-                    {
-                        "%%": "%",
-                        "%(privacy)s": VARIABLE_REFERENCE("privacy"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(privacy)s": VARIABLE_REFERENCE("privacy"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -156,11 +145,7 @@ best-browser-choosing-the-best-browser = {COPY(best_browser, "Choosing the best 
                 value=REPLACE(
                     best_browser,
                     'At <a href="%(firefox)s">Firefox</a>, we’ve worked hard to build a browser that is twice as fast as before and gives users more control over their online life.',
-                    {
-                        "%%": "%",
-                        "%(firefox)s": VARIABLE_REFERENCE("firefox"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%(firefox)s": VARIABLE_REFERENCE("firefox"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]

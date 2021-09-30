@@ -9,13 +9,7 @@ from bedrock.base.templatetags import helpers
 
 jinja_env = Jinja2.get_default()
 SEND_TO_DEVICE_MESSAGE_SETS = {
-    "default": {
-        "email": {
-            "android": "download-firefox-android",
-            "ios": "download-firefox-ios",
-            "all": "download-firefox-mobile",
-        }
-    }
+    "default": {"email": {"android": "download-firefox-android", "ios": "download-firefox-ios", "all": "download-firefox-mobile",}}
 }
 
 

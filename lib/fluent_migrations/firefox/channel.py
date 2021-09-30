@@ -22,25 +22,9 @@ firefox-channel-desktop = {COPY(index, "Desktop",)}
         )
         + [
             FTL.Message(
-                id=FTL.Identifier("firefox-channel-android"),
-                value=REPLACE(
-                    index,
-                    "Android",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
-                ),
+                id=FTL.Identifier("firefox-channel-android"), value=REPLACE(index, "Android", {"Android": TERM_REFERENCE("brand-name-android"),},),
             ),
-            FTL.Message(
-                id=FTL.Identifier("firefox-channel-ios"),
-                value=REPLACE(
-                    index,
-                    "iOS",
-                    {
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
-                ),
-            ),
+            FTL.Message(id=FTL.Identifier("firefox-channel-ios"), value=REPLACE(index, "iOS", {"iOS": TERM_REFERENCE("brand-name-ios"),},),),
         ]
         + transforms_from(
             """
@@ -81,10 +65,7 @@ firefox-channel-tips-for-filing-a-bug = {COPY(index, "Tips for filing a bug",)}
                 value=REPLACE(
                     index,
                     "Try New Features in a Pre-Release Android Browser | Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -143,9 +124,7 @@ firefox-channel-tips-for-filing-a-bug = {COPY(index, "Tips for filing a bug",)}
                 value=REPLACE(
                     index,
                     "Try the latest Android features, before they get released to the rest of the world.",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
         ]
@@ -175,10 +154,7 @@ firefox-channel-all-languages-and-builds = {COPY(index, "All Languages and Build
                 value=REPLACE(
                     index,
                     "Firefox Beta automatically sends feedback to Mozilla.",
-                    {
-                        "Firefox Beta": TERM_REFERENCE("brand-name-firefox-beta"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Firefox Beta": TERM_REFERENCE("brand-name-firefox-beta"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
@@ -186,10 +162,7 @@ firefox-channel-all-languages-and-builds = {COPY(index, "All Languages and Build
                 value=REPLACE(
                     index,
                     '<a rel="external" href="%(feedback)s">Give us feedback</a> to help us put the final tweaks on performance and functionality in a stable environment.',
-                    {
-                        "%%": "%",
-                        "%(feedback)s": VARIABLE_REFERENCE("feedback"),
-                    },
+                    {"%%": "%", "%(feedback)s": VARIABLE_REFERENCE("feedback"),},
                 ),
             ),
             FTL.Message(
@@ -197,20 +170,12 @@ firefox-channel-all-languages-and-builds = {COPY(index, "All Languages and Build
                 value=REPLACE(
                     index,
                     "Check out new Android features in their earliest stages. Enjoy at your own risk.",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-channel-nightly-blog"),
-                value=REPLACE(
-                    index,
-                    "Nightly Blog",
-                    {
-                        "Nightly": TERM_REFERENCE("brand-name-nightly"),
-                    },
-                ),
+                value=REPLACE(index, "Nightly Blog", {"Nightly": TERM_REFERENCE("brand-name-nightly"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-channel-nightly-is-an-unstable-testing"),
@@ -230,10 +195,7 @@ firefox-channel-all-languages-and-builds = {COPY(index, "All Languages and Build
                 value=REPLACE(
                     index,
                     "Firefox Nightly automatically sends feedback to Mozilla.",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"), "Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ],
@@ -246,11 +208,7 @@ firefox-channel-all-languages-and-builds = {COPY(index, "All Languages and Build
             FTL.Message(
                 id=FTL.Identifier("firefox-channel-try-new-browser-features"),
                 value=REPLACE(
-                    index,
-                    "Try New Browser Features in Pre-Release Versions | Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    index, "Try New Browser Features in Pre-Release Versions | Firefox", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -328,9 +286,7 @@ firefox-channel-nightly = { -brand-name-nightly }
                 value=REPLACE(
                     index,
                     "Get a sneak peek at our next generation web browser, and help us make it the best browser it can be: try Firefox Nightly.",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
         ]
@@ -351,10 +307,7 @@ firefox-channel-test-brand-new-features = {COPY(index, "Test brand new features 
                 value=REPLACE(
                     index,
                     "Try New Features in a Pre-Release iOS Browser | Firefox",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(

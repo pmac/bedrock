@@ -65,10 +65,4 @@ class ConfigDBEnv(ConfigDictEnv):
         return configs
 
 
-config = ConfigManager(
-    [
-        ConfigOSEnv(),
-        ConfigEnvFileEnv(".env"),
-        ConfigDBEnv(),
-    ]
-)
+config = ConfigManager([ConfigOSEnv(), ConfigEnvFileEnv(".env"), ConfigDBEnv(),])

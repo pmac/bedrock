@@ -14,10 +14,7 @@ def test_git(co_mock, os_mock):
     output = g.git("checkout", "maude")
     co_mock.assert_called_with((git.GIT, "checkout", "maude"), stderr=git.STDOUT)
     os_mock.chdir.assert_has_calls(
-        [
-            call(g.path_str),
-            call("olddir"),
-        ]
+        [call(g.path_str), call("olddir"),]
     )
     assert output == "dude"
 

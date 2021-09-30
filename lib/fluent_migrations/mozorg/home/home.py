@@ -26,10 +26,7 @@ home-internet-for-people-not-profit = {COPY(index_quantum, "Internet for people,
                 value=REPLACE(
                     index_quantum,
                     "Did you know? Mozilla — the maker of Firefox — fights to keep the Internet a global public resource, open and accessible to all.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -45,10 +42,7 @@ home-fast-for-good = {COPY(index_quantum, "Fast for good.",)}
                 value=REPLACE(
                     index_quantum,
                     "With 2x the speed, built-in privacy protection and Mozilla behind it, the new Firefox is the better way to browse.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -64,10 +58,7 @@ home-we-make-the-internet-safer = {COPY(index_quantum, "We make the internet saf
                 value=REPLACE(
                     index_quantum,
                     "Mozilla is the not-for-profit behind Firefox, the original alternative browser. We create products and policy to keep the internet in service of people, not profit.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -83,10 +74,7 @@ home-our-impact = {COPY(index_quantum, "Our impact",)}
                 value=REPLACE(
                     index_quantum,
                     "When you use Firefox, you help Mozilla fight misinformation online, teach digital skills and make the comments section more human. Check out what helps create a healthier internet.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -100,13 +88,7 @@ home-working-at-the-grassroots-and = {COPY(index_quantum, "Working at the grassr
         + [
             FTL.Message(
                 id=FTL.Identifier("home-mozilla-information-trust-initiative"),
-                value=REPLACE(
-                    index_quantum,
-                    "Mozilla Information Trust Initiative",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(index_quantum, "Mozilla Information Trust Initiative", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -123,13 +105,7 @@ home-virtual-reality-platform = {COPY(index_quantum, "Virtual Reality Platform",
         + [
             FTL.Message(
                 id=FTL.Identifier("home-common-voice"),
-                value=REPLACE(
-                    index_quantum,
-                    "Common Voice",
-                    {
-                        "Common Voice": TERM_REFERENCE("brand-name-common-voice"),
-                    },
-                ),
+                value=REPLACE(index_quantum, "Common Voice", {"Common Voice": TERM_REFERENCE("brand-name-common-voice"),},),
             ),
         ]
         + transforms_from(
@@ -144,9 +120,7 @@ home-extensions = {COPY(index_quantum, "Extensions",)}
                 value=REPLACE(
                     index_quantum,
                     "Personalize Firefox with your favorite extras like password managers, ad blockers and more.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -162,9 +136,7 @@ home-careers = {COPY(index_quantum, "Careers",)}
                 value=REPLACE(
                     index_quantum,
                     "Learn about the benefits of working at Mozilla and view open positions around the world.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -180,10 +152,7 @@ home-need-help = {COPY(index_quantum, "Need help?",)}
                 value=REPLACE(
                     index_quantum,
                     "Get answers to your questions about Firefox and all Mozilla products from our support team.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],

@@ -32,9 +32,7 @@ def migrate(ctx):
                 value=REPLACE(
                     mobile_2019,
                     "Firefox Browser for Mobile blocks over 2000 trackers by default, giving you the privacy you deserve and the speed you need in a private mobile browser.",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
         ]
@@ -70,13 +68,7 @@ firefox-mobile-super-fast-private-by-default = {COPY(mobile_2019, "Super fast. P
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-mobile-get-firefox-mobile"),
-                value=REPLACE(
-                    mobile_2019,
-                    "Get Firefox Mobile",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(mobile_2019, "Get Firefox Mobile", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -92,10 +84,7 @@ firefox-mobile-privacy-protection-by-default = {COPY(mobile_2019, "Privacy prote
                 value=REPLACE(
                     mobile_2019,
                     'Leave no trace with <a href="%s">Private Browsing mode</a>. When you close out, your history and cookies are deleted.',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ]
@@ -111,11 +100,7 @@ firefox-mobile-stop-companies-from-following = {COPY(mobile_2019, "Stop companie
                 value=REPLACE(
                     mobile_2019,
                     'Stay off their radar with <a href="%s">Firefox Tracking Protection</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -129,23 +114,11 @@ firefox-mobile-sync-your-history-passwords = {COPY(mobile_2019, "Sync your histo
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-mobile-android-only"),
-                value=REPLACE(
-                    mobile_2019,
-                    "Android only",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
-                ),
+                value=REPLACE(mobile_2019, "Android only", {"Android": TERM_REFERENCE("brand-name-android"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-mobile-make-android-your-own"),
-                value=REPLACE(
-                    mobile_2019,
-                    "Make Android your own",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
-                ),
+                value=REPLACE(mobile_2019, "Make Android your own", {"Android": TERM_REFERENCE("brand-name-android"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("firefox-mobile-customize-your-firefox-mobile"),
@@ -173,9 +146,7 @@ firefox-mobile-find-it-fast-with-a-smart = {COPY(mobile_2019, "Find it fast with
                 value=REPLACE(
                     mobile_2019,
                     "Firefox anticipates your needs with smart search suggestions and quick access to the sites you visit most.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -188,13 +159,7 @@ firefox-mobile-the-privacy-you-deserve-the = {COPY(mobile_2019, "The privacy you
         + [
             FTL.Message(
                 id=FTL.Identifier("firefox-mobile-get-firefox-for-mobile"),
-                value=REPLACE(
-                    mobile_2019,
-                    "Get Firefox for mobile",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(mobile_2019, "Get Firefox for mobile", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(

@@ -149,18 +149,9 @@ class TestDotlang(TestCase):
                 "This is for the Whatsnew page: http://www-dev.allizom.org/b/firefox/whatsnew/",
                 "F\xe9licitations&nbsp;! Votre Firefox a \xe9t\xe9 mis \xe0 jour.",
             ],
-            "Your Firefox is out of date.": [
-                None,
-                "Votre Firefox ne semble pas \xe0 jour.",
-            ],
-            "Firefox Beta": [
-                None,
-                "Firefox Beta",
-            ],
-            "Firefox Aurora": [
-                None,
-                "Firefox Aurora",
-            ],
+            "Your Firefox is out of date.": [None, "Votre Firefox ne semble pas \xe0 jour.",],
+            "Firefox Beta": [None, "Firefox Beta",],
+            "Firefox Aurora": [None, "Firefox Aurora",],
         }
         assert parsed == expected
 
@@ -205,10 +196,7 @@ class TestDotlang(TestCase):
         mail.outbox = []
 
     @override_settings(
-        DEV=False,
-        ROOT=ROOT,
-        LOCALES_PATH=LOCALES_PATH,
-        LANGUAGE_CODE="en-US",  # Triggers reset of Django's language cache
+        DEV=False, ROOT=ROOT, LOCALES_PATH=LOCALES_PATH, LANGUAGE_CODE="en-US",  # Triggers reset of Django's language cache
     )
     def test_format_identifier_order(self):
         """
@@ -237,10 +225,7 @@ class TestDotlang(TestCase):
         assert gettext_call.text() == "Die Lage von Mozilla"
 
     @override_settings(
-        DEV=False,
-        ROOT=ROOT,
-        LOCALES_PATH=LOCALES_PATH,
-        LANGUAGE_CODE="en-US",  # Triggers reset of Django's language cache
+        DEV=False, ROOT=ROOT, LOCALES_PATH=LOCALES_PATH, LANGUAGE_CODE="en-US",  # Triggers reset of Django's language cache
     )
     def test_extract_message_tweaks_do_not_break(self):
         """

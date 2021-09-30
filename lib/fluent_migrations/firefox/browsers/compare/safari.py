@@ -19,10 +19,7 @@ def migrate(ctx):
                 value=REPLACE(
                     safari,
                     "Firefox vs. Safari: Which is the better browser for you?",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Safari": TERM_REFERENCE("brand-name-safari"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Safari": TERM_REFERENCE("brand-name-safari"),},
                 ),
             ),
             FTL.Message(
@@ -41,11 +38,7 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("compare-safari-comparing-firefox-browser"),
                 value=REPLACE(
-                    safari,
-                    "Comparing Firefox Browser with Apple Safari",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    safari, "Comparing Firefox Browser with Apple Safari", {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
             FTL.Message(
@@ -66,10 +59,7 @@ def migrate(ctx):
                 value=REPLACE(
                     safari,
                     "Privacy has become a white hot topic for tech companies as they realize more and more people are feeling vulnerable to things like data breaches, ad trackers and hackers. But when it comes down to the real tools people use to navigate the actual interwebs, is it all talk or are they actually taking action to keep your data secure?",
-                    {
-                        "Apple": TERM_REFERENCE("brand-name-apple"),
-                        "Safari": TERM_REFERENCE("brand-name-safari"),
-                    },
+                    {"Apple": TERM_REFERENCE("brand-name-apple"), "Safari": TERM_REFERENCE("brand-name-safari"),},
                 ),
             ),
             FTL.Message(
@@ -77,10 +67,7 @@ def migrate(ctx):
                 value=REPLACE(
                     safari,
                     "As alluded to before, Apple is one of those companies that recently decided to step up their privacy game. Not long ago, Apple implemented cross-site tracking prevention in Safari, which prevents ads from following you around the internet. Safari also offers a strong password suggestion when you sign up for a new account on any website. And if you’re invested in the iCloud ecosystem, it syncs that password securely with your other devices, so you never actually have to remember it.",
-                    {
-                        "Apple": TERM_REFERENCE("brand-name-apple"),
-                        "Safari": TERM_REFERENCE("brand-name-safari"),
-                    },
+                    {"Apple": TERM_REFERENCE("brand-name-apple"), "Safari": TERM_REFERENCE("brand-name-safari"),},
                 ),
             ),
             FTL.Message(
@@ -159,10 +146,7 @@ def migrate(ctx):
                 value=REPLACE(
                     safari,
                     "In addition to the regular set of features you’d expect in a browser, such as tabbed browsing and private browsing, Safari has some unexpected features as well. For instance, if a user were to right-click a word anywhere on a page inside Safari, then click Look Up, they’d get a dictionary definition plus entries from the thesaurus, App Store, movies and more. Safari’s Parental Controls are easy to customize, allowing the adults to breathe a little easier when the kids begin to get curious about the internet.",
-                    {
-                        "Safari": TERM_REFERENCE("brand-name-safari"),
-                        "App Store": TERM_REFERENCE("brand-name-app-store"),
-                    },
+                    {"Safari": TERM_REFERENCE("brand-name-safari"), "App Store": TERM_REFERENCE("brand-name-app-store"),},
                 ),
             ),
             FTL.Message(
@@ -210,9 +194,7 @@ def migrate(ctx):
                 value=REPLACE(
                     safari,
                     "Both browsers have a lot of crossover features, as well as some unique functions. It’s worth mentioning, if you take a lot of screenshots, you’ll wonder how you ever lived without this handy feature that’s built right into Firefox. But if you’re just looking for a fast, private browser for surfing and shopping, then you may want to give Firefox a try — especially if you’ve been exclusively using Safari because it came preloaded as the default browser on your computer. Eventually, you’ll discover which one is more suited to your needs.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(

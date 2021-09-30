@@ -20,9 +20,7 @@ def migrate(ctx):
                 value=REPLACE(
                     bookmarks,
                     "Firefox Browser: Better bookmarks everywhere you go",
-                    {
-                        "Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),
-                    },
+                    {"Firefox Browser": TERM_REFERENCE("brand-name-firefox-browser"),},
                 ),
             ),
         ]
@@ -37,11 +35,7 @@ features-bookmarks-better-bookmarks = {COPY(bookmarks, "Better bookmarks",)}
             FTL.Message(
                 id=FTL.Identifier("features-bookmarks-dont-agonize-lovers-of"),
                 value=REPLACE(
-                    bookmarks,
-                    "Don’t agonize, lovers of bookmarking. Organize with Firefox.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    bookmarks, "Don’t agonize, lovers of bookmarking. Organize with Firefox.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -80,10 +74,7 @@ features-bookmarks-futz-with-that-bookmark = {COPY(bookmarks, "Futz with that bo
                 value=REPLACE(
                     bookmarks,
                     'Practice your exactitude with every bookmark manager <a href="%(url)s">add-on</a> you can think of, from full page snapshots to quick-switch sidebars to locked-down-tight private bookmarks.',
-                    {
-                        "%%": "%",
-                        "%(url)s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%(url)s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
         ],

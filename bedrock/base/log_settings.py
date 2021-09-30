@@ -26,57 +26,25 @@ cfg = {
     "version": 1,
     "filters": {},
     "formatters": {
-        "debug": {
-            "()": commonware.log.Formatter,
-            "datefmt": "%H:%M:%s",
-            "format": "%(asctime)s " + base_fmt,
-        },
+        "debug": {"()": commonware.log.Formatter, "datefmt": "%H:%M:%s", "format": "%(asctime)s " + base_fmt,},
         "prod": {
             "()": commonware.log.Formatter,
             "datefmt": "%H:%M:%s",
             "format": "%s %s: [%%(REMOTE_ADDR)s] %s" % (hostname, settings.SYSLOG_TAG, base_fmt),
         },
-        "cef": {
-            "()": cef.SysLogFormatter,
-            "datefmt": "%H:%M:%s",
-        },
+        "cef": {"()": cef.SysLogFormatter, "datefmt": "%H:%M:%s",},
     },
     "handlers": {
-        "console": {
-            "()": logging.StreamHandler,
-            "formatter": "debug",
-        },
-        "syslog": {
-            "()": logging.handlers.SysLogHandler,
-            "facility": logging.handlers.SysLogHandler.LOG_LOCAL7,
-            "formatter": "prod",
-        },
-        "mail_admins": {
-            "level": "ERROR",
-            "class": "django.utils.log.AdminEmailHandler",
-        },
-        "cef_syslog": {
-            "()": logging.handlers.SysLogHandler,
-            "facility": logging.handlers.SysLogHandler.LOG_LOCAL4,
-            "formatter": "cef",
-        },
-        "cef_console": {
-            "()": logging.StreamHandler,
-            "formatter": "cef",
-        },
-        "null": {
-            "()": NullHandler,
-        },
+        "console": {"()": logging.StreamHandler, "formatter": "debug",},
+        "syslog": {"()": logging.handlers.SysLogHandler, "facility": logging.handlers.SysLogHandler.LOG_LOCAL7, "formatter": "prod",},
+        "mail_admins": {"level": "ERROR", "class": "django.utils.log.AdminEmailHandler",},
+        "cef_syslog": {"()": logging.handlers.SysLogHandler, "facility": logging.handlers.SysLogHandler.LOG_LOCAL4, "formatter": "cef",},
+        "cef_console": {"()": logging.StreamHandler, "formatter": "cef",},
+        "null": {"()": NullHandler,},
     },
     "loggers": {
-        "django.request": {
-            "handlers": ["mail_admins"],
-            "level": "ERROR",
-            "propagate": False,
-        },
-        "cef": {
-            "handlers": ["cef_syslog" if use_syslog else "cef_console"],
-        },
+        "django.request": {"handlers": ["mail_admins"], "level": "ERROR", "propagate": False,},
+        "cef": {"handlers": ["cef_syslog" if use_syslog else "cef_console"],},
     },
     "root": {},
 }

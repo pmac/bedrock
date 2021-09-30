@@ -78,23 +78,13 @@ class BooleanTabularRadioSelect(widgets.RadioSelect):
 
     def format_value(self, value):
         try:
-            return {
-                True: "true",
-                False: "false",
-                "true": "true",
-                "false": "false",
-            }[value]
+            return {True: "true", False: "false", "true": "true", "false": "false",}[value]
         except KeyError:
             return "unknown"
 
     def value_from_datadict(self, data, files, name):
         value = data.get(name)
-        return {
-            True: True,
-            False: False,
-            "true": True,
-            "false": False,
-        }.get(value)
+        return {True: True, False: False, "true": True, "false": False,}.get(value)
 
     def get_context(self, name, value, attrs):
         context = super(BooleanTabularRadioSelect, self).get_context(name, value, attrs)
@@ -215,14 +205,8 @@ class NewsletterForm(forms.Form):
 
     title = forms.CharField(required=False)
     description = forms.CharField(required=False)
-    subscribed_radio = forms.BooleanField(
-        widget=BooleanTabularRadioSelect,
-        required=False,  # they have to answer, but answer can be False
-    )
-    subscribed_check = forms.BooleanField(
-        widget=widgets.CheckboxInput,
-        required=False,  # they have to answer, but answer can be False
-    )
+    subscribed_radio = forms.BooleanField(widget=BooleanTabularRadioSelect, required=False,)  # they have to answer, but answer can be False
+    subscribed_check = forms.BooleanField(widget=widgets.CheckboxInput, required=False,)  # they have to answer, but answer can be False
     newsletter = forms.CharField(widget=forms.HiddenInput)
 
 

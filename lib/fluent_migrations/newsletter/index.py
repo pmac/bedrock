@@ -27,13 +27,7 @@ newsletters-newsletter-subscriptions = {COPY(newsletters, "Newsletter Subscripti
         [
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-newsletter"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla Newsletter",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla Newsletter", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -48,9 +42,7 @@ newsletters-read-all-about-it-in-our-newsletter = {COPY(newsletters, "Read all a
                 value=REPLACE(
                     newsletters,
                     "Subscribe to updates and keep current with Mozilla news. It’s the perfect way for us to keep in touch!",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ],
@@ -86,13 +78,7 @@ newsletters-please-be-sure-to-add-mozillaemozillaorg = {COPY(newsletters, "Pleas
         + [
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-touches-on-a-variety"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla touches on a variety of important issues.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla touches on a variety of important issues.", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -110,9 +96,7 @@ newsletters-to-update-your-email-preferences = {COPY(newsletters, "To update you
                 value=REPLACE(
                     newsletters,
                     "We love sharing updates about all the awesome things happening at Mozilla.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ]
@@ -148,11 +132,7 @@ newsletters-text-subscribers-will-receive = {COPY(newsletters, "Text subscribers
                 value=REPLACE(
                     newsletters,
                     'To get access to the whole world of Firefox products, knowledge and services in one account, join us! Learn more about the benefits <a href="%s">here</a>.',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("url"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -170,14 +150,7 @@ newsletters-text-subscribers-will-receive = {COPY(newsletters, "Text subscribers
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-is-not-a-valid-newsletter"),
-                value=REPLACE(
-                    newsletters,
-                    "%s is not a valid newsletter",
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("newsletter"),
-                    },
-                ),
+                value=REPLACE(newsletters, "%s is not a valid newsletter", {"%%": "%", "%s": VARIABLE_REFERENCE("newsletter"),},),
             ),
         ]
         + transforms_from(
@@ -222,11 +195,7 @@ newsletters-thanks-for-telling-us-why = {COPY(newsletters, "Thanks for telling u
             FTL.Message(
                 id=FTL.Identifier("newsletters-while-here-why-not-check"),
                 value=REPLACE(
-                    newsletters,
-                    "While here, why not check out some more Firefox awesomeness.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    newsletters, "While here, why not check out some more Firefox awesomeness.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -240,13 +209,7 @@ newsletters-its-your-web-anywhere-you = {COPY(newsletters, "It’s your Web anyw
         + [
             FTL.Message(
                 id=FTL.Identifier("newsletters-get-firefox-for-mobile"),
-                value=REPLACE(
-                    newsletters,
-                    "Get Firefox for mobile!",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Get Firefox for mobile!", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -258,13 +221,7 @@ newsletters-added-extras = {COPY(newsletters, "Added extras",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("newsletters-make-firefox-do-more-with"),
-                value=REPLACE(
-                    newsletters,
-                    "Make Firefox do more with add-ons.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Make Firefox do more with add-ons.", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
         ]
         + transforms_from(
@@ -277,13 +234,7 @@ newsletters-about-us = {COPY(newsletters, "About us",)}
         + [
             FTL.Message(
                 id=FTL.Identifier("newsletters-whats-mozilla-all-about"),
-                value=REPLACE(
-                    newsletters,
-                    "What’s Mozilla all about?",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "What’s Mozilla all about?", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
         ]
         + transforms_from(
@@ -309,10 +260,7 @@ newsletters-love-the-web-so-do-we = {COPY(newsletters, "Love the web? So do we!"
                 value=REPLACE(
                     newsletters,
                     "Unlock the world of web development with our weekly Mozilla Developer Newsletter. Each edition brings you coding techniques and best practices, MDN updates, info about emerging technologies, developer tools tips, and more.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                        "MDN": TERM_REFERENCE("brand-name-mdn"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"), "MDN": TERM_REFERENCE("brand-name-mdn"),},
                 ),
             ),
         ]
@@ -339,9 +287,7 @@ newsletters-put-more-fox-in-your-inbox = {COPY(newsletters, "Put more fox in you
                 value=REPLACE(
                     newsletters,
                     "See where the Web can take you with monthly Firefox tips, tricks and Internet intel.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ],
@@ -398,10 +344,7 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     'This email address is not in our system. Please double check your address or <a href="%s">subscribe to our newsletters.</a>',
-                    {
-                        "%%": "%",
-                        "%s": VARIABLE_REFERENCE("url"),
-                    },
+                    {"%%": "%", "%s": VARIABLE_REFERENCE("url"),},
                 ),
             ),
             FTL.Message(
@@ -409,100 +352,57 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Join Mozillians all around the world and learn about impactful opportunities to support Mozilla’s mission.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-community"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla Community",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla Community", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-a-monthly-newsletter-affiliates"),
                 value=REPLACE(
                     newsletters,
                     "A monthly newsletter to keep you up to date with the Firefox Affiliates program.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-affiliates"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox Affiliates",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox Affiliates", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-a-monthly-newsletter-ambassadors"),
                 value=REPLACE(
                     newsletters,
                     "A monthly newsletter on how to get involved with Mozilla on your campus.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-student-ambassadors"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox Student Ambassadors",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox Student Ambassadors", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
-                id=FTL.Identifier("newsletters-aurora"),
-                value=REPLACE(
-                    newsletters,
-                    "Aurora",
-                    {
-                        "Aurora": TERM_REFERENCE("brand-name-aurora"),
-                    },
-                ),
+                id=FTL.Identifier("newsletters-aurora"), value=REPLACE(newsletters, "Aurora", {"Aurora": TERM_REFERENCE("brand-name-aurora"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-read-about-the-latest-features"),
                 value=REPLACE(
                     newsletters,
                     "Read about the latest features for Firefox desktop and mobile before the final release.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
-                id=FTL.Identifier("newsletters-beta-news"),
-                value=REPLACE(
-                    newsletters,
-                    "Beta News",
-                    {
-                        "Beta": TERM_REFERENCE("brand-name-beta"),
-                    },
-                ),
+                id=FTL.Identifier("newsletters-beta-news"), value=REPLACE(newsletters, "Beta News", {"Beta": TERM_REFERENCE("brand-name-beta"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-download-firefox-for-android"),
                 value=REPLACE(
                     newsletters,
                     "Download Firefox for Android",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -510,10 +410,7 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Get Firefox for Android",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Android": TERM_REFERENCE("brand-name-android"),},
                 ),
             ),
             FTL.Message(
@@ -521,82 +418,43 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Download Firefox for iOS",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-download-firefox-for-mobile"),
-                value=REPLACE(
-                    newsletters,
-                    "Download Firefox for Mobile",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Download Firefox for Mobile", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-get-the-most-firefox-account"),
                 value=REPLACE(
-                    newsletters,
-                    "Get the most out of your Firefox Account.",
-                    {
-                        "Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),
-                    },
+                    newsletters, "Get the most out of your Firefox Account.", {"Firefox Account": TERM_REFERENCE("brand-name-firefox-account"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-accounts-tips"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox Accounts Tips",
-                    {
-                        "Firefox Accounts": TERM_REFERENCE("brand-name-firefox-accounts"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox Accounts Tips", {"Firefox Accounts": TERM_REFERENCE("brand-name-firefox-accounts"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-for-desktop"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox for desktop",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox for desktop", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-flicks"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox Flicks",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox Flicks", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-be-the-first-to-know"),
                 value=REPLACE(
                     newsletters,
                     "Be the first to know when Firefox is available for iOS devices.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-ios"),
                 value=REPLACE(
-                    newsletters,
-                    "Firefox iOS",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "iOS": TERM_REFERENCE("brand-name-ios"),
-                    },
+                    newsletters, "Firefox iOS", {"Firefox": TERM_REFERENCE("brand-name-firefox"), "iOS": TERM_REFERENCE("brand-name-ios"),},
                 ),
             ),
             FTL.Message(
@@ -604,121 +462,68 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Don’t miss important news and updates about your Firefox OS device.",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
+                    {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-os-smartphone-owner"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox OS smartphone owner?",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox OS smartphone owner?", {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-a-monthly-newsletter-and-special"),
                 value=REPLACE(
                     newsletters,
                     "A monthly newsletter and special announcements on how to get the most from your Firefox OS device, including the latest features and coolest Firefox Marketplace apps.",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                        "Firefox Marketplace": TERM_REFERENCE("brand-name-firefox-marketplace"),
-                    },
+                    {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"), "Firefox Marketplace": TERM_REFERENCE("brand-name-firefox-marketplace"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-os-and-you"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox OS + You",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox OS + You", {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-get-a-weekly-tip"),
                 value=REPLACE(
                     newsletters,
                     "Get a weekly tip on how to super-charge your Firefox experience.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-weekly-tips"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox Weekly Tips",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox Weekly Tips", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-join-mozilla"),
-                value=REPLACE(
-                    newsletters,
-                    "Join Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Join Mozilla", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozillas-largest-celebration"),
                 value=REPLACE(
                     newsletters,
                     "Mozilla's largest celebration of making and learning on the web.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-discover-the-latest"),
                 value=REPLACE(
-                    newsletters,
-                    "Discover the latest, coolest HTML5 apps on Firefox OS.",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
+                    newsletters, "Discover the latest, coolest HTML5 apps on Firefox OS.", {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-os"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox OS",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox OS", {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},),
             ),
             FTL.Message(
-                id=FTL.Identifier("newsletters-android"),
-                value=REPLACE(
-                    newsletters,
-                    "Android",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                    },
-                ),
+                id=FTL.Identifier("newsletters-android"), value=REPLACE(newsletters, "Android", {"Android": TERM_REFERENCE("brand-name-android"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-keep-up-with-releases"),
                 value=REPLACE(
                     newsletters,
                     "Keep up with releases and news about Firefox for Android.",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Android": TERM_REFERENCE("brand-name-android"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -726,10 +531,7 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Firefox for Android",
-                    {
-                        "Android": TERM_REFERENCE("brand-name-android"),
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Android": TERM_REFERENCE("brand-name-android"), "Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -737,89 +539,46 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Get how-tos, advice and news to make your Firefox experience work best for you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-news"),
-                value=REPLACE(
-                    newsletters,
-                    "Firefox News",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Firefox News", {"Firefox": TERM_REFERENCE("brand-name-firefox"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-special-announcements-about-mozilla"),
                 value=REPLACE(
                     newsletters,
                     "Special announcements about Mozilla's annual, hands-on festival dedicated to forging the future of the open Web.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-festival"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla Festival",
-                    {
-                        "Mozilla Festival": TERM_REFERENCE("brand-name-mozilla-festival"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla Festival", {"Mozilla Festival": TERM_REFERENCE("brand-name-mozilla-festival"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-news"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla News",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla News", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
-                id=FTL.Identifier("newsletters-mozilla"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                id=FTL.Identifier("newsletters-mozilla"), value=REPLACE(newsletters, "Mozilla", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-learning-network"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla Learning Network",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla Learning Network", {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-mozilla-labs"),
-                value=REPLACE(
-                    newsletters,
-                    "Mozilla Labs",
-                    {
-                        "Mozilla Labs": TERM_REFERENCE("brand-name-mozilla-labs"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Mozilla Labs", {"Mozilla Labs": TERM_REFERENCE("brand-name-mozilla-labs"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-firefox-os-news"),
                 value=REPLACE(
                     newsletters,
                     "Firefox OS news, tips, launch information and where to buy.",
-                    {
-                        "Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),
-                    },
+                    {"Firefox OS": TERM_REFERENCE("brand-name-firefox-os"),},
                 ),
             ),
             FTL.Message(
@@ -827,9 +586,7 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Help us make a better Firefox for you by test-driving our latest products and features.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
             FTL.Message(
@@ -837,20 +594,12 @@ newsletters-i-didnt-sign-up = {COPY(newsletters, "I didn't sign up for this.",)}
                 value=REPLACE(
                     newsletters,
                     "Special announcements helping you get the most out of Webmaker.",
-                    {
-                        "Webmaker": TERM_REFERENCE("brand-name-webmaker"),
-                    },
+                    {"Webmaker": TERM_REFERENCE("brand-name-webmaker"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-webmaker"),
-                value=REPLACE(
-                    newsletters,
-                    "Webmaker",
-                    {
-                        "Webmaker": TERM_REFERENCE("brand-name-webmaker"),
-                    },
-                ),
+                value=REPLACE(newsletters, "Webmaker", {"Webmaker": TERM_REFERENCE("brand-name-webmaker"),},),
             ),
             FTL.Message(
                 id=FTL.Identifier("newsletters-im-keeping-in-touch"),
@@ -884,9 +633,7 @@ newsletters-get-smart-on-the-issues = {COPY(newsletters, "Get smart on the issue
                 value=REPLACE(
                     newsletters,
                     "Get the Mozilla newsletter to stay informed about issues challenging the health of the Internet and to discover how you can get involved.",
-                    {
-                        "Mozilla": TERM_REFERENCE("brand-name-mozilla"),
-                    },
+                    {"Mozilla": TERM_REFERENCE("brand-name-mozilla"),},
                 ),
             ),
         ],

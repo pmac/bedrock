@@ -609,19 +609,7 @@ def newsletter_subscribe(request):
 
             kwargs = {"format": data["fmt"]}
             # add optional data
-            kwargs.update(
-                dict(
-                    (k, data[k])
-                    for k in [
-                        "country",
-                        "lang",
-                        "source_url",
-                        "first_name",
-                        "last_name",
-                    ]
-                    if data[k]
-                )
-            )
+            kwargs.update(dict((k, data[k]) for k in ["country", "lang", "source_url", "first_name", "last_name",] if data[k]))
 
             # NOTE this is not a typo; Referrer is misspelled in the HTTP spec
             # https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.36

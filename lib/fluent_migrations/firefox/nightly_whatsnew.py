@@ -19,21 +19,13 @@ def migrate(ctx):
                 value=REPLACE(
                     nightly_whatsnew,
                     "You’ve just been upgraded to Firefox Nightly %(version)s!",
-                    {
-                        "%%": "%",
-                        "%(version)s": VARIABLE_REFERENCE("version"),
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    {"%%": "%", "%(version)s": VARIABLE_REFERENCE("version"), "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("nightly-whatsnew-your-firefox-nightly"),
                 value=REPLACE(
-                    nightly_whatsnew,
-                    "Your Firefox Nightly has been updated.",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    nightly_whatsnew, "Your Firefox Nightly has been updated.", {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
         ]
@@ -49,10 +41,7 @@ nightly-whatsnew-firefox-nightly = { -brand-name-firefox-nightly }
                 value=REPLACE(
                     nightly_whatsnew,
                     "Every 4 to 5 weeks, a new major version of Firefox is released and as a result, the Nightly version increases as well.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Nightly": TERM_REFERENCE("brand-name-nightly"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Nightly": TERM_REFERENCE("brand-name-nightly"),},
                 ),
             ),
             FTL.Message(
@@ -60,10 +49,7 @@ nightly-whatsnew-firefox-nightly = { -brand-name-firefox-nightly }
                 value=REPLACE(
                     nightly_whatsnew,
                     "Every 6 to 8 weeks, a new major version of Firefox is released and as a result, the Nightly version increases as well.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Nightly": TERM_REFERENCE("brand-name-nightly"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Nightly": TERM_REFERENCE("brand-name-nightly"),},
                 ),
             ),
             FTL.Message(
@@ -71,10 +57,7 @@ nightly-whatsnew-firefox-nightly = { -brand-name-firefox-nightly }
                 value=REPLACE(
                     nightly_whatsnew,
                     "This is a good time to thank you for helping us make Firefox better and to give you some pointers to documentation, communication channels and news sites related to Nightly that may be of interest to you.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                        "Nightly": TERM_REFERENCE("brand-name-nightly"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"), "Nightly": TERM_REFERENCE("brand-name-nightly"),},
                 ),
             ),
             FTL.Message(

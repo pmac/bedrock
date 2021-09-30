@@ -20,19 +20,12 @@ from bedrock.mozorg.tests import TestCase
 
 
 @override_settings(
-    STUB_ATTRIBUTION_HMAC_KEY="achievers",
-    STUB_ATTRIBUTION_RATE=1,
-    STUB_ATTRIBUTION_MAX_LEN=600,
+    STUB_ATTRIBUTION_HMAC_KEY="achievers", STUB_ATTRIBUTION_RATE=1, STUB_ATTRIBUTION_MAX_LEN=600,
 )
 class TestStubAttributionCode(TestCase):
     def _get_request(self, params):
         rf = RequestFactory()
-        return rf.get(
-            "/",
-            params,
-            HTTP_X_REQUESTED_WITH="XMLHttpRequest",
-            HTTP_ACCEPT="application/json",
-        )
+        return rf.get("/", params, HTTP_X_REQUESTED_WITH="XMLHttpRequest", HTTP_ACCEPT="application/json",)
 
     def test_not_ajax_request(self):
         req = RequestFactory().get("/", {"source": "malibu"})
@@ -64,8 +57,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
+            data["attribution_sig"], "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
         )
 
     def test_no_valid_param_data(self):
@@ -97,8 +89,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
+            data["attribution_sig"], "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
         )
 
     def test_some_valid_param_data(self):
@@ -124,8 +115,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "b53097f17741b75cdd5b737d3c8ba03349a6093148adeada2ee69adf4fe87322",
+            data["attribution_sig"], "b53097f17741b75cdd5b737d3c8ba03349a6093148adeada2ee69adf4fe87322",
         )
 
     def test_campaign_data_too_long(self):
@@ -167,8 +157,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "3c1611db912c51a96418eb7806fbaf1400b8d05fbf6ee4f2f1fb3c0ba74a89f4",
+            data["attribution_sig"], "3c1611db912c51a96418eb7806fbaf1400b8d05fbf6ee4f2f1fb3c0ba74a89f4",
         )
 
     def test_other_data_too_long_not_campaign(self):
@@ -217,8 +206,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "b2dc555b2914fdec9f9a1247d244520392e4f888961a6fb57a74a1cdf041261f",
+            data["attribution_sig"], "b2dc555b2914fdec9f9a1247d244520392e4f888961a6fb57a74a1cdf041261f",
         )
 
     def test_handles_referrer(self):
@@ -244,8 +232,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "b53097f17741b75cdd5b737d3c8ba03349a6093148adeada2ee69adf4fe87322",
+            data["attribution_sig"], "b53097f17741b75cdd5b737d3c8ba03349a6093148adeada2ee69adf4fe87322",
         )
 
     def test_handles_referrer_no_source(self):
@@ -274,8 +261,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "d075cbcbae3bcef5bda3650a259863151586e3a4709d53886ab3cc83a6963d00",
+            data["attribution_sig"], "d075cbcbae3bcef5bda3650a259863151586e3a4709d53886ab3cc83a6963d00",
         )
 
     def test_handles_referrer_utf8(self):
@@ -307,8 +293,7 @@ class TestStubAttributionCode(TestCase):
         attrs = {k: v[0] for k, v in attrs.items()}
         self.assertDictEqual(attrs, final_params)
         self.assertEqual(
-            data["attribution_sig"],
-            "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
+            data["attribution_sig"], "135b2245f6b70978bc8142a91521facdb31d70a1bfbdefdc1bd1dee92ce21a22",
         )
 
     @override_settings(STUB_ATTRIBUTION_RATE=0.2)
@@ -361,94 +346,46 @@ class TestSendToDeviceView(TestCase):
         assert not self.mock_subscribe.called
 
     def test_send_android_email(self):
-        resp_data = self._request(
-            {
-                "platform": "android",
-                "s2d-email": "dude@example.com",
-                "source-url": "https://nihilism.info",
-            }
-        )
+        resp_data = self._request({"platform": "android", "s2d-email": "dude@example.com", "source-url": "https://nihilism.info",})
         assert resp_data["success"]
         self.mock_subscribe.assert_called_with(
-            "dude@example.com",
-            views.SEND_TO_DEVICE_MESSAGE_SETS["default"]["email"]["android"],
-            source_url="https://nihilism.info",
-            lang="en-US",
+            "dude@example.com", views.SEND_TO_DEVICE_MESSAGE_SETS["default"]["email"]["android"], source_url="https://nihilism.info", lang="en-US",
         )
 
     def test_send_android_email_basket_error(self):
         self.mock_subscribe.side_effect = views.basket.BasketException
-        resp_data = self._request(
-            {
-                "platform": "android",
-                "s2d-email": "dude@example.com",
-                "source-url": "https://nihilism.info",
-            },
-            400,
-        )
+        resp_data = self._request({"platform": "android", "s2d-email": "dude@example.com", "source-url": "https://nihilism.info",}, 400,)
         assert not resp_data["success"]
         assert "system" in resp_data["errors"]
 
     def test_send_android_bad_email(self):
-        resp_data = self._request(
-            {
-                "platform": "android",
-                "s2d-email": "@example.com",
-                "source-url": "https://nihilism.info",
-            }
-        )
+        resp_data = self._request({"platform": "android", "s2d-email": "@example.com", "source-url": "https://nihilism.info",})
         assert not resp_data["success"]
         assert "email" in resp_data["errors"]
         assert not self.mock_subscribe.called
 
     # an invalid value for 'message-set' should revert to 'default' message set
     def test_invalid_message_set(self):
-        resp_data = self._request(
-            {
-                "platform": "ios",
-                "s2d-email": "dude@example.com",
-                "message-set": "the-dude-is-not-in",
-            }
-        )
+        resp_data = self._request({"platform": "ios", "s2d-email": "dude@example.com", "message-set": "the-dude-is-not-in",})
         assert resp_data["success"]
         self.mock_subscribe.assert_called_with(
-            "dude@example.com",
-            views.SEND_TO_DEVICE_MESSAGE_SETS["default"]["email"]["ios"],
-            source_url=None,
-            lang="en-US",
+            "dude@example.com", views.SEND_TO_DEVICE_MESSAGE_SETS["default"]["email"]["ios"], source_url=None, lang="en-US",
         )
 
     # /firefox/android/ embedded widget (bug 1221328)
     def test_android_embedded_email(self):
-        resp_data = self._request(
-            {
-                "platform": "android",
-                "s2d-email": "dude@example.com",
-                "message-set": "fx-android",
-            }
-        )
+        resp_data = self._request({"platform": "android", "s2d-email": "dude@example.com", "message-set": "fx-android",})
         assert resp_data["success"]
         self.mock_subscribe.assert_called_with(
-            "dude@example.com",
-            views.SEND_TO_DEVICE_MESSAGE_SETS["fx-android"]["email"]["android"],
-            source_url=None,
-            lang="en-US",
+            "dude@example.com", views.SEND_TO_DEVICE_MESSAGE_SETS["fx-android"]["email"]["android"], source_url=None, lang="en-US",
         )
 
     # /firefox/mobile-download/desktop
     def test_fx_mobile_download_desktop_email(self):
-        resp_data = self._request(
-            {
-                "s2d-email": "dude@example.com",
-                "message-set": "fx-mobile-download-desktop",
-            }
-        )
+        resp_data = self._request({"s2d-email": "dude@example.com", "message-set": "fx-mobile-download-desktop",})
         assert resp_data["success"]
         self.mock_subscribe.assert_called_with(
-            "dude@example.com",
-            views.SEND_TO_DEVICE_MESSAGE_SETS["fx-mobile-download-desktop"]["email"]["all"],
-            source_url=None,
-            lang="en-US",
+            "dude@example.com", views.SEND_TO_DEVICE_MESSAGE_SETS["fx-mobile-download-desktop"]["email"]["all"], source_url=None, lang="en-US",
         )
 
 

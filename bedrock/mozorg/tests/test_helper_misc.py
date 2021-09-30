@@ -334,8 +334,7 @@ class TestPressBlogUrl(TestCase):
 
 
 @override_settings(
-    DONATE_LINK=TEST_DONATE_LINK,
-    DONATE_PARAMS=TEST_DONATE_PARAMS,
+    DONATE_LINK=TEST_DONATE_LINK, DONATE_PARAMS=TEST_DONATE_PARAMS,
 )
 class TestDonateUrl(TestCase):
     rf = RequestFactory()
@@ -638,13 +637,7 @@ val_markup = Markup(val_string)
 
 
 @pytest.mark.parametrize(
-    "f, v",
-    [
-        (format_string, val_string),
-        (format_string, val_markup),
-        (format_markup, val_string),
-        (format_markup, val_markup),
-    ],
+    "f, v", [(format_string, val_string), (format_string, val_markup), (format_markup, val_string), (format_markup, val_markup),],
 )
 def test_f_markup(f, v):
     expect = "Hello &lt;b&gt;&lt;em&gt;Steve&lt;/em&gt;&lt;/b&gt;"

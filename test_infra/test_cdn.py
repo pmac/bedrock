@@ -11,13 +11,7 @@ TLS_DATA_PATH = TESTS_PATH.joinpath("fixtures", "tls.json")
 
 
 @pytest.mark.parametrize(
-    "url",
-    (
-        "/",
-        "/firefox/",
-        "/firefox/new/",
-        "/about/",
-    ),
+    "url", ("/", "/firefox/", "/firefox/new/", "/about/",),
 )
 @pytest.mark.nondestructive
 def test_locale_redirect(url, base_url):

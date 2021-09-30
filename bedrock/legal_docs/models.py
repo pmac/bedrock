@@ -99,13 +99,7 @@ class LegalDocsManager(models.Manager):
                     errors += 1
                     continue
 
-                doc_objs.append(
-                    LegalDoc(
-                        name=path_data["doc_name"],
-                        locale=path_data["locale"],
-                        content=content,
-                    )
-                )
+                doc_objs.append(LegalDoc(name=path_data["doc_name"], locale=path_data["locale"], content=content,))
             self.bulk_create(doc_objs)
 
         return len(doc_objs), errors

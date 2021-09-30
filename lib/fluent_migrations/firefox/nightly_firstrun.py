@@ -17,21 +17,13 @@ def migrate(ctx):
             FTL.Message(
                 id=FTL.Identifier("nightly-firstrun-firefox-nightly"),
                 value=REPLACE(
-                    nightly_firstrun,
-                    "Firefox Nightly First Run Page",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    nightly_firstrun, "Firefox Nightly First Run Page", {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
             FTL.Message(
                 id=FTL.Identifier("nightly-firstrun-thank-you-for-using"),
                 value=REPLACE(
-                    nightly_firstrun,
-                    "Thank you for using Firefox Nightly",
-                    {
-                        "Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),
-                    },
+                    nightly_firstrun, "Thank you for using Firefox Nightly", {"Firefox Nightly": TERM_REFERENCE("brand-name-firefox-nightly"),},
                 ),
             ),
             FTL.Message(
@@ -39,9 +31,7 @@ def migrate(ctx):
                 value=REPLACE(
                     nightly_firstrun,
                     "Choose an area to get involved below and help make Firefox better for users everywhere",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -60,9 +50,7 @@ nightly-firstrun-code = {COPY(nightly_firstrun, "Code",)}
                 value=REPLACE(
                     nightly_firstrun,
                     "File bugs and work on the building blocks of the Firefox browser.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
@@ -79,9 +67,7 @@ nightly-firstrun-localize = {COPY(nightly_firstrun, "Localize",)}
                 value=REPLACE(
                     nightly_firstrun,
                     "Make Firefox available (and better) in more languages around the world.",
-                    {
-                        "Firefox": TERM_REFERENCE("brand-name-firefox"),
-                    },
+                    {"Firefox": TERM_REFERENCE("brand-name-firefox"),},
                 ),
             ),
         ]
