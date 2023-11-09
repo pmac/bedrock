@@ -1033,7 +1033,7 @@ bedrock database.</p>
 <h2 id="add-to-a-view">Add to a View<a class="headerlink" href="#add-to-a-view" title="Permanent link">&para;</a></h2>
 <p>The easiest way to make the data available to a page is to add the
 <code>page_content_cards</code> variable to the template context:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.contentcards.models</span> <span class="kn">import</span> <span class="n">get_page_content_cards</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.contentcards.models</span> <span class="kn">import</span> <span class="n">get_page_content_cards</span>
 
 <span class="k">def</span> <span class="nf">view_with_cards</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">locale</span> <span class="o">=</span> <span class="n">l10n_utils</span><span class="o">.</span><span class="n">get_locale</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
@@ -1062,7 +1062,7 @@ are no cards for that page and locale combination.</p>
 </div>
 <h2 id="add-to-the-template">Add to the Template<a class="headerlink" href="#add-to-the-template" title="Permanent link">&para;</a></h2>
 <p>Once you have the data in the template context, using a card is simple:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros-protocol.html&quot;</span> <span class="k">import</span> <span class="nv">content_card</span> <span class="k">with context</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros-protocol.html&quot;</span> <span class="k">import</span> <span class="nv">content_card</span> <span class="k">with context</span> <span class="cp">%}</span>
 
 <span class="cp">{{</span> <span class="nv">content_card</span><span class="o">(</span><span class="s1">&#39;card_1&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
@@ -1073,7 +1073,7 @@ for protocol content cards.</p>
 context and you don't want to create or modify a view, you can fetch
 the cards via a helper function in the template itself, but you have to
 pass the result to the macro:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros-protocol.html&quot;</span> <span class="k">import</span> <span class="nv">content_card</span> <span class="k">with context</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros-protocol.html&quot;</span> <span class="k">import</span> <span class="nv">content_card</span> <span class="k">with context</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">set</span> <span class="nv">content_cards</span> <span class="o">=</span> <span class="nv">get_page_content_cards</span><span class="o">(</span><span class="s1">&#39;home&#39;</span><span class="o">,</span> <span class="nv">LANG</span><span class="o">)</span> <span class="cp">%}</span>
 
 <span class="cp">{{</span> <span class="nv">content_card</span><span class="o">(</span><span class="s1">&#39;card_1&#39;</span><span class="o">,</span> <span class="nv">content_cards</span><span class="o">)</span> <span class="cp">}}</span>
@@ -1158,7 +1158,7 @@ pass the result to the macro:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

@@ -1158,7 +1158,7 @@ codes</a>`</p>
 <p>Example pricing plan config for $USD / English containing both
 12-month and monthly plans:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">VPN_PLAN_ID_MATRIX</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">VPN_PLAN_ID_MATRIX</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;usd&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;en&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;12-month&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1191,7 +1191,7 @@ a detailed description of what should be in the analytics objects.</p>
 <p>Example that maps the <code>US</code> country code to the pricing plan config
 above:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">VPN_VARIABLE_PRICING</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">VPN_VARIABLE_PRICING</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;US&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="n">VPN_PLAN_ID_MATRIX</span><span class="p">[</span><span class="s2">&quot;usd&quot;</span><span class="p">][</span><span class="s2">&quot;en&quot;</span><span class="p">],</span>
     <span class="p">},</span>
@@ -1209,7 +1209,7 @@ above:</p>
     can then add these to <code>VPN_COUNTRY_CODES</code> in <code>products/views.py</code>
     using a simple function like so:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">vpn_available</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">vpn_available</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">country</span> <span class="o">=</span> <span class="n">get_country_from_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
     <span class="n">country_list</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">VPN_COUNTRY_CODES</span>
 
@@ -1219,7 +1219,7 @@ above:</p>
     <span class="k">return</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">country_list</span>
 </code></pre></div>
 <p>The function could then be used in the landing page view like so:</p>
-<div class="highlight"><pre><span></span><code><span class="n">vpn_available_in_country</span> <span class="o">=</span> <span class="n">vpn_available</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">vpn_available_in_country</span> <span class="o">=</span> <span class="n">vpn_available</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
 </code></pre></div>
 </blockquote>
 </li>
@@ -1231,7 +1231,7 @@ above:</p>
     tests</a>
     for each new country. This will help give you confidence that the
     right plan ID is displayed for each new country / language option.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_vpn_subscribe_link_variable_12_month_us_en</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_vpn_subscribe_link_variable_12_month_us_en</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Should contain expected 12-month plan ID (US / en-US)&quot;&quot;&quot;</span>
     <span class="n">markup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_render</span><span class="p">(</span>
         <span class="n">plan</span><span class="o">=</span><span class="s2">&quot;12-month&quot;</span><span class="p">,</span>
@@ -1255,7 +1255,7 @@ above:</p>
     countries where VPN is available. Again, because this needs to be
     behind a feature switch you may want a new temporary variable that
     you can use in <code>products/views.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">available_countries</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">VPN_AVAILABLE_COUNTRIES</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">available_countries</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">VPN_AVAILABLE_COUNTRIES</span>
 
 <span class="k">if</span> <span class="n">switch</span><span class="p">(</span><span class="s2">&quot;vpn-wave-vi&quot;</span><span class="p">):</span>
     <span class="n">available_countries</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">VPN_AVAILABLE_COUNTRIES_WAVE_VI</span>
@@ -1265,9 +1265,9 @@ above:</p>
 <p>Finally, there is also a string in <code>l10n/en/products/vpn/shared.ftl</code>
     that needs updating to include the new countries. This should be a
     new string ID, and behind a feature switch in the template:</p>
-<div class="highlight"><pre><span></span><code>vpn-shared-available-countries-v6 = We currently offer { -brand-name-mozilla-vpn } in Austria, Belgium, Canada, Finland, France, Germany, Ireland, Italy, Malaysia, the Netherlands, New Zealand, Singapore, Spain, Sweden, Switzerland, the UK, and the US.
+<div class="language-text highlight"><pre><span></span><code>vpn-shared-available-countries-v6 = We currently offer { -brand-name-mozilla-vpn } in Austria, Belgium, Canada, Finland, France, Germany, Ireland, Italy, Malaysia, the Netherlands, New Zealand, Singapore, Spain, Sweden, Switzerland, the UK, and the US.
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;vpn_wave_vi&#39;</span><span class="o">)</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;vpn_wave_vi&#39;</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;vpn-shared-available-countries-v6&#39;</span><span class="o">,</span> <span class="nv">fallback</span><span class="o">=</span><span class="s1">&#39;vpn-shared-available-countries-v5&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;vpn-shared-available-countries-v5&#39;</span><span class="o">)</span> <span class="cp">}}</span>
@@ -1366,7 +1366,7 @@ downloading the VPN client, see <code>VPN_BLOCK_DOWNLOAD_COUNTRY_CODES</code>.</
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

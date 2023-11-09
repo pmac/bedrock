@@ -1213,7 +1213,7 @@ performance reasons. To use Convert on a page, you can load the script
 behind a feature flag, which can be turned on / off for only the
 duration of an experiment. The script should be loaded inside the
 <code>experiments</code> block in your template:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">experiments</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">experiments</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;experiment-convert-page-name&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;en-US&#39;</span><span class="o">])</span> <span class="cp">%}</span>
 <span class="x">        </span><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;convert&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
@@ -1303,7 +1303,7 @@ page.</p>
 different.</p>
 <p>Create the variant page like you would a new page. Make sure it is
 <code>noindex</code> and does not have a <code>canonical</code> URL.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">canonical_urls</span> <span class="cp">%}</span><span class="x">&lt;meta name=&quot;robots&quot; content=&quot;noindex,follow&quot;&gt;</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">canonical_urls</span> <span class="cp">%}</span><span class="x">&lt;meta name=&quot;robots&quot; content=&quot;noindex,follow&quot;&gt;</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>Configure as explained on the <a href="http://bedrock.readthedocs.io/en/latest/coding.html#variation-views">variation
 view</a>
@@ -1313,7 +1313,7 @@ page.</p>
 the experiments block in the template that will be doing the
 redirection. Wrap the extra js include in a
 <a href="http://bedrock.readthedocs.io/en/latest/install.html#feature-flipping-aka-switches">switch</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">experiments</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">experiments</span> <span class="cp">%}</span>
 <span class="x">  </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;experiment-berlin-video&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;de&#39;</span><span class="o">])</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_berlin_experiment&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="x">  </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
@@ -1334,7 +1334,7 @@ as well.</p>
 <p>Including the <code>data-ex-variant</code> and <code>data-ex-name</code> in the analytics
 reporting will add the test to an auto generated report in
 <abbr title="Google Analytics">GA</abbr>. The variable values may be provided by the analytics team.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;v=a&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;v=a&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">        </span><span class="s1">&#39;data-ex-variant&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;de-page&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="s1">&#39;data-ex-name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Berlin-Campaign-Landing-Page&#39;</span>
@@ -1383,7 +1383,7 @@ depending on the experiment.</p>
 externally controlled experiments (for example Ad campaign tests, or
 in-product Firefox experiments), you can use the experiment-utils helper
 to decide whether or not Traffic Cop should initiate.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">TrafficCop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@mozmeao/trafficcop&#39;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">TrafficCop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@mozmeao/trafficcop&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isApprovedToRun</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../../base/experiment-utils.es6&#39;</span><span class="p">;</span>
 
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isApprovedToRun</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
@@ -1483,7 +1483,7 @@ is being opened in an automated testing environment.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

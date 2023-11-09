@@ -1673,7 +1673,7 @@ consistently.</p>
 <p>If you add a new Python dependency (eg to <code>requirements/prod.in</code> or
 <code>requirements/dev.in</code>) you can generate a pinned and hash-marked
 addition to our requirements files just by running:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span>compile-requirements
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>compile-requirements
 </code></pre></div>
 <p>and committing any changes that are made. Please re-build your docker
 image and test it with <code>make build test</code> to be sure the dependency does
@@ -1682,7 +1682,7 @@ not cause a regression.</p>
 <code>make compile-requirements</code> then rebuild, test and commit the results</p>
 <p>To check for stale Python dependencies (basically <code>pip list -o</code> but in
 the Docker container):</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span>check-requirements
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>check-requirements
 </code></pre></div>
 <p>For Node packages we use
 <a href="https://docs.npmjs.com/cli/v8/commands/npm-install">NPM</a>, which should
@@ -1744,7 +1744,7 @@ automatically.</p>
 <code>./media/static-bundles.json</code>. This is the file where you can define the
 bundle names that will get used in page templates. For example, a CSS
 bundle can be defined as:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<div class="language-json highlight"><pre><span></span><code><span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="s2">&quot;css/firefox/new/basic/download.scss&quot;</span>
@@ -1754,10 +1754,10 @@ bundle can be defined as:</p>
 <span class="p">]</span>
 </code></pre></div>
 <p>Which can then be referenced in a page template using:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">css_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_download&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">css_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_download&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>A JS bundle can be defied as:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<div class="language-json highlight"><pre><span></span><code><span class="nt">&quot;js&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="s2">&quot;protocol/js/protocol-modal.js&quot;</span><span class="p">,</span>
@@ -1768,7 +1768,7 @@ bundle can be defined as:</p>
 <span class="p">]</span>
 </code></pre></div>
 <p>Which can then be referenced in a page template using:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_download&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_download&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>Once you define a bundle in <code>static-bundles.json</code>, the
 <code>webpack.config.js</code> file will use these as entrypoints for compiling JS
@@ -1806,19 +1806,19 @@ config</a>.</p>
 from URLs files importing this one, and including a trailing slash. You
 should also give the URL a name so that other pages can reference it
 instead of hardcoding the URL. Example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s2">&quot;channel/&quot;</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mozorg.channel&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s2">&quot;channel/&quot;</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mozorg.channel&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>If you only want to render a template and don't need to do anything
 else in a custom view, Bedrock comes with a handy shortcut to automate
 all of this:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.mozorg.util</span> <span class="kn">import</span> <span class="n">page</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.mozorg.util</span> <span class="kn">import</span> <span class="n">page</span>
 <span class="n">page</span><span class="p">(</span><span class="s2">&quot;channel/&quot;</span><span class="p">,</span> <span class="s2">&quot;mozorg/channel.html&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>You don't need to create a view. It will serve up the specified
 template at the given URL (the first parameter. see the <a href="https://docs.djangoproject.com/en/3.2/ref/urls/#django.urls.path">Django
 docs</a>
 for details). You can also pass template data as keyword arguments:</p>
-<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">(</span><span class="s2">&quot;channel/&quot;</span><span class="p">,</span> <span class="s2">&quot;mozorg/channel.html&quot;</span><span class="p">,</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">page</span><span class="p">(</span><span class="s2">&quot;channel/&quot;</span><span class="p">,</span> <span class="s2">&quot;mozorg/channel.html&quot;</span><span class="p">,</span>
      <span class="n">latest_version</span><span class="o">=</span><span class="n">product_details</span><span class="o">.</span><span class="n">firefox_versions</span><span class="p">[</span><span class="s2">&quot;LATEST_FIREFOX_VERSION&quot;</span><span class="p">])</span>
 </code></pre></div>
 <p>The variable <code>latest_version</code> will be available in the template.</p>
@@ -1914,7 +1914,7 @@ command line:</p>
 </ol>
 <p>The script will:</p>
 <p>-</p>
-<div class="highlight"><pre><span></span><code>optimize JPG and PNG files using [tinypng](https://tinypng.com/) (
+<div class="language-text highlight"><pre><span></span><code>optimize JPG and PNG files using [tinypng](https://tinypng.com/) (
 
 :   -   this step is optional since running compression on the same
         images over and over degrades them)
@@ -1942,10 +1942,10 @@ cases you may encounter when coding pages:</p>
 <h4 id="static">static()<a class="headerlink" href="#static" title="Permanent link">&para;</a></h4>
 <p>For a simple image, the <code>static()</code> function is used to generate the
 image URL. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ static(&#39;img/firefox/new/firefox-wordmark-logo.svg&#39;) }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Firefox&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ static(&#39;img/firefox/new/firefox-wordmark-logo.svg&#39;) }}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Firefox&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>will output an image:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/firefox/new/firefox-wordmark-logo.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Firefox&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/firefox/new/firefox-wordmark-logo.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Firefox&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <h4 id="resp_img">resp_img()<a class="headerlink" href="#resp_img" title="Permanent link">&para;</a></h4>
 <p>For <a href="https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">responsive
@@ -1954,7 +1954,7 @@ where we want to specify multiple different image sizes and let the
 browser select which is best to use.</p>
 <p>The example below shows how to serve an appropriately sized, responsive
 red panda image:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">,</span>
     <span class="n">srcset</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">:</span> <span class="s2">&quot;500w&quot;</span><span class="p">,</span>
@@ -1968,7 +1968,7 @@ red panda image:</p>
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/panda-500.png&quot;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/panda-500.png&quot;</span>
      <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/panda-500.png 500w,/media/img/panda-750.png 750w,/media/img/panda-1000.png 1000w&quot;</span>
      <span class="na">sizes</span><span class="o">=</span><span class="s">&quot;(min-width: 1000px) calc(50vw - 200px),calc(100vw - 50px)&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>&#39;
 </code></pre></div>
@@ -1993,7 +1993,7 @@ fallback size when no other media queries match.</p>
 </div>
 <p>Another example might be to serve a high resolution alternative for a
 fixed size image:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda.png&quot;</span><span class="p">,</span>
     <span class="n">srcset</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;img/panda-high-res.png&quot;</span><span class="p">:</span> <span class="s2">&quot;2x&quot;</span>
@@ -2001,7 +2001,7 @@ fixed size image:</p>
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/panda.png&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/panda-high-res.png 2x&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/panda.png&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/panda-high-res.png 2x&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Here we don't need a <code>sizes</code> attribute, since the panda image is fixed
 in size and small enough that it won't need to resize along with the
@@ -2016,7 +2016,7 @@ then be used to say:</p>
 </ul>
 <p>The <code>resp_img()</code> helper also supports localized images by setting the
 <code>'l10n'</code> parameter to <code>True</code>`:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">,</span>
     <span class="n">srcset</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">:</span> <span class="s2">&quot;500w&quot;</span><span class="p">,</span>
@@ -2033,13 +2033,13 @@ then be used to say:</p>
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output (assuming <code>de</code> was your locale):</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/l10n/de/panda-500.png&quot;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/l10n/de/panda-500.png&quot;</span>
      <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/l10n/de/panda-500.png 500w,/media/img/l10n/de/panda-750.png 750w,/media/img/l10n/de/panda-1000.png 1000w&quot;</span>
      <span class="na">sizes</span><span class="o">=</span><span class="s">&quot;(min-width: 1000px) calc(50vw - 200px),calc(100vw - 50px)&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>&#39;
 </code></pre></div>
 <p>Finally, you can also specify any other additional attributes you might
 need using <code>optional_attributes</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">resp_img</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">,</span>
     <span class="n">srcset</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;img/panda-500.png&quot;</span><span class="p">:</span> <span class="s2">&quot;500w&quot;</span><span class="p">,</span>
@@ -2067,7 +2067,7 @@ where we want to serve different images, or image types, to suit
 different display sizes.</p>
 <p>The example below shows how to serve a different image for desktop and
 mobile sizes screens:</p>
-<div class="highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda-mobile.png&quot;</span><span class="p">,</span>
     <span class="n">sources</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
@@ -2086,7 +2086,7 @@ mobile sizes screens:</p>
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(max-width: 799px)&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/panda-mobile.png&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 800px)&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/panda-desktop.png&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/panda-mobile.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
@@ -2109,7 +2109,7 @@ be satisfied), hence we omit a descriptor value.</p>
 <p>A more complex example might be when we want to load responsively sized,
 animated gifs, but also offer still images for users who set
 <code>(prefers-reduced-motion: reduce)</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/dancing-panda-500.gif&quot;</span><span class="p">,</span>
     <span class="n">sources</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
@@ -2140,7 +2140,7 @@ animated gifs, but also offer still images for users who set
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(prefers-reduced-motion: reduce)&quot;</span>
             <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/sleeping-panda-500.png 500w,/media/img/sleeping-panda-750.png 750w,/media/img/sleeping-panda-1000.png 1000w&quot;</span>
             <span class="na">sizes</span><span class="o">=</span><span class="s">&quot;(min-width: 1000px) calc(50vw - 200px),calc(100vw - 50px)&quot;</span><span class="p">&gt;</span>
@@ -2156,7 +2156,7 @@ would load static png files instead. Multiple image sizes are also
 supported for each <code>&lt;source&gt;</code> using <code>srcset</code> and <code>sizes</code>.</p>
 <p>Another type of use case might be to serve different image formats, so
 capable browsers can take advantage of more efficient encoding:</p>
-<div class="highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/red-panda.png&quot;</span><span class="p">,</span>
     <span class="n">sources</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
@@ -2169,7 +2169,7 @@ capable browsers can take advantage of more efficient encoding:</p>
 <span class="p">)</span>
 </code></pre></div>
 <p>This would output:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/webp&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;/media/img/red-panda.webp&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/media/img/red-panda.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
@@ -2180,7 +2180,7 @@ to download <code>red-panda.webp</code>, whilst older browsers would download
 <code>red-panda.png</code>.</p>
 <p>Like <code>resp_img()</code>, the <code>picture()</code> helper also supports L10n images and
 other useful attributes via the <code>optional_attributes</code> parameter:</p>
-<div class="highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">picture</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="s2">&quot;img/panda-mobile.png&quot;</span><span class="p">,</span>
     <span class="n">sources</span><span class="o">=</span><span class="p">[</span>
         <span class="p">{</span>
@@ -2208,12 +2208,12 @@ other useful attributes via the <code>optional_attributes</code> parameter:</p>
 <p>This is a good question. The answer depends entirely on the image in
 question. A good rule of thumb is as follows:</p>
 <p>-</p>
-<div class="highlight"><pre><span></span><code>Is the image a vector format (e.g. `.svg`)?
+<div class="language-text highlight"><pre><span></span><code>Is the image a vector format (e.g. `.svg`)?
 
 :   -   If yes, then for most cases you can simply use `static()`.
 </code></pre></div>
 <p>-</p>
-<div class="highlight"><pre><span></span><code>Is the image a raster format (e.g. `.png` or `.jpg`)?
+<div class="language-text highlight"><pre><span></span><code>Is the image a raster format (e.g. `.png` or `.jpg`)?
 
 :   -   Is the same image displayed on both large and small
         viewports? Does the image need to scale as the browser
@@ -2241,7 +2241,7 @@ more specific use cases. Some are also encapsulated as features inside
 inside of primary helpers, such as <code>l1n_img()</code>.</p>
 <h4 id="l10n_img">l10n_img()<a class="headerlink" href="#l10n_img" title="Permanent link">&para;</a></h4>
 <p>Images that have translatable text can be handled with <code>l10n_img()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ l10n_img(&#39;firefox/os/have-it-all/messages.jpg&#39;) }}&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ l10n_img(&#39;firefox/os/have-it-all/messages.jpg&#39;) }}&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>The images referenced by <code>l10n_img()</code> must exist in <code>media/img/l10n/</code>,
 so for above example, the images could include
@@ -2252,7 +2252,7 @@ so for above example, the images could include
 spot in the template where it is called. It caches the results to the
 <code>data/qrcode_cache</code> directory, so it only generates the SVG data one
 time per data and box_size combination.</p>
-<div class="highlight"><pre><span></span><code><span class="n">qrcode</span><span class="p">(</span><span class="s2">&quot;https://accounts.firefox.com&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">qrcode</span><span class="p">(</span><span class="s2">&quot;https://accounts.firefox.com&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 </code></pre></div>
 <p>The first argument is the data you'd like to encode in the QR Code
 (usually a URL), and the second is the "box size". It's a parameter
@@ -2309,7 +2309,7 @@ static and you should use the <code>page</code> function documented above.</p>
 <p>If you need to write a view and the page is translated or translatable
 then it should use the <code>l10n_utils.render()</code> function to render the
 template.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="n">l10n_utils</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib</span> <span class="kn">import</span> <span class="n">l10n_utils</span>
 
 <span class="kn">from</span> <span class="nn">django.views.decorators.http</span> <span class="kn">import</span> <span class="n">require_safe</span>
 
@@ -2328,7 +2328,7 @@ it through to your view.</p>
 <p>If you prefer to use Django's Generic View classes we have a convenient
 helper for that. You can use it either to create a custom view class of
 your own, or use it directly in a <code>urls.py</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># app/views.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># app/views.py</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 
 <span class="k">class</span> <span class="nc">FirefoxRoxView</span><span class="p">(</span><span class="n">L10nTemplateView</span><span class="p">):</span>
@@ -2352,7 +2352,7 @@ will be served.</p>
 testing templates. If you'd like to have either separate templates or
 just a template context variable for switching, this will help you out.
 For example.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># urls.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># urls.py</span>
 
 <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
 
@@ -2371,12 +2371,12 @@ URL, or <code>b</code> if <code>?v=b</code> is in the URL. No other options will
 the <code>v</code> query parameter and <code>variation</code> will be empty if any other value
 is passed in for <code>v</code> via the URL. So in your template code you'd simply
 do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">variation</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span> <span class="cp">%}</span><span class="x">&lt;p&gt;This is the B variation of our test. Enjoy!&lt;/p&gt;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">variation</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span> <span class="cp">%}</span><span class="x">&lt;p&gt;This is the B variation of our test. Enjoy!&lt;/p&gt;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>If you'd rather have a fully separate template for your test, you can
 use the <code>template_name_variations</code> argument to the view instead of
 <code>template_context_variations</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># urls.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># urls.py</span>
 
 <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
 
@@ -2405,7 +2405,7 @@ it will only set the variation context variable or alter the template
 name (depending on the options explained above) when requested at one of
 said locales. For example, the template name example above could be
 modified to only work for English or German like so</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># urls.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># urls.py</span>
 
 <span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
 
@@ -2432,7 +2432,7 @@ with most views: <code>bedrock.utils.views.VariationMixin</code>.</p>
 per request country. This is very similar to the above, but it will
 simply use the proper template for the country from which the request
 originated.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.base.views</span> <span class="kn">import</span> <span class="n">GeoTemplateView</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.base.views</span> <span class="kn">import</span> <span class="n">GeoTemplateView</span>
 
 <span class="k">class</span> <span class="nc">CanadaIsSpecialView</span><span class="p">(</span><span class="n">GeoTemplateView</span><span class="p">):</span>
     <span class="n">geo_template_names</span> <span class="o">=</span> <span class="p">{</span>
@@ -2450,7 +2450,7 @@ things depending on the location of the user. You can use the
 <code>bedrock.base.geo.get_country_from_request</code> function in a view and it
 will return the country code for the request (either from the
 <abbr title="Content Delivery Network">CDN</abbr> or the query param, just like above).</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.base.geo</span> <span class="kn">import</span> <span class="n">get_country_from_request</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.base.geo</span> <span class="kn">import</span> <span class="n">get_country_from_request</span>
 
 <span class="k">def</span> <span class="nf">dude_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">country</span> <span class="o">=</span> <span class="n">get_country_from_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
@@ -2463,7 +2463,7 @@ will return the country code for the request (either from the
 the <abbr title="Content Delivery Network">CDN</abbr> or the query param, is avilable in any template in the <code>country_code</code>
 variable. This allows you to change anything about how the template
 renders based on the location of the user.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">country_code</span> <span class="o">==</span> <span class="s2">&quot;US&quot;</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">country_code</span> <span class="o">==</span> <span class="s2">&quot;US&quot;</span> <span class="cp">%}</span>
 <span class="x">    &lt;h1&gt;GO MURICA!&lt;/h1&gt;</span>
 <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
 <span class="x">    &lt;h1&gt;Yay World!&lt;/h1&gt;</span>
@@ -2535,14 +2535,14 @@ page-specific basis, we set up Protocol in a page-specific SCSS file.</p>
 <p>For example, on a Firefox product page, we might want to use Firefox
 logos or wordmarks that do not exist on every page.</p>
 <p>To do this, we add Protocol <code>mzp-</code> classes to the HTML:</p>
-<div class="highlight"><pre><span></span><code>// bedrock/bedrock/firefox/templates/firefox/{specific-page}.html
+<div class="language-html highlight"><pre><span></span><code>// bedrock/bedrock/firefox/templates/firefox/{specific-page}.html
 
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mzp-c-wordmark mzp-t-wordmark-md mzp-t-product-firefox&quot;</span><span class="p">&gt;</span>
     Firefox Browser
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Then we need to include those Protocol styles in the page's SCSS file:</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* bedrock/media/css/firefox/{specific-page}.scss */</span>
+<div class="language-css highlight"><pre><span></span><code><span class="c">/* bedrock/media/css/firefox/{specific-page}.scss */</span>
 
 <span class="c">/* if we need to use protocol images, we need to set the $image-path variable */</span>
 <span class="o">$</span><span class="nt">image-path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/media/protocol/img&#39;</span><span class="o">;</span>
@@ -2574,7 +2574,7 @@ customize based on how the component should look like on a given page.</p>
 HTML code and call it with the desired arguments, instead of manually
 adding Protocol markup. We can import multiple macros in a
 comma-separated fashion, ending the import with <code>with context</code>:</p>
-<div class="highlight"><pre><span></span><code>// bedrock/bedrock/firefox/templates/firefox/{specific-page}.html
+<div class="language-html highlight"><pre><span></span><code>// bedrock/bedrock/firefox/templates/firefox/{specific-page}.html
 
 {% from &quot;macros-protocol.html&quot; import billboard with context %}
 
@@ -2588,7 +2588,7 @@ comma-separated fashion, ending the import with <code>with context</code>:</p>
 </code></pre></div>
 <p>Because not all component styles are global, we still have to import the
 page-specific Protocol styles in SCSS:</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* bedrock/media/css/firefox/{specific-page}.scss */</span>
+<div class="language-css highlight"><pre><span></span><code><span class="c">/* bedrock/media/css/firefox/{specific-page}.scss */</span>
 
 <span class="o">$</span><span class="nt">brand-theme</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;firefox&#39;</span><span class="o">;</span>
 
@@ -2612,7 +2612,7 @@ works for the following components:</p>
 </ul>
 <p>Include a CSS bundle in the template's <code>page_css</code> block along with any
 other page-specific bundles, like so:</p>
-<div class="highlight"><pre><span></span><code>{% block page_css %}
+<div class="language-html highlight"><pre><span></span><code>{% block page_css %}
     {{ css_bundle(&#39;protocol-split&#39;) }}
     {{ css_bundle(&#39;protocol-card&#39;) }}
     {{ css_bundle(&#39;page-specific-bundle&#39;) }}
@@ -2698,7 +2698,7 @@ other page-specific bundles, like so:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

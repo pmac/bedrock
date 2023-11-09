@@ -1477,7 +1477,7 @@
 the code distribution, but are available in separate GitHub
 repositories. The proper repos can be cloned and kept up-to-date using
 the <code>l10n_update</code> management command:</p>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>./manage.py<span class="w"> </span>l10n_update
+<div class="language-console highlight"><pre><span></span><code><span class="gp">$ </span>./manage.py<span class="w"> </span>l10n_update
 </code></pre></div>
 <p>If you don't already have a <code>data/www-l10n</code> directory, this command
 will clone the git repo containing the .ftl translation files (either
@@ -1536,7 +1536,7 @@ well documented on the Fluent Project's site. We use "double hash" or
 comment only ends when another group comment starts however, so you
 should either group your required strings at the bottom of a file, or
 also have a "not required" group comment. Here's an example:</p>
-<div class="highlight"><pre><span></span><code>### File for example.html
+<div class="language-text highlight"><pre><span></span><code>### File for example.html
 
 ## Required
 example-page-title = The Page Title
@@ -1552,7 +1552,7 @@ and any other group comment will end it.</p>
 <p>Once you have your strings in your .ftl file you can place them in your
 template. We'll use the above .ftl file for a simple Jinja template
 example:</p>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;!doctype html&gt;</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="x">&lt;!doctype html&gt;</span>
 <span class="x">&lt;html&gt;</span>
 <span class="x">&lt;head&gt;</span>
 <span class="x">    &lt;title&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;example-page-title&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;/title&gt;</span>
@@ -1600,7 +1600,7 @@ word and may be translated, leave a comment for the translators.</p>
 <p>We are trying to phase out use of <code>{ -brand-name-firefox-browser }</code>
 please use <code>{ -brand-name-firefox } browser</code>.</p>
 </div>
-<div class="highlight"><pre><span></span><code>-brand-name = Firefox
+<div class="language-text highlight"><pre><span></span><code>-brand-name = Firefox
 
 example-about = About { -brand-name }.
 example-update-successful = { -brand-name } has been updated.
@@ -1628,7 +1628,7 @@ the translators including:</p>
 <li>Explanations of English idioms and jargon that may be confusing to
     non-native speakers.</li>
 </ol>
-<div class="highlight"><pre><span></span><code># Variables:
+<div class="language-text highlight"><pre><span></span><code># Variables:
 #   $savings (string) - the percentage saved from the regular price, not including the % Examples: 50, 70
 example-bundle-savings = Buy now for { $savings }% off.
 
@@ -1648,7 +1648,7 @@ remove as much room for error as possible by putting all the attributes
 and their values in a single variable. (This is most common with links
 and their href attributes but we do occasionally pass classes with other
 tags.)</p>
-<div class="highlight"><pre><span></span><code># Variables:
+<div class="language-text highlight"><pre><span></span><code># Variables:
 #   $attrs (attrs) - link to https://www.mozilla.org/about/
 example-created = { -brand-name-firefox } was created by &lt;a {$attrs}&gt;{ -brand-name-mozilla }&lt;/a&gt;.
 
@@ -1656,7 +1656,7 @@ example-created = { -brand-name-firefox } was created by &lt;a {$attrs}&gt;{ -br
 #   $class (string) - CSS class used to replace brand name with wordmark logo
 example-firefox-relay = Add &lt;span { $class }&quot;&gt;{ -brand-name-firefox-relay }&lt;/span&gt;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">created_attrs</span> <span class="o">=</span> <span class="s1">&#39;href=&quot;%s&quot; data-cta-type=&quot;link&quot; data-cta-text=&quot;created by Mozilla&quot;&#39;</span><span class="o">|</span><span class="nf">safe</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">url</span><span class="o">(</span><span class="s1">&#39;mozorg.about.index&#39;</span><span class="o">))</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">set</span> <span class="nv">created_attrs</span> <span class="o">=</span> <span class="s1">&#39;href=&quot;%s&quot; data-cta-type=&quot;link&quot; data-cta-text=&quot;created by Mozilla&quot;&#39;</span><span class="o">|</span><span class="nf">safe</span><span class="o">|</span><span class="nf">format</span><span class="o">(</span><span class="nv">url</span><span class="o">(</span><span class="s1">&#39;mozorg.about.index&#39;</span><span class="o">))</span> <span class="cp">%}</span>
 <span class="x">&lt;p&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;example-created&#39;</span><span class="o">,</span> <span class="nv">attrs</span><span class="o">=</span><span class="nv">created_attrs</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
 
 <span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;example-firefox-relay&#39;</span><span class="o">,</span> <span class="nv">class_name</span><span class="o">=</span><span class="s1">&#39;class=&quot;mzp-c-wordmark mzp-t-wordmark-md mzp-t-product-relay&quot;&#39;</span><span class="o">)</span> <span class="cp">}}</span>
@@ -1671,7 +1671,7 @@ kept as a fallback they should be removed after 1-2 months.</p>
 would like to keep the old one as a fallback, you can add a version
 suffix to the new string ID: e.g.
 <code>firefox-new-skyline-main-page-title-v2</code>.</p>
-<div class="highlight"><pre><span></span><code>example-block-title-v2 = Security, reliability and speed — on every device, anywhere you go.
+<div class="language-text highlight"><pre><span></span><code>example-block-title-v2 = Security, reliability and speed — on every device, anywhere you go.
 # Obsolete string
 example-block-title = Security, reliability and speed — from name you can trust.
 </code></pre></div>
@@ -1684,11 +1684,11 @@ created and the old one deleted.</p>
 Translate extension to promoting our own Firefox Translate feature the
 old strings are not appropriate fall backs.</p>
 <p>The old strings and IDs should be deleted:</p>
-<div class="highlight"><pre><span></span><code>example-translate-title = The To Google Translate extension makes translating the page you’re on easier than ever.
+<div class="language-text highlight"><pre><span></span><code>example-translate-title = The To Google Translate extension makes translating the page you’re on easier than ever.
 example-translate-content = Google Translate, with over 100 languages* at the ready, is used by millions of people around the world.
 </code></pre></div>
 <p>The new strings should have different IDs and not be versioned:</p>
-<div class="highlight"><pre><span></span><code>example-translate-integrated-title = { -brand-name-firefox } now comes with an integrated translation tool.
+<div class="language-text highlight"><pre><span></span><code>example-translate-integrated-title = { -brand-name-firefox } now comes with an integrated translation tool.
 example-translate-integrated-content =  Unlike some cloud-based alternatives, { -brand-name-firefox } translates text locally, so the content you’re translating doesn’t leave your machine.
 </code></pre></div>
 <p>The <code>ftl_has_messages</code> jinja helper would be useful here and is
@@ -1698,7 +1698,7 @@ described in the next section.</p>
 current language, or simplified english if the string isn't translated.
 If you'd like to use a different string ID in the case that the primary
 one isn't translated you can specify that like this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">ftl</span><span class="p">(</span><span class="s1">&#39;primary-string-id&#39;</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="s1">&#39;fallback-string-id&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ftl</span><span class="p">(</span><span class="s1">&#39;primary-string-id&#39;</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="s1">&#39;fallback-string-id&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>When a fallback is specified it will be used only if the primary isn't
 translated in the current locale. English locales (e.g. en-US, en-GB)
@@ -1709,21 +1709,21 @@ locale.</p>
 use with <a href="https://projectfluent.org/fluent/guide/variables.html">fluent
 variables</a>. If
 you had a variable in your fluent file like this:</p>
-<div class="highlight"><pre><span></span><code>welcome = Welcome, { $user }!
+<div class="language-text highlight"><pre><span></span><code>welcome = Welcome, { $user }!
 </code></pre></div>
 <p>You could use that in a template like this:</p>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">,</span> <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;Dude&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;h2&gt;</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="x">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">,</span> <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;Dude&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;h2&gt;</span>
 </code></pre></div>
 <p>For our purposes these are mostly useful for things that can change, but
 which shouldn't involve retranslation of a string (e.g. URLs or email
 addresses).</p>
 <p>You may also request any other translation of the string (or the
 original English string of course) regardless of the current locale.</p>
-<div class="highlight"><pre><span></span><code><span class="x">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">,</span> <span class="nv">locale</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="o">,</span> <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;Dude&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;h2&gt;</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="x">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;welcome&#39;</span><span class="o">,</span> <span class="nv">locale</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="o">,</span> <span class="nv">user</span><span class="o">=</span><span class="s1">&#39;Dude&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;h2&gt;</span>
 </code></pre></div>
 <p>This helper is available in Jinja templates and Python code in views.
 For use in a view you should always call it in the view itself:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># views.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># views.py</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">render</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils.fluent</span> <span class="kn">import</span> <span class="n">ftl</span>
 
@@ -1748,7 +1748,7 @@ pass it any number of string IDs and it will return <code>True</code> only if al
 of those message IDs exist in the current translation. This is useful
 when you want to add a new block of HTML to a page that is already
 translated, but don't want it to appear untranslated on any page.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">ftl_has_messages</span><span class="o">(</span><span class="s1">&#39;new-title&#39;</span><span class="o">,</span> <span class="s1">&#39;new-description&#39;</span><span class="o">)</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">ftl_has_messages</span><span class="o">(</span><span class="s1">&#39;new-title&#39;</span><span class="o">,</span> <span class="s1">&#39;new-description&#39;</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">  &lt;h3&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;new-title&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;/h3&gt;</span>
 <span class="x">  &lt;p&gt;</span><span class="cp">{{</span> <span class="nv">ftl</span><span class="o">(</span><span class="s1">&#39;new-description&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
 <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
@@ -1762,7 +1762,7 @@ the optional <code>require_all=False</code> parameter and it will do just that.<
 <p>There is a version of this function for use in views called
 <code>has_messages</code>. It works exactly the same way but is meant to be used in
 the view Python code.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># views.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># views.py</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">render</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils.fluent</span> <span class="kn">import</span> <span class="n">ftl</span><span class="p">,</span> <span class="n">has_messages</span>
 
@@ -1786,14 +1786,14 @@ template or view. This is done in either the <code>page()</code> helper in a
 <p>If you just need to render a template, which is quite common for
 bedrock, you will probably just add a line like the following to your
 <code>urls.py</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">page</span><span class="p">(</span><span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;about.html&#39;</span><span class="p">),</span>
     <span class="n">page</span><span class="p">(</span><span class="s1">&#39;about/contact&#39;</span><span class="p">,</span> <span class="s1">&#39;about/contact.html&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>To tell this page to use the Fluent framework for l10n you just need to
 tell it which file(s) to use:</p>
-<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">page</span><span class="p">(</span><span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;about.html&#39;</span><span class="p">,</span> <span class="n">ftl_files</span><span class="o">=</span><span class="s1">&#39;mozorg/about&#39;</span><span class="p">),</span>
     <span class="n">page</span><span class="p">(</span><span class="s1">&#39;about/contact&#39;</span><span class="p">,</span> <span class="s1">&#39;about/contact.html&#39;</span><span class="p">,</span> <span class="n">ftl_files</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mozorg/about/contact&#39;</span><span class="p">,</span> <span class="s1">&#39;mozorg/about&#39;</span><span class="p">]),</span>
 <span class="p">]</span>
@@ -1809,7 +1809,7 @@ newsletter form, but those should always come last in the list.</p>
 <p>Bedrock includes a generic class-based view (CBV) that sets up l10n for
 you. If you need to do anything fancier than just render the page, then
 you can use this:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 
 <span class="k">class</span> <span class="nc">AboutView</span><span class="p">(</span><span class="n">L10nTemplateView</span><span class="p">):</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;about.html&#39;</span>
@@ -1821,7 +1821,7 @@ need. Also, if you do need to do anything fancy with the context, and
 you find that you need to dynamically set the fluent files list, you can
 easily do so by setting <code>ftl_files</code> in the context instead of the class
 attribute.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 
 <span class="k">class</span> <span class="nc">AboutView</span><span class="p">(</span><span class="n">L10nTemplateView</span><span class="p">):</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;about.html&#39;</span>
@@ -1841,7 +1841,7 @@ have some logic to decide which template to use in the
 <code>get_template_names()</code> method. You can set the <code>ftl_files_map</code> class
 variable to a dict containing a map of template names to the list of <abbr title="Fluent Translation List">FTL</abbr>
 files for that template (or a single file name if that's all you need).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># views.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># views.py</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 
 <span class="c1"># class-based view example</span>
@@ -1876,7 +1876,7 @@ case you can provide an <code>old_template_name</code> to the class and include
 both that template and <code>template_name</code> in the <code>ftl_files_map</code>. Once you
 do this the view will use the template in <code>template_name</code> only for
 requests for an active locale for the <abbr title="Fluent Translation List">FTL</abbr> files you provided in the map.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 
 <span class="k">class</span> <span class="nc">AboutView</span><span class="p">(</span><span class="n">L10nTemplateView</span><span class="p">):</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;about_new.html&#39;</span>
@@ -1893,7 +1893,7 @@ the <code>about_new.html</code> template will be rendered. Otherwise the
 <p>Lastly there's the good old function views. These should use
 <code>l10n_utils.render</code> directly to render the template with the context.
 You can use the <code>ftl_files</code> argument with this function as well.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">render</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">render</span>
 
 <span class="k">def</span> <span class="nf">about_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;about.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Duder&#39;</span><span class="p">},</span> <span class="n">ftl_files</span><span class="o">=</span><span class="s1">&#39;mozorg/about&#39;</span><span class="p">)</span>
@@ -1920,7 +1920,7 @@ each file should not be changed without first consulting the with L10n
 team, and such changes should not be a regular occurrence.</p>
 <p>To establish a localization strategy for a Fluent file, it needs to be
 included as a path in one or more configuration files. For example:</p>
-<div class="highlight"><pre><span></span><code>[[paths]]
+<div class="language-text highlight"><pre><span></span><code>[[paths]]
     reference = &quot;en/mozorg/mission.ftl&quot;
     l10n = &quot;{locale}/mozorg/mission.ftl&quot;
 </code></pre></div>
@@ -1969,7 +1969,7 @@ that <abbr title="Fluent Translation List">FTL</abbr> file. For example, say we 
 [mozorg/mission.ftl]{.title-ref} file remained inactive for German, even
 though the translation is already done. We would add <code>de</code> to the
 <code>inactive_locales</code> list in the <code>metadata/mozorg/mission.json</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<div class="language-json highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;active_locales&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s2">&quot;de&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s2">&quot;fr&quot;</span><span class="p">,</span>
@@ -2005,7 +2005,7 @@ instructions.</p>
 view to make some decisions; what template to render for example. The
 way you would do that is with the <code>ftl_file_is_active</code> function. For
 example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># views.py</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># views.py</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils</span> <span class="kn">import</span> <span class="n">L10nTemplateView</span>
 <span class="kn">from</span> <span class="nn">lib.l10n_utils.fluent</span> <span class="kn">import</span> <span class="n">ftl_file_is_active</span>
 
@@ -2041,11 +2041,11 @@ with the same path but in the <code>metadata</code> folder instead of a locale
 folder in the www-l10n repository. Or if you'd like something a bit
 nicer looking and more convenient there is the <code>active_locales</code>
 management command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>l10n_update
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>l10n_update
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>active_locales<span class="w"> </span>mozorg/mission
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>active_locales<span class="w"> </span>mozorg/mission
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>There<span class="w"> </span>are<span class="w"> </span><span class="m">91</span><span class="w"> </span>active<span class="w"> </span>locales<span class="w"> </span><span class="k">for</span><span class="w"> </span>mozorg/mission.ftl:
+<div class="language-bash highlight"><pre><span></span><code>There<span class="w"> </span>are<span class="w"> </span><span class="m">91</span><span class="w"> </span>active<span class="w"> </span>locales<span class="w"> </span><span class="k">for</span><span class="w"> </span>mozorg/mission.ftl:
 -<span class="w"> </span>af
 -<span class="w"> </span>an
 -<span class="w"> </span>ar
@@ -2082,7 +2082,7 @@ jobs that are triggered by a commit to <code>main</code>)</p>
 <h3 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
 <p>If a localized page needs some locale-specific style tweaks, you can add
 the style rules to the page's stylesheet like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s2">&quot;it&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">#</span><span class="nn">features</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+<div class="language-css highlight"><pre><span></span><code><span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s2">&quot;it&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">#</span><span class="nn">features</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -2108,7 +2108,7 @@ fonts using custom font families as below:</p>
     Extrabold</em>. The font weight is 800 only</li>
 </ul>
 <p>Here's an example of <code>intl.css</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<div class="language-css highlight"><pre><span></span><code><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">X-LocaleSpecific-Light</span><span class="o">;</span>
 <span class="w">  </span><span class="nt">font-weight</span><span class="o">:</span><span class="w"> </span><span class="nt">normal</span><span class="o">;</span>
 <span class="w">  </span><span class="nt">font-display</span><span class="o">:</span><span class="w"> </span><span class="nt">swap</span><span class="o">;</span>
@@ -2208,23 +2208,23 @@ view is coded.</p>
 [active_locales]{.title-ref}. This will be the full list of available
 translations. Use [add_active_locales]{.title-ref} if you want to add
 languages to the existing list:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">french_and_german_only</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">french_and_german_only</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">l10n_utils</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;home.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;active_locales&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">])</span>
 </code></pre></div>
 <p>If you don't need a custom view and are just using the
 [page()]{.title-ref} helper function in your [urls.py]{.title-ref} file,
 then you can similarly pass in a list:</p>
-<div class="highlight"><pre><span></span><code><span class="n">page</span><span class="p">(</span><span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;about.html&#39;</span><span class="p">,</span> <span class="n">active_locales</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span> <span class="s1">&#39;es-ES&#39;</span><span class="p">]),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">page</span><span class="p">(</span><span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;about.html&#39;</span><span class="p">,</span> <span class="n">active_locales</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span> <span class="s1">&#39;es-ES&#39;</span><span class="p">]),</span>
 </code></pre></div>
 <p>Or if your view is even more fancy and you're using a Class-Based-View
 that inherits from [LangFilesMixin]{.title-ref} (which it must if you
 want it to be translated) then you can specify the list as part of the
 view Class definition:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">LangFilesMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">LangFilesMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
     <span class="n">active_locales</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;zh-CN&#39;</span><span class="p">,</span> <span class="s1">&#39;hi-IN&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>Or in the [urls.py]{.title-ref} when using a CBV:</p>
-<div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;about/$&#39;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">active_locales</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">])),</span>
+<div class="language-python highlight"><pre><span></span><code><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;about/$&#39;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">active_locales</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">])),</span>
 </code></pre></div>
 <p>The main thing to keep in mind is that if you specify
 [active_locales]{.title-ref} that will be the full list of localizations
@@ -2270,7 +2270,7 @@ translation.</p>
 </ul>
 </div>
 <p>Add the following files:</p>
-<div class="highlight"><pre><span></span><code>./l10n-newintegration/
+<div class="language-bash highlight"><pre><span></span><code>./l10n-newintegration/
 ./l10n-newintegration/en/<span class="w">  </span><span class="c1"># This is where source Fluent templates go for &#39;newintegration&#39;</span>
 ./l10n-newintegration/en/configs/pontoon.toml<span class="w">  </span><span class="c1"># If using community/Pontoon translations at all</span>
 ./l10n-newintegration/en/configs/vendor.toml<span class="w">  </span><span class="c1"># If using a paid-for translation service such as Smartling</span>
@@ -2459,7 +2459,7 @@ happen.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

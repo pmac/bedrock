@@ -1017,7 +1017,7 @@ feature. An example of such a banner is the
 <p>Banners can be inserted into any page template by using the
 <code>page_banner</code> block. Banners can also be toggled on and off using a
 switch:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">page_banner</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">page_banner</span> <span class="cp">%}</span>
 <span class="x">  </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;fundraising-banner&#39;</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;includes/banners/fundraiser.html&#39;</span> <span class="cp">%}</span>
 <span class="x">  </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
@@ -1025,7 +1025,7 @@ switch:</p>
 </code></pre></div>
 <p>Banner templates should extend the <em>base banner template</em>, and content
 can then be inserted using <code>banner_title</code> and <code>banner_content</code> blocks:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;includes/banners/base.html&#39;</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">&#39;includes/banners/base.html&#39;</span> <span class="cp">%}</span>
 
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">banner_title</span> <span class="cp">%}</span><span class="x">We all love the web. Join Mozilla in defending it.</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 
@@ -1035,13 +1035,13 @@ can then be inserted using <code>banner_title</code> and <code>banner_content</c
 </code></pre></div>
 <p>CSS styles for banners should be located in <code>media/css/base/banners/</code>,
 and should extend common base banner styles:</p>
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;includes/base&#39;</span><span class="p">;</span>
+<div class="language-css highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;includes/base&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>To initiate a banner on a page, include
 <code>js/base/banners/mozilla-banner.js</code> in your page bundle and then
 initiate the banner using a unique ID. The ID will be used as a cookie
 identifier should someone dismiss a banner and not wish to see it again.</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">onLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1056,7 +1056,7 @@ identifier should someone dismiss a banner and not wish to see it again.</p>
 primary page navigation. If you want to render a banner flush at the top
 of the page, you can pass a secondary <code>renderAtTopOfPage</code> parameter to
 the <code>init()</code> function with a boolean value:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">onLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1153,7 +1153,7 @@ in.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

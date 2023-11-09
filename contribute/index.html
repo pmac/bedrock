@@ -1140,23 +1140,23 @@ guidelines for Python, Django, JavaScript and CSS.</p>
 <h2 id="git-workflow">Git workflow<a class="headerlink" href="#git-workflow" title="Permanent link">&para;</a></h2>
 <p>When you want to start contributing, you should create a branch from
 main. This allows you to work on different project at the same time:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>topic-branch
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>topic-branch
 </code></pre></div>
 <p>To keep your branch up-to-date, assuming the mozilla repository is the
 remote called mozilla:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>--ff-only
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>--ff-only
 </code></pre></div>
 <p>More on <a href="https://blog.sffc.xyz/post/185195398930/why-you-should-use-git-pull-ff-only-git-is-a">Why you should use
 --ff-only</a>.
 To make this the default update your Git config as described in the
 article.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>topic-branch
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>topic-branch
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>main
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>main
 </code></pre></div>
 <p>If you need more Git expertise, a good resource is the <a href="http://git-scm.com/book">Git
 book</a>.</p>
@@ -1176,10 +1176,10 @@ was done.</p>
 </ul>
 <p>If you're asked to change your commit message, you can use these
 commands:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--amend
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--amend
 </code></pre></div>
 <p>-f is doing a force push because you modified the history</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>my-remote<span class="w"> </span>topic-branch
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>my-remote<span class="w"> </span>topic-branch
 </code></pre></div>
 <h2 id="submitting-your-work">Submitting your work<a class="headerlink" href="#submitting-your-work" title="Permanent link">&para;</a></h2>
 <p>In general, you should submit your work with a pull request to main. If
@@ -1196,7 +1196,7 @@ ask you to squash them into a single commit before merging. You can do
 this with [git rebase]{.title-ref}.</p>
 <p>As an example, let's say your pull request contains two commits. To
 squash them into a single commit, you can follow these instructions:</p>
-<div class="highlight"><pre><span></span><code>$ git rebase -i HEAD~2
+<div class="language-text highlight"><pre><span></span><code>$ git rebase -i HEAD~2
 </code></pre></div>
 <p>You will then get an editor with your two commits listed. Change the
 second commit from [pick]{.title-ref} to [fixup]{.title-ref}, then save
@@ -1238,10 +1238,10 @@ get code up to one of those URLs, push it to the specified branch on
 </li>
 </ul>
 <p>For example, for Mozorg:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:mozorg-demo-2
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:mozorg-demo-2
 </code></pre></div>
 <p>Or for Pocket:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:pocket-demo-1
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:pocket-demo-1
 </code></pre></div>
 <p><strong>Deployment notification and logs</strong></p>
 <p>At the moment, there is no way to view logs for the deployment unless
@@ -1319,7 +1319,7 @@ URLs that historically used to point to Heroku will be pointed to the
 new GCP demos services instead, so you will have to look at Heroku's
 web UI to see what the URL of the relevant Heroku app is.</p>
 <p>To push to launch a demo on Heroku:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:demo/1
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span>my-demo-branch:demo/1
 </code></pre></div>
 <h3 id="pushing-to-production">Pushing to production<a class="headerlink" href="#pushing-to-production" title="Permanent link">&para;</a></h3>
 <p>We're doing pushes as soon as new work is ready to go out.</p>
@@ -1330,7 +1330,7 @@ need to update the bugs that have been pushed with a quick message
 stating that the code was deployed.</p>
 <p>If you'd like to see the commits that will be deployed before the push
 run the following command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./bin/open-compare.py
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>./bin/open-compare.py
 </code></pre></div>
 <p>This will discover the currently deployed git hash, and open a compare
 URL at github to the latest main. Look at <code>open-compare.py -h</code> for more
@@ -1417,7 +1417,7 @@ options.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

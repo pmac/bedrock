@@ -1339,7 +1339,7 @@ triggers.</p>
 <h3 id="datalayer-push-example">DataLayer push example<a class="headerlink" href="#datalayer-push-example" title="Permanent link">&para;</a></h3>
 <p>If we wanted to track clicks on a carousel and capture what the image
 was that was clicked, we might write a dataLayer push like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">    </span><span class="s1">&#39;event&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;carousel-click&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;image&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;house&#39;</span>
 <span class="p">});</span>
@@ -1362,7 +1362,7 @@ please pass all contextual or meta data on the user or page here that
 you want to make available to <abbr title="Google Tag Manager">GTM</abbr>.</p>
 <h4 id="conditional-banners">Conditional banners<a class="headerlink" href="#conditional-banners" title="Permanent link">&para;</a></h4>
 <p>When a banner is shown:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">    </span><span class="s1">&#39;eLabel&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Banner Impression&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;banner name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">//ex. Fb-Video-Compat</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-impression&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
@@ -1370,7 +1370,7 @@ you want to make available to <abbr title="Google Tag Manager">GTM</abbr>.</p>
 <span class="p">});</span>
 </code></pre></div>
 <p>When an element in the banner is clicked:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">    </span><span class="s1">&#39;eLabel&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Banner Clickthrough&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;banner name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">//ex. Fb-Video-Compat</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-click&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
@@ -1378,7 +1378,7 @@ you want to make available to <abbr title="Google Tag Manager">GTM</abbr>.</p>
 <span class="p">});</span>
 </code></pre></div>
 <p>When a banner is dismissed:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">    </span><span class="s1">&#39;eLabel&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Banner Dismissal&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;banner name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">//ex. Fb-Video-Compat</span>
 <span class="w">    </span><span class="s1">&#39;data-banner-dismissal&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
@@ -1386,7 +1386,7 @@ you want to make available to <abbr title="Google Tag Manager">GTM</abbr>.</p>
 <span class="p">});</span>
 </code></pre></div>
 <h4 id="ab-tests">A/B tests<a class="headerlink" href="#ab-tests" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;v=a&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;v=a&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
 <span class="w">        </span><span class="s1">&#39;data-ex-variant&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;de-page&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="s1">&#39;data-ex-name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Berlin-Campaign-Landing-Page&#39;</span>
@@ -1511,7 +1511,7 @@ script is expecting the following values:</p>
 </ul>
 <p>There are two ways to use TrackBeginCheckout:</p>
 <p><strong>1)  Call the function passing the values directly.</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nx">TrackBeginCheckout</span><span class="p">.</span><span class="nx">getEventObjectAndSend</span><span class="p">(</span><span class="nx">item_id</span><span class="p">,</span><span class="w"> </span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">plan</span><span class="p">,</span><span class="w"> </span><span class="nx">period</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">currency</span><span class="p">,</span><span class="w"> </span><span class="nx">discount</span><span class="p">)</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">TrackBeginCheckout</span><span class="p">.</span><span class="nx">getEventObjectAndSend</span><span class="p">(</span><span class="nx">item_id</span><span class="p">,</span><span class="w"> </span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">plan</span><span class="p">,</span><span class="w"> </span><span class="nx">period</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">,</span><span class="w"> </span><span class="nx">currency</span><span class="p">,</span><span class="w"> </span><span class="nx">discount</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>2)  Pass the values as a data attribute.</strong></p>
 <p>The <code>vpn_subscribe_link</code> and <code>relay_subscribe_link</code> will automatically
@@ -1520,7 +1520,7 @@ to links they create -- as long as there is analytics information
 associated with the plan in its lookup table.</p>
 <p>To use this method you will need to include
 <code>datalayer-begincheckout-init.es6.js</code> in the page bundle.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ fxa link }}&quot;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ fxa link }}&quot;</span>
     <span class="na">class</span><span class="o">=</span><span class="s">&quot;ga-begin-checkout&quot;</span>
     <span class="na">data-ga-item</span><span class="o">=</span><span class="s">&quot;{</span>
 <span class="s">        &#39;id&#39; : &#39;price_1Iw7qSJNcmPzuWtRMUZpOwLm&#39;,</span>
@@ -1566,10 +1566,10 @@ will have all options):</p>
 <p>There are two ways to use TrackProductDownload:</p>
 <p>1)  Call the function, passing it the same URL you are sending the user
     to:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">TrackProductDownload</span><span class="p">.</span><span class="nx">sendEventFromURL</span><span class="p">(</span><span class="nx">downloadURL</span><span class="p">);</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">TrackProductDownload</span><span class="p">.</span><span class="nx">sendEventFromURL</span><span class="p">(</span><span class="nx">downloadURL</span><span class="p">);</span>
 </code></pre></div>
 <p>2)  Add a class to the link:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ link }}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ga-product-download&quot;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ link }}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ga-product-download&quot;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>You do NOT need to include <code>datalayer-productdownload-init.es6.js</code> in
 the page bundle, it is already included in the site bundle.</p>
@@ -1607,7 +1607,7 @@ non-production data in telemetry dashboards.</p>
 variable in your <code>.env</code>` file to automatically log pings in the
 browser's web console. This can be especially useful when making
 updates to analytics code.</p>
-<div class="highlight"><pre><span></span><code>GLEAN_LOG_PINGS=True
+<div class="language-text highlight"><pre><span></span><code>GLEAN_LOG_PINGS=True
 </code></pre></div>
 <h3 id="defining-metrics-and-pings">Defining metrics and pings<a class="headerlink" href="#defining-metrics-and-pings" title="Permanent link">&para;</a></h3>
 <p>All of the data we send to the Glean pipeline is defined in <abbr title="Yet Another Markup Language">YAML</abbr>
@@ -1644,7 +1644,7 @@ also creates some helpers that can be used across different page bundles
 to record interaction events such as link clicks and form submissions.</p>
 <p>The <code>Mozilla.Glean.pageEvent()</code> helper can be used to record events that
 are specific to a page, such as successful form completions:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="p">.</span><span class="nx">pageEvent</span><span class="p">({</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;newsletter-sign-up-success&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mozilla-and-you&#39;</span><span class="w"> </span><span class="c1">// type is optional</span>
@@ -1653,7 +1653,7 @@ are specific to a page, such as successful form completions:</p>
 </code></pre></div>
 <p>It can also be used to record non-interaction events that are not
 directly initiated by a visitor:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="p">.</span><span class="nx">pageEvent</span><span class="p">({</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;firefox-default&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">nonInteraction</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
@@ -1663,7 +1663,7 @@ directly initiated by a visitor:</p>
 <p>The <code>Mozilla.Glean.clickEvent()</code> helper can be used to record click
 events that are specific to an element in a page, such as a link or
 button.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">Glean</span><span class="p">.</span><span class="nx">clickEvent</span><span class="p">({</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;firefox-download&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;macOS, release, en-US&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// type is optional</span>
@@ -1761,7 +1761,7 @@ can also make use of the opt-out mechanism.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

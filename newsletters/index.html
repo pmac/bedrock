@@ -1184,16 +1184,16 @@ user tokens in URLS and also against referral information leakage.</p>
 <p>In some common templates, you can customize the footer sign-up form by
 overriding the email_form template block. For example, to have no
 sign-up form:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>The default is:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}{{</span> <span class="nv">email_newsletter_form</span><span class="o">()</span> <span class="cp">}}{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}{{</span> <span class="nv">email_newsletter_form</span><span class="o">()</span> <span class="cp">}}{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>This will render a sign-up for "Firefox &amp; You". You can pass
 parameters to the macro <code>email_newsletter_form</code> to change that. For
 example, the <code>newsletters</code> parameter controls which newsletter is signed
 up for, and <code>title</code> can override the text:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">email_newsletter_form</span><span class="o">(</span><span class="s1">&#39;app-dev&#39;</span><span class="o">,</span>
                              <span class="s1">&#39;Sign up for more news about the Firefox Marketplace.&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
@@ -1201,7 +1201,7 @@ up for, and <code>title</code> can override the text:</p>
 <p>The [newsletters]{.title-ref} parameter, the first positional argument,
 can be either a list of newsletter IDs or a comma separated list of
 newsletters IDs:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">email_form</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">email_newsletter_form</span><span class="o">(</span><span class="s1">&#39;mozilla-foundation, mozilla-and-you&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
@@ -1288,7 +1288,7 @@ passing <code>include_language=[True|False]</code> and/or
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

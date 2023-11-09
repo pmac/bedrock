@@ -1231,7 +1231,7 @@ and passes along any attribution data that exists.</p>
 installation rates and retention. This is achieved by adding optional
 <code>experiment</code> and <code>variation</code> parameters to a page URL. Additionally,
 these values can also be set via JavaScript using:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">StubAttribution</span><span class="p">.</span><span class="nx">experimentName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;experiment-name&#39;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="nx">Mozilla</span><span class="p">.</span><span class="nx">StubAttribution</span><span class="p">.</span><span class="nx">experimentName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;experiment-name&#39;</span><span class="p">;</span>
 <span class="nx">Mozilla</span><span class="p">.</span><span class="nx">StubAttribution</span><span class="p">.</span><span class="nx">experimentVariation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;v1&#39;</span><span class="p">;</span>
 </code></pre></div>
 <div class="admonition note">
@@ -1269,7 +1269,7 @@ helper</a> that our team maintains.</p>
 <p>For stub attribution to work locally or on a demo instance, a value for
 the HMAC key that is used to sign the attribution code must be set via
 an environment variable e.g.</p>
-<div class="highlight"><pre><span></span><code>STUB_ATTRIBUTION_HMAC_KEY=thedude
+<div class="language-html highlight"><pre><span></span><code>STUB_ATTRIBUTION_HMAC_KEY=thedude
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1357,7 +1357,7 @@ passed to the stub installer for full end-to-end testing via Telemetry.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

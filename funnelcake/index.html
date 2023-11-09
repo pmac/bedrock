@@ -1071,21 +1071,21 @@ expand</a>.</p>
 <p>We signal to bedrock that we want a funnelcake when linking to the
 download page by appending the query variable [f]{.title-ref} with a
 value equal to the funnelcake number being requested.</p>
-<div class="highlight"><pre><span></span><code>https://www.mozilla.org/en-US/firefox/download/thanks/?f=137
+<div class="language-text highlight"><pre><span></span><code>https://www.mozilla.org/en-US/firefox/download/thanks/?f=137
 </code></pre></div>
 <p>Bedrock checks to see if the funnelcake is configured (this is handled
 in the <a href="https://github.com/mozmeao/www-config/blob/main/waffle_configs/bedrock-prod.env">www-config
 repo</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="nv">FUNNELCAKE_135_LOCALES</span><span class="o">=</span>en-US
+<div class="language-bash highlight"><pre><span></span><code><span class="nv">FUNNELCAKE_135_LOCALES</span><span class="o">=</span>en-US
 <span class="nv">FUNNELCAKE_135_PLATFORMS</span><span class="o">=</span>win,win64
 </code></pre></div>
 <p>Bedrock then converts that into a request to download a file like so:</p>
 <p>Windows:</p>
-<div class="highlight"><pre><span></span><code>https://download.mozilla.org/?product=firefox-stub-f137&amp;os=win&amp;lang=en-US
+<div class="language-text highlight"><pre><span></span><code>https://download.mozilla.org/?product=firefox-stub-f137&amp;os=win&amp;lang=en-US
 </code></pre></div>
 <p>Mac (You can see the mac one does not pass the funnelcake number
 along.):</p>
-<div class="highlight"><pre><span></span><code>https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=osx&amp;lang=en-US
+<div class="language-text highlight"><pre><span></span><code>https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=osx&amp;lang=en-US
 </code></pre></div>
 <p>Someone in Release Engineering needs to set up the redirects on their
 side to take the request from here.</p>
@@ -1105,7 +1105,7 @@ people:</p>
 <h2 id="partner-builds">Partner builds<a class="headerlink" href="#partner-builds" title="Permanent link">&para;</a></h2>
 <p>Bedrock does not have an automated way of handling these, so you'll
 have to craft your own download button:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://download.mozilla.org/?product=firefox-election-edition&amp;os=win&amp;lang=en-US&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://download.mozilla.org/?product=firefox-election-edition&amp;os=win&amp;lang=en-US&quot;</span><span class="p">&gt;</span>
 Download<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </code></pre></div>
 <hr />
@@ -1198,7 +1198,7 @@ Download<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

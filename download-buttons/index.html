@@ -1043,14 +1043,14 @@
 The first is a lightweight button that links directly to the
 <code>/firefox/download/thanks/</code> page. Its sole purpose is to facilitate
 downloading the main release version of Firefox.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">download_firefox_thanks</span><span class="o">()</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">download_firefox_thanks</span><span class="o">()</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>The second type of button is more heavy weight, and can be configured to
 download any build of Firefox (e.g. Release, Beta, Developer Edition,
 Nightly). It can also offer functionality such as direct (in-page)
 download links, so it comes with a lot more complexity and in-page
 markup.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">download_firefox</span><span class="o">()</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">download_firefox</span><span class="o">()</span> <span class="cp">}}</span>
 </code></pre></div>
 <h2 id="which-button-should-i-use">Which button should I use?<a class="headerlink" href="#which-button-should-i-use" title="Permanent link">&para;</a></h2>
 <p>A good rule of thumb is to always use <code>download_firefox_thanks()</code> for
@@ -1070,7 +1070,7 @@ user experience and also benefits
 <abbr title="Search Engine Optimization">SEO</abbr>. In some circumstances however sites may want to provide a download button
 that initiates a file download automatically when clicked. For cases
 like this, sites can link to the following URL:</p>
-<div class="highlight"><pre><span></span><code>https://www.mozilla.org/firefox/download/thanks/?s=direct
+<div class="language-text highlight"><pre><span></span><code>https://www.mozilla.org/firefox/download/thanks/?s=direct
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -1087,7 +1087,7 @@ Internet Explorer browsers. If that's important to your visitors, then
 you can use a <a href="https://en.wikipedia.org/wiki/Conditional_comment">conditional
 comment</a> to provide a
 different link.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--[if !IE]&gt;&lt;!--&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="cm">&lt;!--[if !IE]&gt;&lt;!--&gt;</span>
     <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.mozilla.org/firefox/download/thanks/?s=direct&quot;</span><span class="p">&gt;</span>Download Firefox<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 <span class="cm">&lt;!--&lt;![endif]--&gt;</span>
 
@@ -1176,7 +1176,7 @@ different link.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

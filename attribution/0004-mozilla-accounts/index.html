@@ -1271,7 +1271,7 @@ product landing page:</p>
 <p>For Mozilla VPN, there's a <code>vpn_product_referral_link</code> helper built
 specifically to help implement account referral links to the VPN landing
 page:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">vpn_product_referral_link</span><span class="o">(</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">vpn_product_referral_link</span><span class="o">(</span>
     <span class="nv">referral_id</span><span class="o">=</span><span class="s1">&#39;navigation&#39;</span><span class="o">,</span>
     <span class="nv">link_to_pricing_page</span><span class="o">=</span><span class="kp">True</span><span class="o">,</span>
     <span class="nv">link_text</span><span class="o">=</span><span class="s1">&#39;Get Mozilla VPN&#39;</span><span class="o">,</span>
@@ -1361,13 +1361,13 @@ situation, flow metrics need to get queried and added at specific times
 and conditions (more on that below).</p>
 <p>To add flow metrics to links, a page's respective JavaScript bundle
 should import and initialize the <code>FxaProductButton</code> script.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">FxaProductButton</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./path/to/fxa-product-button.es6.js&#39;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">FxaProductButton</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./path/to/fxa-product-button.es6.js&#39;</span><span class="p">;</span>
 
 <span class="nx">FxaProductButton</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 </code></pre></div>
 <p>The above JS is also available as a pre-compiled bundle, which can be
 included directly in a template:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;fxa_product_button&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;fxa_product_button&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>When [init()]{.title-ref} is called, flow metrics will automatically be
 added to add account sign up links on a page.</p>
@@ -1468,7 +1468,7 @@ the script.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>

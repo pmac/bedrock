@@ -1149,7 +1149,7 @@ setting (see <code>bedrock/mozorg/redirects.py</code> as an example).</p>
 you simply add a call to the <code>bedrock.redirects.util.redirect</code> helper
 function in a list named <code>redirectpatterns</code> in <code>redirects.py</code>. For
 example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span>
 
 
 <span class="n">redirectpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -1161,7 +1161,7 @@ locale like <code>/pt-BR/rubble/barny/</code>) will get a 301 response sending
 users to <code>/flintstone/fred/</code>.</p>
 <p>The <code>redirect()</code> function has several options. Its signature is as
 follows:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">redirect</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">permanent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_prefix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">redirect</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">permanent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale_prefix</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
              <span class="n">query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vary</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_timeout</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">decorators</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a url matcher suited for urlpatterns.</span>
@@ -1220,7 +1220,7 @@ in an HTTP header.</p>
 <p><code>bedrock.redirects.util.ua_redirector</code> is a function to be used in the
 <code>to</code> argument that will use a regex to match against the <code>User-Agent</code>
 HTTP header to allow you to decide where to send the user. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">ua_redirector</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">ua_redirector</span>
 
 
 <span class="n">redirectpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -1243,7 +1243,7 @@ the <code>Vary: User-Agent</code> header; this will not work in production.</p>
 <p>This is basically the same as <code>ua_redirector</code> but works against any
 header. The arguments are the same as above except that thre is an
 additional first argument for the name of the header:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">header_redirector</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.redirects.util</span> <span class="kn">import</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">header_redirector</span>
 
 
 <span class="n">redirectpatterns</span> <span class="o">=</span> <span class="p">[</span>
@@ -1262,15 +1262,15 @@ to test them before release.</p>
 which will guide you through installing pip and setting up
 a virtual environment for the tests. The additional requirements can
 then be installed by using the following commands:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/dev.txt
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/dev.txt
 </code></pre></div>
 <h3 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h3>
 <p>If you wish to run the full set of tests, which requires a deployed
 instance of the site (e.g. <a href="http://www.mozilla.org">www.mozilla.org</a>) you can set the <code>--base-url</code>
 command line option:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www.mozilla.org<span class="w"> </span>tests/redirects/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www.mozilla.org<span class="w"> </span>tests/redirects/
 </code></pre></div>
 <p>By default, tests will run one at a time. If you intend to run the suite
 against a remote instance of the site (e.g. production) it will run a
@@ -1357,7 +1357,7 @@ want to set the maximum number of concurrent processes.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

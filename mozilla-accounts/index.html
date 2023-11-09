@@ -1296,24 +1296,24 @@ on a page.</p>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
 <p>To use the form in a Jinja template, first import the <code>fxa_email_form</code>
 macro:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros.html&quot;</span> <span class="k">import</span> <span class="nv">fxa_email_form</span> <span class="k">with context</span> <span class="cp">%}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">from</span> <span class="s2">&quot;macros.html&quot;</span> <span class="k">import</span> <span class="nv">fxa_email_form</span> <span class="k">with context</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>The form can then be invoked using:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">fxa_email_form</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-accounts&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">fxa_email_form</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-accounts&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>The macro's respective JavaScript and CSS dependencies should also be
 imported in the page:</p>
 <p><strong>Javascript:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">FxaForm</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./path/to/fxa-form.es6.js&#39;</span><span class="p">;</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">FxaForm</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./path/to/fxa-form.es6.js&#39;</span><span class="p">;</span>
 
 <span class="nx">FxaForm</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 </code></pre></div>
 <p>The above JS is also available as a pre-compiled bundle, which can be
 included directly in a template:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;fxa_form&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;fxa_form&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p><strong>CSS:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;../path/to/fxa-form&#39;</span><span class="p">;</span>
+<div class="language-css highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="s1">&#39;../path/to/fxa-form&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>The JavaScript files will automatically handle things such as adding
 metrics parameters for Firefox desktop browsers. The CSS file contains
@@ -1428,7 +1428,7 @@ feature.</p>
 <p>Use the <code>fxa_button</code> helper to create a <abbr title="Call To Action">CTA</abbr> button or link to
 <a href="https://accounts.firefox.com/">https://accounts.firefox.com/</a>.</p>
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-sync-page&#39;</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Sign In&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-sync-page&#39;</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Sign In&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1449,7 +1449,7 @@ Parameters" section further below.</p>
 <p>Use the <code>monitor_fxa_button</code> helper to link to
 <a href="https://monitor.firefox.com/">https://monitor.firefox.com/</a> via a Mozilla accounts auth flow.</p>
 <h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">monitor_fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="nv">_entrypoint</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Sign Up for Monitor&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">monitor_fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="nv">_entrypoint</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Sign Up for Monitor&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>For more information on the available parameters, read the "Common
 Parameters" section further below.</p>
@@ -1457,7 +1457,7 @@ Parameters" section further below.</p>
 <p>Use the <code>pocket_fxa_button</code> helper to link to <a href="https://getpocket.com/">https://getpocket.com/</a>
 via a Mozilla accounts auth flow.</p>
 <h3 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">pocket_fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-pocket&#39;</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Try Pocket Now&#39;</span><span class="o">,</span> <span class="nv">optional_parameters</span><span class="o">={</span><span class="s1">&#39;s&#39;</span><span class="o">:</span> <span class="s1">&#39;ffpocket&#39;</span><span class="o">})</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">pocket_fxa_button</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;mozilla.org-firefox-pocket&#39;</span><span class="o">,</span> <span class="nv">button_text</span><span class="o">=</span><span class="s1">&#39;Try Pocket Now&#39;</span><span class="o">,</span> <span class="nv">optional_parameters</span><span class="o">={</span><span class="s1">&#39;s&#39;</span><span class="o">:</span> <span class="s1">&#39;ffpocket&#39;</span><span class="o">})</span> <span class="cp">}}</span>
 </code></pre></div>
 <p>For more information on the available parameters, read the "Common
 Parameters" section below.</p>
@@ -1534,7 +1534,7 @@ the type of authentication flow.</p>
 <p>Use the <code>vpn_subscribe_link</code> helpers to create a <abbr title="Virtual Private Network">VPN</abbr>
 subscription link via a Mozilla accounts auth flow.</p>
 <h3 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">vpn_subscribe_link</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;www.mozilla.org-vpn-product-page&#39;</span><span class="o">,</span> <span class="nv">link_text</span><span class="o">=</span><span class="s1">&#39;Get Mozilla VPN&#39;</span><span class="o">)</span> <span class="cp">}}</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">vpn_subscribe_link</span><span class="o">(</span><span class="nv">entrypoint</span><span class="o">=</span><span class="s1">&#39;www.mozilla.org-vpn-product-page&#39;</span><span class="o">,</span> <span class="nv">link_text</span><span class="o">=</span><span class="s1">&#39;Get Mozilla VPN&#39;</span><span class="o">)</span> <span class="cp">}}</span>
 </code></pre></div>
 <h3 id="common-vpn-parameters">Common <abbr title="Virtual Private Network">VPN</abbr> Parameters<a class="headerlink" href="#common-vpn-parameters" title="Permanent link">&para;</a></h3>
 <p>Both helpers for Mozilla <abbr title="Virtual Private Network">VPN</abbr> support
@@ -1641,10 +1641,10 @@ parameters, <abbr title="Urchin Tracking Module">UTM</abbr> parameters and the e
 environment requires some additional configuration.</p>
 <p><strong>Configuring bedrock:</strong></p>
 <p>Set the following in your local <code>.env</code> file:</p>
-<div class="highlight"><pre><span></span><code>FXA_ENDPOINT=https://accounts.stage.mozaws.net/
+<div class="language-text highlight"><pre><span></span><code>FXA_ENDPOINT=https://accounts.stage.mozaws.net/
 </code></pre></div>
 <p>For Mozilla <abbr title="Virtual Private Network">VPN</abbr> links you can also set:</p>
-<div class="highlight"><pre><span></span><code>VPN_ENDPOINT=https://stage.guardian.nonprod.cloudops.mozgcp.net/
+<div class="language-text highlight"><pre><span></span><code>VPN_ENDPOINT=https://stage.guardian.nonprod.cloudops.mozgcp.net/
 VPN_SUBSCRIPTION_URL=https://accounts.stage.mozaws.net/
 </code></pre></div>
 <div class="admonition note">
@@ -1733,7 +1733,7 @@ your <code>.env</code> file if you wish to change a setting to something else.</
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

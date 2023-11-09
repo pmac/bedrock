@@ -2348,7 +2348,7 @@ environment).</p>
     need?</li>
 <li>Does it structure data as expected?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># example content type def</span>
+<div class="language-python highlight"><pre><span></span><code><span class="c1"># example content type def</span>
 
 <span class="k">def</span> <span class="nf">get_section_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_obj</span><span class="p">):</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="n">entry_obj</span><span class="o">.</span><span class="n">fields</span><span class="p">()</span>
@@ -2366,18 +2366,18 @@ environment).</p>
 <ul>
 <li>Can you find a render condition for the component you need?</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="x">/* example component condition */</span>
+<div class="language-jinja highlight"><pre><span></span><code><span class="x">/* example component condition */</span>
 
 <span class="cp">{%</span> <span class="k">elif</span> <span class="nv">entry.component</span> <span class="o">==</span> <span class="s1">&#39;sectionHeading&#39;</span> <span class="cp">%}</span>
 </code></pre></div>
 <p>-</p>
-<div class="highlight"><pre><span></span><code>If the component calls a macro:
+<div class="language-text highlight"><pre><span></span><code>If the component calls a macro:
 
 :   -   Does it have all the necessary parameters?
     -   Is it passing the expected values as arguments?
 </code></pre></div>
 <p>-</p>
-<div class="highlight"><pre><span></span><code>If the component is custom HTML:
+<div class="language-text highlight"><pre><span></span><code>If the component is custom HTML:
 
 :   -   Is the HTML structure correct?
     -   Are Protocol-specific class names spelled correctly?
@@ -2402,16 +2402,16 @@ Bedrock API (<code>api.py</code>).</p>
 contentful_contentfulentry table. All the dependencies to explore the
 data are installed by default for local development.</p>
 <p>Using sqlite (with an example query to get some info about en-US pages):</p>
-<div class="highlight"><pre><span></span><code>./manage.py<span class="w"> </span>dbshell
+<div class="language-bash highlight"><pre><span></span><code>./manage.py<span class="w"> </span>dbshell
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>select id, slug, data from contentful_contentfulentry where locale=&#39;en-US&#39;;
+<div class="language-text highlight"><pre><span></span><code>select id, slug, data from contentful_contentfulentry where locale=&#39;en-US&#39;;
 </code></pre></div>
 <p>Close the sqlite shell with <code>.exit</code></p>
 <p>Using Django shell (with an example query to get data from first entry
 of "pageProductJournalismStory" type):</p>
-<div class="highlight"><pre><span></span><code>./manage.py<span class="w"> </span>shell
+<div class="language-bash highlight"><pre><span></span><code>./manage.py<span class="w"> </span>shell
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.contentful.models</span> <span class="kn">import</span> <span class="n">ContentfulEntry</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.contentful.models</span> <span class="kn">import</span> <span class="n">ContentfulEntry</span>
 
 <span class="n">product_stories</span> <span class="o">=</span> <span class="n">ContentfulEntry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;pageProductJournalismStory&quot;</span><span class="p">,</span> <span class="n">localisation_complete</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&quot;en-US&quot;</span><span class="p">)</span>
 
@@ -2537,7 +2537,7 @@ able to make new connect entries.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

@@ -1225,7 +1225,7 @@ your system, there are a couple of ways:</p>
     geckdriver</a>
     and add it to your system path:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/downloaded/files/
+<div class="language-bash highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/downloaded/files/
 mv<span class="w"> </span>geckodriver<span class="w"> </span>/usr/local/bin/
 </code></pre></div>
 </blockquote>
@@ -1234,7 +1234,7 @@ mv<span class="w"> </span>geckodriver<span class="w"> </span>/usr/local/bin/
 <p>If you're on MacOS, download geckodriver directly using Homebrew,
     which automatically places it in your system path:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>geckodriver
+<div class="language-bash highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>geckodriver
 </code></pre></div>
 </blockquote>
 </li>
@@ -1242,7 +1242,7 @@ mv<span class="w"> </span>geckodriver<span class="w"> </span>/usr/local/bin/
 <p><a href="https://chromedriver.chromium.org/downloads">Download chromedriver</a>
     and add it to your system path:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/downloaded/files/
+<div class="language-bash highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/your/downloaded/files/
 mv<span class="w"> </span>chromedriver<span class="w"> </span>/usr/local/bin/
 </code></pre></div>
 </blockquote>
@@ -1251,7 +1251,7 @@ mv<span class="w"> </span>chromedriver<span class="w"> </span>/usr/local/bin/
 <p>If you're on MacOS, download chromedriver directly using
     Homebrew/Cask, which automatically places it in your system path:</p>
 <blockquote>
-<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>tap<span class="w"> </span>homebrew/cask
+<div class="language-bash highlight"><pre><span></span><code>brew<span class="w"> </span>tap<span class="w"> </span>homebrew/cask
 
 brew<span class="w"> </span>cask<span class="w"> </span>install<span class="w"> </span>chromedriver
 </code></pre></div>
@@ -1262,15 +1262,15 @@ brew<span class="w"> </span>cask<span class="w"> </span>install<span class="w"> 
 <p>To perform a single run of the Jasmine test suite using Firefox and
 Chrome, first make sure you have both browsers installed locally, and
 then activate your bedrock virtual env.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pyenv<span class="w"> </span>activate<span class="w"> </span>bedrock
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>pyenv<span class="w"> </span>activate<span class="w"> </span>bedrock
 </code></pre></div>
 <p>You can then run the tests with the following command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <p>This will run all our front-end linters and formatting checks before
 running the Jasmine test suite. If you only want to run the tests
 themselves, you can run:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <p>See the <a href="https://jasmine.github.io/index.html">Jasmine</a> documentation
 for tips on how to write JS behavioral or unit tests. We also use
@@ -1286,7 +1286,7 @@ pass.</p>
 </div>
 <p>To run the full functional test suite against your local bedrock
 instance in Mozorg mode:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
 </code></pre></div>
 <p>This will run all test suites found in the <code>tests/functional</code> directory
 and assumes you have bedrock running at <code>localhost</code> on port <code>8000</code>.
@@ -1297,7 +1297,7 @@ way things are set up in order to allow CI to test both Mozorg Mode and
 Pocket Mode at the same time. You need to define a temporary environment
 variable (needed by the [pocket_base_url]{.title-ref} fixture) and scope
 pytest to only run Pocket tests:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">BASE_POCKET_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span>py.test<span class="w"> </span>-m<span class="w"> </span>pocket_mode<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">BASE_POCKET_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span>py.test<span class="w"> </span>-m<span class="w"> </span>pocket_mode<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
 </code></pre></div>
 <p>This will run all test suites found in the <code>tests/functional</code> directory
 that have the pytest "[mark]{.title-ref}" of [pocket_mode]{.title-ref}
@@ -1326,16 +1326,16 @@ To skip these tests, add <code>-m 'not headless'</code> to your command line.</p
 </div>
 <p>To run a single test file you must tell py.test to execute a specific
 file e.g. <code>tests/functional/test_newsletter.py</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/firefox/new/test_download.py
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/firefox/new/test_download.py
 </code></pre></div>
 <p>To run a single test you can filter using the <code>-k</code> argument supplied
 with a keyword e.g. <code>-k test_download_button_displayed</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/firefox/new/test_download.py<span class="w"> </span>-k<span class="w"> </span>test_download_button_displayed
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>http://localhost:8000<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/firefox/new/test_download.py<span class="w"> </span>-k<span class="w"> </span>test_download_button_displayed
 </code></pre></div>
 <p>You can also easily run the tests against any bedrock environment by
 specifying the <code>--base-url</code> argument. For example, to run all functional
 tests against dev:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www-dev.allizom.org<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www-dev.allizom.org<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1359,7 +1359,7 @@ when you're on Mac OSX, for instance.</p>
 </ol>
 <p>For example, to run the home page tests using Internet Explorer via
 Sauce Labs:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SAUCELABS_USERNAME</span><span class="o">=</span>thedude<span class="w"> </span><span class="nv">SAUCELABS_API_KEY</span><span class="o">=</span><span class="m">123456789</span><span class="w"> </span><span class="nv">SAUCELABS_W3C</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="nv">SELENIUM_EXCLUDE_DEBUG</span><span class="o">=</span>logs<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www-dev.allizom.org<span class="w"> </span>--driver<span class="w"> </span>SauceLabs<span class="w"> </span>--capability<span class="w"> </span>browserName<span class="w"> </span><span class="s1">&#39;internet explorer&#39;</span><span class="w"> </span>--capability<span class="w"> </span>platformName<span class="w"> </span><span class="s1">&#39;Windows 10&#39;</span><span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/test_home.py
+<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SAUCELABS_USERNAME</span><span class="o">=</span>thedude<span class="w"> </span><span class="nv">SAUCELABS_API_KEY</span><span class="o">=</span><span class="m">123456789</span><span class="w"> </span><span class="nv">SAUCELABS_W3C</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="nv">SELENIUM_EXCLUDE_DEBUG</span><span class="o">=</span>logs<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www-dev.allizom.org<span class="w"> </span>--driver<span class="w"> </span>SauceLabs<span class="w"> </span>--capability<span class="w"> </span>browserName<span class="w"> </span><span class="s1">&#39;internet explorer&#39;</span><span class="w"> </span>--capability<span class="w"> </span>platformName<span class="w"> </span><span class="s1">&#39;Windows 10&#39;</span><span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/test_home.py
 </code></pre></div>
 <h2 id="writing-selenium-tests">Writing Selenium tests<a class="headerlink" href="#writing-selenium-tests" title="Permanent link">&para;</a></h2>
 <p>Tests usually consist of interactions and assertions. Selenium provides
@@ -1371,7 +1371,7 @@ means each page we test has an object that represents the actions and
 states that are needed for testing.</p>
 <p>Well written page objects should allow your test to contain simple
 interactions and assertions as shown in the following example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_sign_up_for_newsletter</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">selenium</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_sign_up_for_newsletter</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">selenium</span><span class="p">):</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">NewsletterPage</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">selenium</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
     <span class="n">page</span><span class="o">.</span><span class="n">type_email</span><span class="p">(</span><span class="s1">&#39;noreply@mozilla.com&#39;</span><span class="p">)</span>
     <span class="n">page</span><span class="o">.</span><span class="n">accept_privacy_policy</span><span class="p">()</span>
@@ -1398,7 +1398,7 @@ will need to apply the <code>nondestructive</code> marker to it. A simple exampl
 is shown below, however you can also read the <a href="http://pytest.org/latest/example/markers.html">pytest
 markers</a> documentation
 for more options.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">nondestructive</span>
 <span class="k">def</span> <span class="nf">test_newsletter_default_values</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">selenium</span><span class="p">):</span>
@@ -1415,7 +1415,7 @@ for more options.</p>
 in a wide range of web browsers, including Internet Explorer 11. The
 number of smoke tests we run should be enough to cover our most critical
 pages where legacy browser support is important.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">smoke</span>
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">nondestructive</span>
@@ -1434,7 +1434,7 @@ continue. For this reason, you will need to write explicit
 in your page objects. These repeatedly execute code (a condition) until
 the condition returns true. The following example is probably the most
 commonly used, and will wait until an element is considered displayed:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">expected</span>
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">expected</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span> <span class="k">as</span> <span class="n">Wait</span>
 
 <span class="n">Wait</span><span class="p">(</span><span class="n">selenium</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span>
@@ -1569,7 +1569,7 @@ return valid 200 responses.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

@@ -1297,7 +1297,7 @@ JS, with the exception of the following scripts:</p>
 to IE. To hide non-relevant content from IE users who see the universal
 stylesheet, a <code>hide-from-legacy-ie</code> class name can also be applied
 directly to HTML:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hide-from-legacy-ie&quot;</span><span class="p">&gt;</span>See what Firefox has blocked for you<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hide-from-legacy-ie&quot;</span><span class="p">&gt;</span>See what Firefox has blocked for you<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="delivering-degraded-support">Delivering degraded support<a class="headerlink" href="#delivering-degraded-support" title="Permanent link">&para;</a></h2>
 <p>On other legacy browsers where conditional comments are not supported,
@@ -1322,14 +1322,14 @@ allowing older browsers to degrade gracefully using simpler layouts when
 needed.</p>
 <p>Additionally, there is also a universal CSS class hook available that
 gets delivered via a site-wide JS feature detection snippet:</p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">is-modern-browser</span><span class="w"> </span><span class="p">{</span>
+<div class="language-css highlight"><pre><span></span><code><span class="p">.</span><span class="nc">is-modern-browser</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c">/* Styles will only be applied to browsers that get enhanced support. */</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="feature-detection-using-javascript">Feature detection using JavaScript<a class="headerlink" href="#feature-detection-using-javascript" title="Permanent link">&para;</a></h3>
 <p>For JS, enhanced support can be delivered using a helper that leverages
 the same feature detection snippet:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">onLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1341,7 +1341,7 @@ the same feature detection snippet:</p>
 </code></pre></div>
 <p>The <code>site.isModernBrowser</code> global property can also be used within
 conditionals like so:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">site</span><span class="p">.</span><span class="nx">isModernBrowser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="language-javascript highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">site</span><span class="p">.</span><span class="nx">isModernBrowser</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Code that will only be run on browsers that get enhanced support.</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1433,7 +1433,7 @@ browser</a>.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
