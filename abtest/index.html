@@ -1284,8 +1284,7 @@ detailing the experiment and recording the results.</p>
 page javascript or redirecting to the same URL with a query string
 appended. We mostly use the redirect method in bedrock. This makes
 testing easier.</p>
-<p>Create a <a href="http://bedrock.readthedocs.io/en/latest/coding.html#variation-views">variation
-view</a>
+<p>Create a <a href="../coding/#variation-views">variation view</a>
 for the a/b test.</p>
 <p>The view can handle the URL redirect in one of two ways:</p>
 <ol>
@@ -1295,8 +1294,7 @@ for the a/b test.</p>
 </ol>
 <h3 id="content-variation">Content variation<a class="headerlink" href="#content-variation" title="Permanent link">&para;</a></h3>
 <p>Useful for small focused tests.</p>
-<p>This is explained on the <a href="http://bedrock.readthedocs.io/en/latest/coding.html#variation-views">variation
-view</a>
+<p>This is explained on the <a href="../coding/#variation-views">variation view</a>
 page.</p>
 <h3 id="new-page">New page<a class="headerlink" href="#new-page" title="Permanent link">&para;</a></h3>
 <p>Useful for large page changes where content and assets are dramatically
@@ -1305,14 +1303,13 @@ different.</p>
 <code>noindex</code> and does not have a <code>canonical</code> URL.</p>
 <div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">canonical_urls</span> <span class="cp">%}</span><span class="x">&lt;meta name=&quot;robots&quot; content=&quot;noindex,follow&quot;&gt;</span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
-<p>Configure as explained on the <a href="http://bedrock.readthedocs.io/en/latest/coding.html#variation-views">variation
-view</a>
+<p>Configure as explained on the <a href="../coding/#variation-views">variation view</a>
 page.</p>
 <h3 id="traffic-cop">Traffic Cop<a class="headerlink" href="#traffic-cop" title="Permanent link">&para;</a></h3>
 <p>Create a .js file where you initialize Traffic Cop and include that in
 the experiments block in the template that will be doing the
 redirection. Wrap the extra js include in a
-<a href="http://bedrock.readthedocs.io/en/latest/install.html#feature-flipping-aka-switches">switch</a>.</p>
+<a href="../install/#feature-flipping-aka-switches">switch</a>.</p>
 <div class="language-jinja highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">experiments</span> <span class="cp">%}</span>
 <span class="x">  </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">switch</span><span class="o">(</span><span class="s1">&#39;experiment-berlin-video&#39;</span><span class="o">,</span> <span class="o">[</span><span class="s1">&#39;de&#39;</span><span class="o">])</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">js_bundle</span><span class="o">(</span><span class="s1">&#39;firefox_new_berlin_experiment&#39;</span><span class="o">)</span> <span class="cp">}}</span>
@@ -1320,15 +1317,13 @@ redirection. Wrap the extra js include in a
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </code></pre></div>
 <h3 id="switches">Switches<a class="headerlink" href="#switches" title="Permanent link">&para;</a></h3>
-<p>See the traffic cop section of the <a href="http://bedrock.readthedocs.io/en/latest/install.html#feature-flipping-aka-switches">switch
-docs</a>
+<p>See the traffic cop section of the <a href="../install/#feature-flipping-aka-switches">switch docs</a>
 for instructions.</p>
 <h3 id="recording-the-data">Recording the data<a class="headerlink" href="#recording-the-data" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are measuring installs as part of your experiment be sure to
-configure <a href="https://bedrock.readthedocs.io/en/latest/firefox-stub-attribution.html#measuring-campaigns-and-experiments">custom stub
-attribution</a>
+configure <a href="../attribution/0002-firefox-desktop/#measuring-campaigns-and-experiments">custom stub attribution</a>
 as well.</p>
 </div>
 <p>Including the <code>data-ex-variant</code> and <code>data-ex-name</code> in the analytics
