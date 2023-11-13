@@ -755,13 +755,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#logging-pings-in-the-console" class="md-nav__link">
-    Logging pings in the console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#defining-metrics-and-pings" class="md-nav__link">
     Defining metrics and pings
   </a>
@@ -1261,13 +1254,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#logging-pings-in-the-console" class="md-nav__link">
-    Logging pings in the console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#defining-metrics-and-pings" class="md-nav__link">
     Defining metrics and pings
   </a>
@@ -1590,25 +1576,25 @@ developer reference documentation.</p>
 Glean JavaScript bundle, which will do things like record page hits and
 link click events that we want to measure.</p>
 <h3 id="debugging-pings">Debugging pings<a class="headerlink" href="#debugging-pings" title="Permanent link">&para;</a></h3>
-<p>For all non-production environments, bedrock will automatically set a
-debug view tag for all pings. This means that when running on localhost,
-on a demo, or on a staging environment, ping data will be viewable in
-the <a href="https://debug-ping-preview.firebaseapp.com/">Glean debug dashboard</a>
-which can be used to test that pings are working correctly. All bedrock
-debug pings will register in the debug dashboard with the tag name
-<code>bedrock</code>.</p>
+<p>Glean supports debugging pings via a set of flags that can be enabled directly
+in the browser's web console.</p>
+<ul>
+<li><code>window.Glean.setLogPings(true)</code> (enable verbose ping logging in the web console).</li>
+<li><code>window.Glean.setDebugViewTag('bedrock')</code> (send pings to the <a href="https://debug-ping-preview.firebaseapp.com/">Glean debug dashboard</a> with the tag name <code>bedrock</code>).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After enabling Glean debugging in the web console, it will be remembered
+when navigating across pages using <code>sessionStorage</code>. To stop debugging,
+you need to either close the browser tab, or delete the items from
+<code>sessionStorage</code>. You can disable ping logging by calling
+<code>window.Glean.setLogPings(false)</code>.</p>
+</div>
 <h3 id="filtering-out-non-production-pings">Filtering out non-production pings<a class="headerlink" href="#filtering-out-non-production-pings" title="Permanent link">&para;</a></h3>
 <p>Bedrock will also set an <code>app_channel</code> tag with a value of either <code>prod</code>
 or <code>non-prod</code>, depending on the environment. This is present in all
 pings in the <code>client_info</code> section, and is useful for filtering out
 non-production data in telemetry dashboards.</p>
-<h3 id="logging-pings-in-the-console">Logging pings in the console<a class="headerlink" href="#logging-pings-in-the-console" title="Permanent link">&para;</a></h3>
-<p>When running bedrock locally, you can also set the following environment
-variable in your <code>.env</code>` file to automatically log pings in the
-browser's web console. This can be especially useful when making
-updates to analytics code.</p>
-<div class="language-text highlight"><pre><span></span><code>GLEAN_LOG_PINGS=True
-</code></pre></div>
 <h3 id="defining-metrics-and-pings">Defining metrics and pings<a class="headerlink" href="#defining-metrics-and-pings" title="Permanent link">&para;</a></h3>
 <p>All of the data we send to the Glean pipeline is defined in <abbr title="Yet Another Markup Language">YAML</abbr>
 schema files in the <code>./glean/</code> project root directory. The
