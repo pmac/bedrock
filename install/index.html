@@ -1286,9 +1286,9 @@
 <h2 id="installation-methods">Installation Methods<a class="headerlink" href="#installation-methods" title="Permanent link">&para;</a></h2>
 <p>There are two primary methods of installing bedrock: Docker and Local.
 Whichever you choose you'll start by getting the source</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mozilla/bedrock.git
+<div class="language-shell highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mozilla/bedrock.git
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>bedrock
+<div class="language-shell highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>bedrock
 </code></pre></div>
 <p>After these basic steps you can choose your install method below. Docker
 is the easiest and recommended way, but local is also possible and may
@@ -1310,12 +1310,12 @@ the <code>Local Installation</code> section.</p>
 you're on Linux or Mac (and possibly Windows 10 with the Linux
 subsystem) you can run a script that will pull our production and
 development docker images and start them:</p>
-<div class="language-text highlight"><pre><span></span><code>$ make clean run
+<div class="language-text highlight"><pre><span></span><code>make clean run
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can start the server any other time with:</p>
-<div class="language-text highlight"><pre><span></span><code>$ make run
+<div class="language-text highlight"><pre><span></span><code>make run
 </code></pre></div>
 </div>
 <p>You should see a number of things happening, but when it's done it will
@@ -1335,12 +1335,12 @@ try for a quick fix.</p>
 </div>
 <p>If you don't have or want to use Make you can call the docker and
 compose commands directly</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>docker-compose<span class="w"> </span>pull
+<div class="language-shell highlight"><pre><span></span><code>docker-compose<span class="w"> </span>pull
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>.env-dist<span class="w"> </span>.env
+<div class="language-shell highlight"><pre><span></span><code><span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>.env<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>.env-dist<span class="w"> </span>.env
 </code></pre></div>
 <p>Then starting it all is simply</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>docker-compose<span class="w"> </span>up<span class="w"> </span>app<span class="w"> </span>assets
+<div class="language-shell highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>app<span class="w"> </span>assets
 </code></pre></div>
 <p>All of this is handled by the <code>Makefile</code> script and called by Make if
 you follow the above directions. You <strong>DO NOT</strong> need to do both.</p>
@@ -1350,7 +1350,7 @@ Hub</a>. If you need to add or change any
 dependencies for Python or Node then you'll need to build new images
 for local testing. You can do this by updating the requirements files
 and/or package.json file then simply running:</p>
-<div class="language-text highlight"><pre><span></span><code>$ make build
+<div class="language-text highlight"><pre><span></span><code>make build
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1393,41 +1393,44 @@ there are installation instructions for a variety of platforms and
 shells in the READMEs for the two pyenv projects.</p>
 <p><strong>Install Python 3.9.10 with pyenv</strong></p>
 <ol>
-<li>Install <code>pyenv</code> itself :<div class="language-text highlight"><pre><span></span><code>$ brew install pyenv
+<li>
+<p>Install <code>pyenv</code> itself :</p>
+<div class="language-text highlight"><pre><span></span><code>brew install pyenv
 </code></pre></div>
 </li>
-</ol>
-<p>2. Configure your shell to init <code>pyenv</code> on start - this is noted in the
+<li>
+<p>Configure your shell to init <code>pyenv</code> on start - this is noted in the
 project's <a href="https://github.com/pyenv/pyenv">own docs</a>, in more detail,
 but omits that setting [PYENV_ROOT]{.title-ref} and adding it to the
 path is needed:</p>
-<div class="language-text highlight"><pre><span></span><code>$ echo &#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39; &gt;&gt; ~/.zshrc
-$ echo &#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
-$ echo &#39;eval &quot;$(pyenv init -)&quot;&#39; &gt;&gt; ~/.zshrc
+<div class="language-text highlight"><pre><span></span><code>echo &#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39; &gt;&gt; ~/.zshrc
+echo &#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+echo &#39;eval &quot;$(pyenv init -)&quot;&#39; &gt;&gt; ~/.zshrc
 </code></pre></div>
-<p>3. Restart your login session for the changes to profile files to take
-effect - if you're not using <code>zsh</code>, the <code>pyenv</code> docs have other routes
-:</p>
-<div class="language-text highlight"><pre><span></span><code>$ zsh -l
+</li>
+<li>
+<p>Restart your login session for the changes to profile files to take
+effect - if you're not using <code>zsh</code>, the <code>pyenv</code> docs have other routes:</p>
+<div class="language-text highlight"><pre><span></span><code>zsh -l
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Install the latest Python 3.9.x (eg 3.9.10), then test it's there:</p>
-<div class="language-text highlight"><pre><span></span><code>$ pyenv install 3.9.10
+<div class="language-text highlight"><pre><span></span><code>pyenv install 3.9.10
 </code></pre></div>
 <p>If you'd like to make Python 3.9.10 your default globally, you can
 do so with:</p>
-<div class="language-text highlight"><pre><span></span><code>$ pyenv global 3.9.10
+<div class="language-text highlight"><pre><span></span><code>pyenv global 3.9.10
 </code></pre></div>
 <p>If you only want to make Python 3.9.10 available in the current
 shell, while you set up the Python virtualenv (below), you can do so
 with:</p>
-<div class="language-text highlight"><pre><span></span><code>$ pyenv shell 3.9.10
+<div class="language-text highlight"><pre><span></span><code>pyenv shell 3.9.10
 </code></pre></div>
 </li>
 <li>
 <p>Verify that you have the correct version of Python installed:</p>
-<div class="language-text highlight"><pre><span></span><code>$ python --version
+<div class="language-text highlight"><pre><span></span><code>python --version
 Python 3.9.10
 </code></pre></div>
 </li>
@@ -1445,7 +1448,7 @@ virtualenv for Bedrock's dependencies</strong></p>
 <ol>
 <li>
 <p>Install <code>pyenv-virtualenv</code> :</p>
-<div class="language-text highlight"><pre><span></span><code>$ brew install pyenv-virtualenv
+<div class="language-text highlight"><pre><span></span><code>brew install pyenv-virtualenv
 </code></pre></div>
 </li>
 <li>
@@ -1454,17 +1457,20 @@ this is noted in the <code>pyenv-virtualenv</code> project's <a href="https://gi
 documentation</a>, in more
 detail. The following will slot in a command that will work as long as
 you have pyenv-virtualenv installed:</p>
-<p>$ echo 'eval "$(pyenv virtualenv-init -)"' &gt;&gt; ~/.zshrc</p>
+<div class="language-text highlight"><pre><span></span><code>echo &#39;eval &quot;$(pyenv virtualenv-init -)&quot;&#39; &gt;&gt; ~/.zshrc
+</code></pre></div>
 </li>
 <li>
 <p>Restart your login session for the changes to profile files to take
    effect :</p>
-<p>$ zsh -l</p>
+<div class="language-text highlight"><pre><span></span><code>zsh -l
+</code></pre></div>
 </li>
 <li>
 <p>Make a virtualenv we can use - in this example we'll call it
     <code>bedrock</code> but use whatever you want :</p>
-<p>$ pyenv virtualenv 3.9.10 bedrock</p>
+<div class="language-text highlight"><pre><span></span><code>pyenv virtualenv 3.9.10 bedrock
+</code></pre></div>
 </li>
 </ol>
 <p><strong>Use the virtualenv</strong></p>
@@ -1472,21 +1478,25 @@ you have pyenv-virtualenv installed:</p>
 <li>
 <p>Switch to the virtualenv - this is the command you will use any time
    you need this virtualenv :</p>
-<p>$ pyenv activate bedrock</p>
+<div class="language-text highlight"><pre><span></span><code>pyenv activate bedrock
+</code></pre></div>
 </li>
 <li>
 <p>If you'd like to auto activate the virtualenv when you cd into the
 bedrock directory, and deactivate it when you exit the directory, you
 can do so with:</p>
-<p>$ echo 'bedrock' &gt; .python-version</p>
+<div class="language-text highlight"><pre><span></span><code>echo &#39;bedrock&#39; &gt; .python-version
+</code></pre></div>
 </li>
 <li>
 <p>Securely upgrade pip :</p>
-<p>$ pip install --upgrade pip</p>
+<div class="language-text highlight"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
 </li>
 <li>
 <p>Install / update dependencies :</p>
-<p>$ make install-local-python-deps</p>
+<div class="language-text highlight"><pre><span></span><code>make install-local-python-deps
+</code></pre></div>
 </li>
 </ol>
 <div class="admonition info">
@@ -1495,9 +1505,9 @@ can do so with:</p>
 compile, try explicitly setting the arch flags and try again. The
 following are relevant to Intel Macs only. If you're on Apple Silicon,
 3.9.10 should 'just work':</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ARCHFLAGS</span><span class="o">=</span><span class="s2">&quot;-arch i386 -arch x86_64&quot;</span>
+<div class="language-shell highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ARCHFLAGS</span><span class="o">=</span><span class="s2">&quot;-arch i386 -arch x86_64&quot;</span>
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>install-local-python-deps
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>install-local-python-deps
 </code></pre></div>
 <p>If you are on Linux, you may need at least the following packages or
 their equivalent for your distro:</p>
@@ -1507,12 +1517,12 @@ their equivalent for your distro:</p>
 <p><strong>Sync the database and all of the external data locally.</strong> This gets
 product-details, security-advisories, credits, release notes,
 localizations, legal-docs etc:</p>
-<div class="language-text highlight"><pre><span></span><code>$ bin/bootstrap.sh
+<div class="language-text highlight"><pre><span></span><code>bin/bootstrap.sh
 </code></pre></div>
 <p><strong>Install the node dependencies to run the site</strong>. This will only work
 if you already have <a href="https://nodejs.org/">Node.js</a> and
 <a href="https://www.npmjs.com/">npm</a> installed:</p>
-<div class="language-text highlight"><pre><span></span><code>$ npm install
+<div class="language-text highlight"><pre><span></span><code>npm install
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1536,12 +1546,12 @@ know when you've broken something with a change.</p>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>We manage our local docker environment with docker-compose and Make. All
 you need to do here is run:</p>
-<div class="language-text highlight"><pre><span></span><code>$ make test
+<div class="language-text highlight"><pre><span></span><code>make test
 </code></pre></div>
 <p>If you don't have Make you can simply run <code>docker-compose run test</code>.</p>
 <p>If you'd like to run only a subset of the tests or only one of the test
 commands you can accomplish that with a command like the following:</p>
-<div class="language-text highlight"><pre><span></span><code>$ docker-compose run test py.test bedrock/firefox
+<div class="language-text highlight"><pre><span></span><code>docker-compose run test py.test bedrock/firefox
 </code></pre></div>
 <p>This example will run only the unit tests for the <code>firefox</code> app in
 bedrock. You can substitute <code>py.test bedrock/firefox</code> with most any
@@ -1549,30 +1559,30 @@ shell command you'd like and it will run in the Docker container and
 show you the output. You can also just run <code>bash</code> to get an interactive
 shell in the container which you can then use to run any commands you'd
 like and inspect the file system:</p>
-<div class="language-text highlight"><pre><span></span><code>$ docker-compose run test bash
+<div class="language-text highlight"><pre><span></span><code>docker-compose run test bash
 </code></pre></div>
 <h3 id="local">Local<a class="headerlink" href="#local" title="Permanent link">&para;</a></h3>
 <p>From the local install instructions above you should still have your
 virtualenv activated, so running the tests is as simple as:</p>
-<div class="language-text highlight"><pre><span></span><code>$ py.test lib bedrock
+<div class="language-text highlight"><pre><span></span><code>py.test lib bedrock
 </code></pre></div>
 <p>To test a single app, specify the app by name in the command above.
 e.g.:</p>
-<div class="language-text highlight"><pre><span></span><code>$ py.test bedrock/firefox
+<div class="language-text highlight"><pre><span></span><code>py.test bedrock/firefox
 </code></pre></div>
 <h2 id="make-it-run">Make it run<a class="headerlink" href="#make-it-run" title="Permanent link">&para;</a></h2>
 <h3 id="docker_1">Docker<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
 <p>You can simply run the <code>make run</code> script mentioned above, or use
 docker-compose directly:</p>
-<div class="language-text highlight"><pre><span></span><code>$ docker-compose up app assets
+<div class="language-text highlight"><pre><span></span><code>docker-compose up app assets
 </code></pre></div>
 <h3 id="local_1">Local<a class="headerlink" href="#local_1" title="Permanent link">&para;</a></h3>
 <p>To make the server run, make sure your virtualenv is activated, and then
 run the server:</p>
-<div class="language-text highlight"><pre><span></span><code>$ npm start
+<div class="language-text highlight"><pre><span></span><code>npm start
 </code></pre></div>
 <p>If you are not inside a virtualenv, you can activate it by doing:</p>
-<div class="language-text highlight"><pre><span></span><code>$ pyenv activate bedrock
+<div class="language-text highlight"><pre><span></span><code>pyenv activate bedrock
 </code></pre></div>
 <h3 id="prod-mode">Prod Mode<a class="headerlink" href="#prod-mode" title="Permanent link">&para;</a></h3>
 <p>There are certain things about the site that behave differently when
@@ -1589,14 +1599,14 @@ This usually means adding <code>DEBUG=False</code> and <code>DEV=False</code>, t
 want <code>DEV=True</code> if you want the site to act more like
 www-dev.allizom.org in that all feature switches are <code>On</code> and all
 locales are active for every page. After that you can run the following:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>run-prod
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>run-prod
 </code></pre></div>
 <p>This will run the latest bedrock image using your local bedrock files
 and templates, but not your local static assets. If you need an updated
 image just run <code>make pull</code>.</p>
 <p>If you need to include the changes you've made to your local static
 files (images, css, js, etc.) then you have to build the image first:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>build-prod<span class="w"> </span>run-prod
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>build-prod<span class="w"> </span>run-prod
 </code></pre></div>
 <h3 id="pocket-mode">Pocket Mode<a class="headerlink" href="#pocket-mode" title="Permanent link">&para;</a></h3>
 <p>By default, Bedrock will serve the content of <code>www.mozilla.org</code>.
@@ -1632,12 +1642,12 @@ You can do this with Docker or Local installations. Run the commands
 from your root folder. They will build documentation and start a live
 server to auto-update any changes you make to a documentation file.</p>
 <p>Docker:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>docs
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>docs
 </code></pre></div>
 <p>Local:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/docs.txt
+<div class="language-shell highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/docs.txt
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>livedocs
+<div class="language-shell highlight"><pre><span></span><code>make<span class="w"> </span>livedocs
 </code></pre></div>
 <h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h2>
 <p>Localization (or L10n) files were fetched by the
@@ -1645,7 +1655,7 @@ server to auto-update any changes you make to a documentation file.</p>
 the docker images. If you need to update them or switch to a different
 repo or branch after changing settings you can run the following
 command:</p>
-<div class="language-text highlight"><pre><span></span><code>$ ./manage.py l10n_update
+<div class="language-text highlight"><pre><span></span><code>./manage.py l10n_update
 </code></pre></div>
 <p>You can read more details about how to localize content
 <a href="../l10n/">here</a>.</p>
@@ -1669,11 +1679,11 @@ these with just the prefix. So if you used
 active for German and any English locale the site supports.</p>
 <p>You may also use these switches in Python in <code>views.py</code> files (though
 not with locale support). For example:</p>
-<div class="language-text highlight"><pre><span></span><code>from bedrock.base.waffle import switch
+<div class="language-py highlight"><span class="filename">views.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">bedrock.base.waffle</span> <span class="kn">import</span> <span class="n">switch</span>
 
-def home_view(request):
-    title = &#39;Staging Home&#39; if switch(&#39;staging-site&#39;) else &#39;Prod Home&#39;
-    ...
+<span class="k">def</span> <span class="nf">home_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Staging Home&#39;</span> <span class="k">if</span> <span class="n">switch</span><span class="p">(</span><span class="s1">&#39;staging-site&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;Prod Home&#39;</span>
+    <span class="c1"># ...</span>
 </code></pre></div>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
 <p>If the environment variable <code>DEV</code> is set to a "true" value, then all
@@ -1697,15 +1707,14 @@ switches and other configuration values in our <a href="https://mozmeao.github.i
 repo</a>.</p>
 <p>To work with/test these experiment switches locally, you must add the
 switches to your local environment. For example:</p>
-<div class="language-text highlight"><pre><span></span><code># to switch on firstrun-copy-experiment you&#39;d add the following to your ``.env`` file
-SWITCH_FIRSTRUN_COPY_EXPERIMENT=on
+<div class="language-shell highlight"><pre><span></span><code><span class="c1"># to switch on firstrun-copy-experiment you&#39;d add the following to your ``.env`` file</span>
+<span class="nv">SWITCH_FIRSTRUN_COPY_EXPERIMENT</span><span class="o">=</span>on
 </code></pre></div>
 <p>To do the equivalent in one of the bedrock apps see the
 <a href="https://mozmeao.github.io/www-config/">www-config</a> documentation.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
-<p>A shortcut for activating virtual envs in zsh or bash is [.
-venv/bin/activate]{.title-ref}. The dot is the same as
-[source]{.title-ref}.</p>
+<p>A shortcut for activating virtual envs in zsh or bash is <code>. venv/bin/activate</code>. The dot is the same as
+<code>source</code>.</p>
 <p>There's a project called <a href="https://pypi.org/project/pew/">pew</a> that
 provides a better interface for managing/activating virtual envs, so you
 can use that if you want. Also if you need help managing various
