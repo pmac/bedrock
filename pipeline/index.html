@@ -1278,8 +1278,7 @@ testing changes to the website as a whole is required, then pushing
 changes to the special <code>run-integration-tests</code> branch (see below) is
 much faster than running the full test suite locally.</p>
 <h3 id="pull-request">Pull request<a class="headerlink" href="#pull-request" title="Permanent link">&para;</a></h3>
-<p>Once a pull request is submitted, a <a href="https://github.com/mozilla/bedrock/actions/workflows/pull_request_tests.yml">Unit Tests Github
-Action</a>
+<p>Once a pull request is submitted, a <a href="https://github.com/mozilla/bedrock/actions/workflows/pull_request_tests.yml">Unit Tests Github Action</a>
 will run both the Python and JavaScript unit tests, as well as the suite
 of redirect headless HTTP(s) response checks.</p>
 <h3 id="push-to-main-branch">Push to main branch<a class="headerlink" href="#push-to-main-branch" title="Permanent link">&para;</a></h3>
@@ -1292,10 +1291,8 @@ according to the settings in the Github Action workflow defined in
 <ul>
 <li>Chrome (latest) via local Selenium grid.</li>
 <li>Firefox (latest) via local Selenium grid.</li>
-<li>Internet Explorer 11 (smoke tests) via <a href="https://saucelabs.com/">Sauce
-    Labs</a>.</li>
-<li>Internet Explorer 9 (sanity tests) via <a href="https://saucelabs.com/">Sauce
-    Labs</a>.</li>
+<li>Internet Explorer 11 (smoke tests) via <a href="https://saucelabs.com/">Sauce Labs</a>.</li>
+<li>Internet Explorer 9 (sanity tests) via <a href="https://saucelabs.com/">Sauce Labs</a>.</li>
 <li>Headless tests.</li>
 </ul>
 <p>Note that now we have Mozorg mode and Pocket mode, we actually stand up
@@ -1328,8 +1325,7 @@ but this time with the addition of the <code>headless download tests</code>.</p>
 <h3 id="push-to-prod-branch-tagged-tagged-commit">Push to prod branch (tagged) {#tagged-commit}<a class="headerlink" href="#push-to-prod-branch-tagged-tagged-commit" title="Permanent link">&para;</a></h3>
 <p>When a tagged commit is pushed to the <code>prod</code> branch, a production
 container image (private, see above) is built, and a set of public
-images is also built and pushed to <a href="https://hub.docker.com/r/mozmeao/bedrock/tags">Docker
-Hub</a> if needed (usually
+images is also built and pushed to <a href="https://hub.docker.com/r/mozmeao/bedrock/tags">Docker Hub</a> if needed (usually
 this will have already happened as a result of a push to the <code>main</code> or
 <code>stage</code> branch). The production image is deployed to each
 <a href="https://www.mozilla.org">production</a> deployment.</p>
@@ -1380,12 +1376,10 @@ currently deployed to Dev, Stage, and Prod:</p>
 <p><a href="https://whatsdeployed.io/s/RuO/mozilla/bedrock"><img alt="image" src="https://img.shields.io/badge/whatsdeployed-dev,stage,prod-green.svg" /></a></p>
 <h2 id="instance-configuration-switches">Instance Configuration &amp; Switches<a class="headerlink" href="#instance-configuration-switches" title="Permanent link">&para;</a></h2>
 <p>We have a <a href="https://github.com/mozmeao/www-config">separate repo</a> for
-configuring our primary instances (dev, stage, and prod). The <a href="https://mozmeao.github.io/www-config/">docs for
-updating configurations</a> in that
+configuring our primary instances (dev, stage, and prod). The <a href="https://mozmeao.github.io/www-config/">docs for updating configurations</a> in that
 repo are on their own page, but there is a way to tell what version of
 the configuration is in use on any particular instance of bedrock. You
-can go to the <code>/healthz-cron/</code> URL on an instance (<a href="https://www.mozilla.org/healthz-cron/">see
-prod</a> for example) to see the
+can go to the <code>/healthz-cron/</code> URL on an instance (<a href="https://www.mozilla.org/healthz-cron/">see prod</a> for example) to see the
 current commit of all of the external Git repos in use by the site and
 how long ago they were updated. The info on that page also includes the
 latest version of the database in use, the git revision of the bedrock
@@ -1395,8 +1389,7 @@ to production, this is the URL you should check.</p>
 <h2 id="updating-selenium">Updating Selenium<a class="headerlink" href="#updating-selenium" title="Permanent link">&para;</a></h2>
 <p>There are several components for Selenium, which are independently
 versioned. The first is the Python client, and this can be updated via
-the <a href="https://github.com/mozilla/bedrock/blob/main/requirements/dev.txt">test
-dependencies</a>.
+the <a href="https://github.com/mozilla/bedrock/blob/main/requirements/dev.txt">test dependencies</a>.
 The other components are the Selenium versions used in both SauceLabs
 and the local Selenium grid. These versions are selected automatically
 based on the required OS / Browser configuration, so they should not
@@ -1415,9 +1408,7 @@ following clause to the matrix:</p>
 <span class="w">  </span><span class="nt">PLATFORM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Windows 8</span>
 <span class="w">  </span><span class="nt">MARK_EXPRESSION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smoke</span>
 </code></pre></div>
-<p>You can use <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator/">Sauce Labs platform
-configurator</a>
-to help with the parameter values.</p>
+<p>You can use <a href="https://wiki.saucelabs.com/display/DOCS/Platform+Configurator/">Sauce Labs platform configurator</a> to help with the parameter values.</p>
 <h2 id="pushing-to-the-integration-tests-branch">Pushing to the integration tests branch<a class="headerlink" href="#pushing-to-the-integration-tests-branch" title="Permanent link">&para;</a></h2>
 <p>If you have commit rights to our Github repo (mozilla/bedrock) you can
 simply push your branch to the branch named <code>run-integration-tests</code>, and
