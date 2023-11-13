@@ -1295,12 +1295,12 @@ Results will be reported in <code>tests/functional/results.html</code>.</p>
 instance in Pocket mode, things are slightly different, because of the
 way things are set up in order to allow CI to test both Mozorg Mode and
 Pocket Mode at the same time. You need to define a temporary environment
-variable (needed by the [pocket_base_url]{.title-ref} fixture) and scope
+variable (needed by the <code>pocket_base_url</code> fixture) and scope
 pytest to only run Pocket tests:</p>
 <div class="language-bash highlight"><pre><span></span><code><span class="nv">BASE_POCKET_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span>py.test<span class="w"> </span>-m<span class="w"> </span>pocket_mode<span class="w"> </span>--driver<span class="w"> </span>Firefox<span class="w"> </span>--html<span class="w"> </span>tests/functional/results.html<span class="w"> </span>tests/functional/
 </code></pre></div>
 <p>This will run all test suites found in the <code>tests/functional</code> directory
-that have the pytest "[mark]{.title-ref}" of [pocket_mode]{.title-ref}
+that have the pytest "<code>mark</code>" of <code>pocket_mode</code>
 and assumes you have bedrock running <em>in Pocket mode</em> at <code>localhost</code> on
 port <code>8000</code>. Results will be reported in
 <code>tests/functional/results.html</code>.</p>

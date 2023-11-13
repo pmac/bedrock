@@ -1321,12 +1321,10 @@ tests against the environment that has just been deployed.</li>
 </div>
 <h3 id="push-to-stage-branch">Push to stage branch<a class="headerlink" href="#push-to-stage-branch" title="Permanent link">&para;</a></h3>
 <p>Whenever a change is pushed to the stage branch, a production docker
-image is built, published to <a href="https://hub.docker.com/r/mozmeao/bedrock/tags">Docker
-Hub</a>, and deployed to a
+image is built, published to <a href="https://hub.docker.com/r/mozmeao/bedrock/tags">Docker Hub</a>, and deployed to a
 <a href="https://www.allizom.org">public staging environment</a>. Once the new
 image is deployed, the full suite of UI tests is run against it again,
-but this time with the addition of the [headless download
-tests]{.title-ref}.</p>
+but this time with the addition of the <code>headless download tests</code>.</p>
 <h3 id="push-to-prod-branch-tagged-tagged-commit">Push to prod branch (tagged) {#tagged-commit}<a class="headerlink" href="#push-to-prod-branch-tagged-tagged-commit" title="Permanent link">&para;</a></h3>
 <p>When a tagged commit is pushed to the <code>prod</code> branch, a production
 container image (private, see above) is built, and a set of public
@@ -1347,8 +1345,7 @@ this will have already happened as a result of a push to the <code>main</code> o
 <li>
 <p>Check that dev deployment is green:</p>
 <ol>
-<li>View the <a href="https://github.com/mozilla/bedrock/actions/workflows/integration_tests.yml">Integration Tests Github
-    Action</a>
+<li>View the <a href="https://github.com/mozilla/bedrock/actions/workflows/integration_tests.yml">Integration Tests Github Action</a>
     and look at the run labelled
     <code>Run Integration tests for main</code></li>
 </ol>

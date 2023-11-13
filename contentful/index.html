@@ -1738,7 +1738,7 @@ entry.</p>
 are typically looking at several different entries combined together.</p>
 <p>On the bedrock side, the data for all entries is periodically requested
 from the API and stored in a database.</p>
-<p>When a Contentful page is requested the code in [api.py]{.title-ref}
+<p>When a Contentful page is requested the code in <code>api.py</code>
 transforms the information from the database into a group of Python
 dictionaries (these are like key/value pairs or an object in JS).</p>
 <p>This data is then passed to the page template (either Mozilla or for
@@ -2052,11 +2052,11 @@ displayed in small content widths.</p>
 in the API into HTML content.</p>
 <p>In places were we disagree with the rendering or want to enhance the
 rendering we can provide our own renderers on the bedrock side. They can
-be as simple as changing [\&lt;b>]{.title-ref} tags to
-[\&lt;strong>]{.title-ref} tags or as complex as inserting a component.</p>
+be as simple as changing <code>\&lt;b\&gt;</code> tags to
+<code>\&lt;strong\&gt;</code> tags or as complex as inserting a component.</p>
 <p>A list of our custom renderers is passed to the
-[RichTextRenderer]{.title-ref} helper at the start of the
-[ContentfulPage]{.title-ref} class in api.py. The renderers themselves
+<code>RichTextRenderer</code> helper at the start of the
+<code>ContentfulPage</code> class in api.py. The renderers themselves
 are also defined in api.py</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2174,7 +2174,7 @@ for pages, and display on demo5.</p>
 dev server.</p>
 <p>Specific URLs will only update every 5 minutes as the data is pulled
 from the API but pages can be previewed up to the second at the
-[contentful-preview]{.title-ref} URL. This preview will include
+<code>contentful-preview</code> URL. This preview will include
 "changed" and "draft" changes (even if there is an error in the
 data) not just published changes.</p>
 <p>For previewing on localhost, see Development Practices, below.</p>
@@ -2239,8 +2239,8 @@ environment variables set up.</p>
 <li><code>SWITCH_CONTENTFUL_HOMEPAGE_DE</code> should be set to <code>True</code> if you are
     working on the German Contentful-powered homepage</li>
 <li><code>CONTENTFUL_ENVIRONMENT</code> Contentful has 'branches' which it calls
-    environments. [master]{.title-ref} is what we use in production, and
-    [sandbox]{.title-ref} is generally what we use in development. It's
+    environments. <code>master</code> is what we use in production, and
+    <code>sandbox</code> is generally what we use in development. It's
     also possible to reference a specific environment - e.g.
     <code>CONTENTFUL_ENVIRONMENT=sandbox-2021-11-02</code></li>
 </ul>
@@ -2283,7 +2283,7 @@ following:</p>
 </ul>
 <p>Manually create preview URL in browser:</p>
 <ul>
-<li>[<a href="http://localhost:8000/en-US/contentful-preview/{entry_id}/]{.title-ref">http://localhost:8000/en-US/contentful-preview/{entry_id}/]{.title-ref</a>}</li>
+<li><code>http://localhost:8000/en-US/contentful-preview/{entry_id}/</code></li>
 </ul>
 <p>Note that previewing a page will require it to be pulled from
 Contentful's API, so you will need <code>CONTENTFUL_SPACE_ID</code> and
@@ -2300,7 +2300,7 @@ Contentful has the concept of aliases for environments and we use two
 aliases in our setup:</p>
 <ul>
 <li><code>master</code> is used for production and is an alias currently pointing
-    to the [V1]{.title-ref} environment. It is pretty stable and access
+    to the <code>V1</code> environment. It is pretty stable and access
     to it is limited.</li>
 <li><code>sandbox</code> is used for development and more team members have access
     to edit content. Again, it's an alias and is pointed at an
@@ -2320,7 +2320,7 @@ recently added to master. To do this:</p>
     is aliased to <code>master</code> - this will basically create a new 'branch'
     with the content currently in master.</li>
 <li>In the Environment Aliases section of the main page, find
-    [sandbox]{.title-ref} and click Change alias target, then select the
+    <code>sandbox</code> and click Change alias target, then select the
     <code>sandbox-XXXX-XX-XX</code> environment you just made.</li>
 </ul>
 <h3 id="which-environment-is-connected-to-where">Which environment is connected to where?<a class="headerlink" href="#which-environment-is-connected-to-where" title="Permanent link">&para;</a></h3>

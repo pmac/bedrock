@@ -1193,18 +1193,17 @@ Also make use of an appropriate label, such as <code>Do Not Merge</code>.</p>
 <h2 id="squashing-your-commits">Squashing your commits<a class="headerlink" href="#squashing-your-commits" title="Permanent link">&para;</a></h2>
 <p>Should your pull request contain more than one commit, sometimes we may
 ask you to squash them into a single commit before merging. You can do
-this with [git rebase]{.title-ref}.</p>
+this with <code>git rebase</code>.</p>
 <p>As an example, let's say your pull request contains two commits. To
 squash them into a single commit, you can follow these instructions:</p>
 <div class="language-text highlight"><pre><span></span><code>git rebase -i HEAD~2
 </code></pre></div>
 <p>You will then get an editor with your two commits listed. Change the
-second commit from [pick]{.title-ref} to [fixup]{.title-ref}, then save
+second commit from <code>pick</code> to <code>fixup</code>, then save
 and close. You should then be able to verify that you only have one
-commit now with [git log]{.title-ref}.</p>
+commit now with <code>git log</code>.</p>
 <p>To push to GitHub again, because you "altered the history" of the repo
-by merging the two commits into one, you'll have to [git push
--f]{.title-ref} instead of just [git push]{.title-ref}.</p>
+by merging the two commits into one, you'll have to <code>git push -f</code> instead of just <code>git push</code>.</p>
 <h2 id="deploying-your-code">Deploying your code<a class="headerlink" href="#deploying-your-code" title="Permanent link">&para;</a></h2>
 <p>These are the websites that Bedrock is usually deployed to as part of
 development.</p>
@@ -1313,8 +1312,8 @@ Heroku.</p>
 <p>However, the <a href="https://github.com/mozilla/bedrock/blob/main/.github/workflows/demo_deploy.yml">Github
 Action</a>
 we used to push code to Heroku may still be enabled. Pushing a branch to
-one of the [demo/*]{.title-ref} branches of the
-[mozilla/bedrock]{.title-ref} repo will trigger this. However, note that
+one of the <code>demo/\*</code> branches of the
+<code>mozilla/bedrock</code> repo will trigger this. However, note that
 URLs that historically used to point to Heroku will be pointed to the
 new GCP demos services instead, so you will have to look at Heroku's
 web UI to see what the URL of the relevant Heroku app is.</p>

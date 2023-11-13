@@ -1378,7 +1378,7 @@ running <code>docker-compose kill</code> to stop all containers, or
 </div>
 <h3 id="local-installation">Local Installation<a class="headerlink" href="#local-installation" title="Permanent link">&para;</a></h3>
 <p>These instructions assume you have Python, pip, and NodeJS installed. If
-you don't have [pip]{.title-ref} installed (you probably do) you can
+you don't have <code>pip</code> installed (you probably do) you can
 install it with the instructions in <a href="https://pip.pypa.io/en/stable/installing/">the pip
 docs</a>.</p>
 <p>Bedrock currently uses Python 3.9.10. The recommended way to install and
@@ -1401,7 +1401,7 @@ shells in the READMEs for the two pyenv projects.</p>
 <li>
 <p>Configure your shell to init <code>pyenv</code> on start - this is noted in the
 project's <a href="https://github.com/pyenv/pyenv">own docs</a>, in more detail,
-but omits that setting [PYENV_ROOT]{.title-ref} and adding it to the
+but omits that setting <code>PYENV_ROOT</code> and adding it to the
 path is needed:</p>
 <div class="language-text highlight"><pre><span></span><code>echo &#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39; &gt;&gt; ~/.zshrc
 echo &#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
@@ -1651,7 +1651,7 @@ server to auto-update any changes you make to a documentation file.</p>
 </code></pre></div>
 <h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h2>
 <p>Localization (or L10n) files were fetched by the
-[bootstrap.sh]{.title-ref} command your ran earlier and are included in
+<code>bootstrap.sh</code> command your ran earlier and are included in
 the docker images. If you need to update them or switch to a different
 repo or branch after changing settings you can run the following
 command:</p>
