@@ -1477,7 +1477,7 @@
 the code distribution, but are available in separate GitHub
 repositories. The proper repos can be cloned and kept up-to-date using
 the <code>l10n_update</code> management command:</p>
-<div class="language-console highlight"><pre><span></span><code><span class="gp">$ </span>./manage.py<span class="w"> </span>l10n_update
+<div class="language-console highlight"><pre><span></span><code><span class="go">./manage.py l10n_update</span>
 </code></pre></div>
 <p>If you don't already have a <code>data/www-l10n</code> directory, this command
 will clone the git repo containing the .ftl translation files (either
@@ -2041,9 +2041,9 @@ with the same path but in the <code>metadata</code> folder instead of a locale
 folder in the www-l10n repository. Or if you'd like something a bit
 nicer looking and more convenient there is the <code>active_locales</code>
 management command:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>l10n_update
+<div class="language-bash highlight"><pre><span></span><code>./manage.py<span class="w"> </span>l10n_update
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>./manage.py<span class="w"> </span>active_locales<span class="w"> </span>mozorg/mission
+<div class="language-bash highlight"><pre><span></span><code>./manage.py<span class="w"> </span>active_locales<span class="w"> </span>mozorg/mission
 </code></pre></div>
 <div class="language-bash highlight"><pre><span></span><code>There<span class="w"> </span>are<span class="w"> </span><span class="m">91</span><span class="w"> </span>active<span class="w"> </span>locales<span class="w"> </span><span class="k">for</span><span class="w"> </span>mozorg/mission.ftl:
 -<span class="w"> </span>af

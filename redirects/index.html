@@ -1262,15 +1262,15 @@ to test them before release.</p>
 which will guide you through installing pip and setting up
 a virtual environment for the tests. The additional requirements can
 then be installed by using the following commands:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<div class="language-bash highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/dev.txt
+<div class="language-bash highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/dev.txt
 </code></pre></div>
 <h3 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h3>
 <p>If you wish to run the full set of tests, which requires a deployed
 instance of the site (e.g. <a href="http://www.mozilla.org">www.mozilla.org</a>) you can set the <code>--base-url</code>
 command line option:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www.mozilla.org<span class="w"> </span>tests/redirects/
+<div class="language-bash highlight"><pre><span></span><code>py.test<span class="w"> </span>--base-url<span class="w"> </span>https://www.mozilla.org<span class="w"> </span>tests/redirects/
 </code></pre></div>
 <p>By default, tests will run one at a time. If you intend to run the suite
 against a remote instance of the site (e.g. production) it will run a

@@ -1367,9 +1367,9 @@ this will have already happened as a result of a push to the <code>main</code> o
 remote. If you'd like for it to push to a different remote name you can
 either pass in a <code>-r</code> or <code>--remote</code> argument, or set the
 <code>MOZ_GIT_REMOTE</code> environment variable. So the following are equivalent:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>bin/tag-release.sh<span class="w"> </span>--push<span class="w"> </span>-r<span class="w"> </span>mozilla
+<div class="language-bash highlight"><pre><span></span><code>bin/tag-release.sh<span class="w"> </span>--push<span class="w"> </span>-r<span class="w"> </span>mozilla
 </code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">MOZ_GIT_REMOTE</span><span class="o">=</span>mozilla<span class="w"> </span>bin/tag-release.sh<span class="w"> </span>--push
+<div class="language-bash highlight"><pre><span></span><code><span class="nv">MOZ_GIT_REMOTE</span><span class="o">=</span>mozilla<span class="w"> </span>bin/tag-release.sh<span class="w"> </span>--push
 </code></pre></div>
 <p>And if you'd like to just tag and not push the tag anywhere, you may
 omit the <code>--push</code> parameter.</p>
@@ -1430,7 +1430,7 @@ mozilla.slack.com) that you'll be doing this so that we don't get
 conflicts. Also remember that you'll likely need to force push, as
 there may be commits on that branch which aren't in yours -- so, if you
 have the <code>mozilla/bedrock</code> remote set as <code>mozilla</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>branch<span class="w"> </span>--show-current<span class="k">)</span>:run-integration-tests
+<div class="language-bash highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>mozilla<span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>branch<span class="w"> </span>--show-current<span class="k">)</span>:run-integration-tests
 </code></pre></div>
 
 
